@@ -1,127 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
 <instant-run
-    abi="x86"
+    abi="x86_64,x86"
     api-level="28"
     build-mode="COLD"
-    density="420dpi"
+    density="hdpi"
     format="10"
+    ir-eligibility="COMPATIBLE"
     plugin-version="3.3.1"
-    timestamp="1552989883406"
-    token="-1631863342296903048"
+    timestamp="1553095223887"
+    token="8708411194390795584"
     verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="0" />
+        duration="435" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="0" />
+        duration="20" />
     <task
         name="verifier"
-        duration="0" />
+        duration="8" />
 
     <artifact
-        location="C:\Users\User\AndroidStudioProjects\ComicBookRoute\app\build\intermediates\resources\instant-run\debug\resources-debug.apk"
+        location="C:\Users\mobapp02\Desktop\EindprojectBIJ\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
         type="SPLIT" />
-    <artifact
-        location="C:\Users\User\AndroidStudioProjects\ComicBookRoute\app\build\intermediates\instant-run-apk\debug\app-debug.apk"
-        type="SPLIT_MAIN" />
 
     <build
         build-mode="FULL"
-        timestamp="1552983234748"
+        timestamp="1553091815023"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
-            location="C:\Users\User\AndroidStudioProjects\ComicBookRoute\app\build\intermediates\resources\instant-run\debug\resources-debug.apk"
+            location="C:\Users\mobapp02\Desktop\EindprojectBIJ\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
             type="SPLIT" />
         <artifact
-            location="C:\Users\User\AndroidStudioProjects\ComicBookRoute\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
+            location="C:\Users\mobapp02\Desktop\EindprojectBIJ\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
             type="SPLIT" />
         <artifact
-            location="C:\Users\User\AndroidStudioProjects\ComicBookRoute\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
+            location="C:\Users\mobapp02\Desktop\EindprojectBIJ\app\build\intermediates\split-apk\debug\dep\dependencies.apk"
             type="SPLIT" />
         <artifact
-            location="C:\Users\User\AndroidStudioProjects\ComicBookRoute\app\build\intermediates\split-apk\debug\dep\dependencies.apk"
+            location="C:\Users\mobapp02\Desktop\EindprojectBIJ\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
             type="SPLIT" />
         <artifact
-            location="C:\Users\User\AndroidStudioProjects\ComicBookRoute\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
+            location="C:\Users\mobapp02\Desktop\EindprojectBIJ\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
             type="SPLIT" />
         <artifact
-            location="C:\Users\User\AndroidStudioProjects\ComicBookRoute\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
+            location="C:\Users\mobapp02\Desktop\EindprojectBIJ\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
             type="SPLIT" />
         <artifact
-            location="C:\Users\User\AndroidStudioProjects\ComicBookRoute\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
+            location="C:\Users\mobapp02\Desktop\EindprojectBIJ\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
             type="SPLIT" />
         <artifact
-            location="C:\Users\User\AndroidStudioProjects\ComicBookRoute\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
+            location="C:\Users\mobapp02\Desktop\EindprojectBIJ\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
             type="SPLIT" />
         <artifact
-            location="C:\Users\User\AndroidStudioProjects\ComicBookRoute\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
+            location="C:\Users\mobapp02\Desktop\EindprojectBIJ\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
             type="SPLIT" />
         <artifact
-            location="C:\Users\User\AndroidStudioProjects\ComicBookRoute\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
+            location="C:\Users\mobapp02\Desktop\EindprojectBIJ\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
             type="SPLIT" />
         <artifact
-            location="C:\Users\User\AndroidStudioProjects\ComicBookRoute\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
+            location="C:\Users\mobapp02\Desktop\EindprojectBIJ\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
             type="SPLIT" />
         <artifact
-            location="C:\Users\User\AndroidStudioProjects\ComicBookRoute\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
+            location="C:\Users\mobapp02\Desktop\EindprojectBIJ\app\build\intermediates\resources\instant-run\debug\resources-debug.apk"
             type="SPLIT" />
         <artifact
-            location="C:\Users\User\AndroidStudioProjects\ComicBookRoute\app\build\intermediates\instant-run-apk\debug\app-debug.apk"
+            location="C:\Users\mobapp02\Desktop\EindprojectBIJ\app\build\intermediates\instant-run-apk\debug\app-debug.apk"
             type="SPLIT_MAIN" />
     </build>
     <build
         build-mode="COLD"
-        timestamp="1552988490519"
+        ir-eligibility="COMPATIBLE"
+        timestamp="1553095223887"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
-            location="C:\Users\User\AndroidStudioProjects\ComicBookRoute\app\build\intermediates\split-apk\debug\dep\dependencies.apk"
+            location="C:\Users\mobapp02\Desktop\EindprojectBIJ\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
             type="SPLIT" />
-        <artifact
-            location="C:\Users\User\AndroidStudioProjects\ComicBookRoute\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\User\AndroidStudioProjects\ComicBookRoute\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\User\AndroidStudioProjects\ComicBookRoute\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\User\AndroidStudioProjects\ComicBookRoute\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\User\AndroidStudioProjects\ComicBookRoute\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\User\AndroidStudioProjects\ComicBookRoute\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\User\AndroidStudioProjects\ComicBookRoute\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\User\AndroidStudioProjects\ComicBookRoute\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\User\AndroidStudioProjects\ComicBookRoute\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\User\AndroidStudioProjects\ComicBookRoute\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
-            type="SPLIT" />
-    </build>
-    <build
-        build-mode="COLD"
-        timestamp="1552989883406"
-        verifier="COLD_SWAP_REQUESTED" >
-        <artifact
-            location="C:\Users\User\AndroidStudioProjects\ComicBookRoute\app\build\intermediates\resources\instant-run\debug\resources-debug.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\User\AndroidStudioProjects\ComicBookRoute\app\build\intermediates\instant-run-apk\debug\app-debug.apk"
-            type="SPLIT_MAIN" />
     </build>
 
 </instant-run>

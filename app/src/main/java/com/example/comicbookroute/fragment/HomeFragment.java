@@ -9,8 +9,12 @@ import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.SearchView;
 
 import com.example.comicbookroute.R;
 import com.example.comicbookroute.model.BookRouteDataSource;
@@ -31,7 +35,8 @@ public class HomeFragment extends Fragment {
 
     View v;
     private RecyclerView recyclerView;
-    BookRouteHandler mBookRouteHandler;
+    private BookRouteHandler mBookRouteHandler;
+    private BookRouteAdapter mBookRouteAdapter;
 
 
     public HomeFragment() {
@@ -47,6 +52,7 @@ public class HomeFragment extends Fragment {
         // Inflate the layout for this fragment
         v = inflater.inflate(R.layout.fragment_home, container, false);
 
+        setHasOptionsMenu(true);
 
         return v;
     }
@@ -56,18 +62,40 @@ public class HomeFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         recyclerView = v.findViewById(R.id.rv_bookroute);
-        BookRouteAdapter mBookRouteAdapter = new BookRouteAdapter(BookRouteDataSource.getInstance().getBookRoutes());
+
+        mBookRouteAdapter = new BookRouteAdapter(BookRouteDataSource.getInstance().getBookRoutes());
         recyclerView.setAdapter(mBookRouteAdapter);
 
         LinearLayoutManager mLayoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setHasFixedSize(true);
 
+
         mBookRouteHandler = new BookRouteHandler(mBookRouteAdapter);
 
         downloadData();
     }
 
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
+        inflater.inflate(R.menu.list_menu, menu);
+
+        SearchView sv = (SearchView) menu.findItem(R.id.app_bar_search).getActionView();
+
+        sv.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String s) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String s) {
+                mBookRouteAdapter.getFilter().filter(s);
+                return false;
+            }
+        });
+    }
 
 
 

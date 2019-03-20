@@ -1,18 +1,21 @@
 package com.example.comicbookroute;
 
 import android.support.design.widget.TabLayout;
-import android.support.v4.app.FragmentTransaction;
+
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
 import android.support.v7.widget.Toolbar;
 
-import com.example.comicbookroute.R;
+
+
 import com.example.comicbookroute.fragment.AboutFragment;
 import com.example.comicbookroute.fragment.FavoriteFragment;
 import com.example.comicbookroute.fragment.HomeFragment;
 import com.example.comicbookroute.fragment.MapFragment;
+
 import com.example.comicbookroute.util.ViewPagerAdapter;
 
 public class MainActivity extends AppCompatActivity {
@@ -20,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     private TabLayout tabLayout;
     private ViewPager viewPager;
     private ViewPagerAdapter adapter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +35,8 @@ public class MainActivity extends AppCompatActivity {
         toolbar = findViewById(R.id.main_toolbar);
         tabLayout = findViewById(R.id.main_tabs);
         viewPager = findViewById(R.id.main_viewpager);
+
+
         adapter = new ViewPagerAdapter(getSupportFragmentManager());
 
        setSupportActionBar(toolbar);
@@ -54,5 +60,13 @@ public class MainActivity extends AppCompatActivity {
 
         ActionBar actionBar =getSupportActionBar();
         actionBar.setElevation(0);
+
+
+
+
+
     }
+
+
+
 }

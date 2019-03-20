@@ -30,7 +30,7 @@
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="" />
+            android:value="AIzaSyAxcDDPr_SqV4mZj4WvBDw1mrcPKEu0ULA" />
 
         <provider
             android:name="com.squareup.picasso.PicassoProvider"
