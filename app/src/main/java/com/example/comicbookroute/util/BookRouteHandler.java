@@ -40,12 +40,12 @@ public class BookRouteHandler extends Handler {
                 JSONObject fields = currentRecords.getJSONObject("fields");
 
 
-                String personnage = (fields.has("personnage_s")) ? fields.getString("personnage") : "geen personnage";
+                String personnage = (fields.has("personnage_s")) ? fields.getString("personnage_s") : "geen personnage";
                 String auteur = fields.getString("auteur_s");
                 String annee = fields.getString("annee");
                 String photo = fields.getString("photo");
 
-                BookRoute currentBookRoute = new BookRoute(personnage, auteur, annee, photo);
+                BookRoute currentBookRoute = new BookRoute(photo, personnage, auteur, annee);
                 BookRouteDataSource.getInstance().addBookRoute(currentBookRoute);
 
                 index++;
