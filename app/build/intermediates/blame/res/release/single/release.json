@@ -8,16 +8,16 @@
         "source": "C:\\Users\\mobapp02\\Desktop\\EindprojectBIJ\\app\\build\\generated\\res\\pngs\\release\\drawable-xxhdpi\\ic_search_black_24dp.png"
     },
     {
-        "merged": "C:\\Users\\mobapp02\\Desktop\\EindprojectBIJ\\app\\build\\intermediates\\res\\merged\\release\\drawable-ldrtl-xxxhdpi-v17_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
-        "source": "C:\\Users\\mobapp02\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d27a242a650a04a01e761cbe2a6c531a\\res\\drawable-ldrtl-xxxhdpi-v17\\abc_ic_menu_copy_mtrl_am_alpha.png"
+        "merged": "C:\\Users\\mobapp02\\Desktop\\EindprojectBIJ\\app\\build\\intermediates\\res\\merged\\release\\color_design_error.xml.flat",
+        "source": "C:\\Users\\mobapp02\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\414a84d8bc01e16c83f0976dbf6b350d\\res\\color\\design_error.xml"
     },
     {
         "merged": "C:\\Users\\mobapp02\\Desktop\\EindprojectBIJ\\app\\build\\intermediates\\res\\merged\\release\\color-v23_abc_tint_edittext.xml.flat",
         "source": "C:\\Users\\mobapp02\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d27a242a650a04a01e761cbe2a6c531a\\res\\color-v23\\abc_tint_edittext.xml"
     },
     {
-        "merged": "C:\\Users\\mobapp02\\Desktop\\EindprojectBIJ\\app\\build\\intermediates\\res\\merged\\release\\color_design_error.xml.flat",
-        "source": "C:\\Users\\mobapp02\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\414a84d8bc01e16c83f0976dbf6b350d\\res\\color\\design_error.xml"
+        "merged": "C:\\Users\\mobapp02\\Desktop\\EindprojectBIJ\\app\\build\\intermediates\\res\\merged\\release\\drawable-ldrtl-xxxhdpi-v17_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
+        "source": "C:\\Users\\mobapp02\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d27a242a650a04a01e761cbe2a6c531a\\res\\drawable-ldrtl-xxxhdpi-v17\\abc_ic_menu_copy_mtrl_am_alpha.png"
     },
     {
         "merged": "C:\\Users\\mobapp02\\Desktop\\EindprojectBIJ\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4_abc_popup_background_mtrl_mult.9.png.flat",
@@ -36,24 +36,24 @@
         "source": "C:\\Users\\mobapp02\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\73acf723afbb9449f3d12e3f372a9b72\\res\\drawable-mdpi-v4\\notification_bg_normal.9.png"
     },
     {
-        "merged": "C:\\Users\\mobapp02\\Desktop\\EindprojectBIJ\\app\\build\\intermediates\\res\\merged\\release\\drawable_abc_btn_default_mtrl_shape.xml.flat",
-        "source": "C:\\Users\\mobapp02\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d27a242a650a04a01e761cbe2a6c531a\\res\\drawable\\abc_btn_default_mtrl_shape.xml"
-    },
-    {
-        "merged": "C:\\Users\\mobapp02\\Desktop\\EindprojectBIJ\\app\\build\\intermediates\\res\\merged\\release\\drawable-v21_abc_list_divider_material.xml.flat",
-        "source": "C:\\Users\\mobapp02\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d27a242a650a04a01e761cbe2a6c531a\\res\\drawable-v21\\abc_list_divider_material.xml"
-    },
-    {
-        "merged": "C:\\Users\\mobapp02\\Desktop\\EindprojectBIJ\\app\\build\\intermediates\\res\\merged\\release\\interpolator-v21_mtrl_linear_out_slow_in.xml.flat",
-        "source": "C:\\Users\\mobapp02\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\414a84d8bc01e16c83f0976dbf6b350d\\res\\interpolator-v21\\mtrl_linear_out_slow_in.xml"
+        "merged": "C:\\Users\\mobapp02\\Desktop\\EindprojectBIJ\\app\\build\\intermediates\\res\\merged\\release\\layout-v21_notification_template_custom_big.xml.flat",
+        "source": "C:\\Users\\mobapp02\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\73acf723afbb9449f3d12e3f372a9b72\\res\\layout-v21\\notification_template_custom_big.xml"
     },
     {
         "merged": "C:\\Users\\mobapp02\\Desktop\\EindprojectBIJ\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4_abc_scrubber_primary_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\mobapp02\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d27a242a650a04a01e761cbe2a6c531a\\res\\drawable-hdpi-v4\\abc_scrubber_primary_mtrl_alpha.9.png"
     },
     {
-        "merged": "C:\\Users\\mobapp02\\Desktop\\EindprojectBIJ\\app\\build\\intermediates\\res\\merged\\release\\layout-v21_notification_template_custom_big.xml.flat",
-        "source": "C:\\Users\\mobapp02\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\73acf723afbb9449f3d12e3f372a9b72\\res\\layout-v21\\notification_template_custom_big.xml"
+        "merged": "C:\\Users\\mobapp02\\Desktop\\EindprojectBIJ\\app\\build\\intermediates\\res\\merged\\release\\interpolator-v21_mtrl_linear_out_slow_in.xml.flat",
+        "source": "C:\\Users\\mobapp02\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\414a84d8bc01e16c83f0976dbf6b350d\\res\\interpolator-v21\\mtrl_linear_out_slow_in.xml"
+    },
+    {
+        "merged": "C:\\Users\\mobapp02\\Desktop\\EindprojectBIJ\\app\\build\\intermediates\\res\\merged\\release\\drawable-v21_abc_list_divider_material.xml.flat",
+        "source": "C:\\Users\\mobapp02\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d27a242a650a04a01e761cbe2a6c531a\\res\\drawable-v21\\abc_list_divider_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\mobapp02\\Desktop\\EindprojectBIJ\\app\\build\\intermediates\\res\\merged\\release\\drawable_abc_btn_default_mtrl_shape.xml.flat",
+        "source": "C:\\Users\\mobapp02\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d27a242a650a04a01e761cbe2a6c531a\\res\\drawable\\abc_btn_default_mtrl_shape.xml"
     },
     {
         "merged": "C:\\Users\\mobapp02\\Desktop\\EindprojectBIJ\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4_common_google_signin_btn_icon_dark_normal_background.9.png.flat",
@@ -76,12 +76,12 @@
         "source": "C:\\Users\\mobapp02\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d27a242a650a04a01e761cbe2a6c531a\\res\\layout\\abc_action_menu_layout.xml"
     },
     {
-        "merged": "C:\\Users\\mobapp02\\Desktop\\EindprojectBIJ\\app\\build\\intermediates\\res\\merged\\release\\layout_notification_template_custom_big.xml.flat",
-        "source": "C:\\Users\\mobapp02\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\73acf723afbb9449f3d12e3f372a9b72\\res\\layout\\notification_template_custom_big.xml"
-    },
-    {
         "merged": "C:\\Users\\mobapp02\\Desktop\\EindprojectBIJ\\app\\build\\intermediates\\res\\merged\\release\\drawable-xxxhdpi-v4_abc_scrubber_control_to_pressed_mtrl_000.png.flat",
         "source": "C:\\Users\\mobapp02\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d27a242a650a04a01e761cbe2a6c531a\\res\\drawable-xxxhdpi-v4\\abc_scrubber_control_to_pressed_mtrl_000.png"
+    },
+    {
+        "merged": "C:\\Users\\mobapp02\\Desktop\\EindprojectBIJ\\app\\build\\intermediates\\res\\merged\\release\\layout_notification_template_custom_big.xml.flat",
+        "source": "C:\\Users\\mobapp02\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\73acf723afbb9449f3d12e3f372a9b72\\res\\layout\\notification_template_custom_big.xml"
     },
     {
         "merged": "C:\\Users\\mobapp02\\Desktop\\EindprojectBIJ\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4_abc_text_select_handle_middle_mtrl_dark.png.flat",
@@ -96,12 +96,12 @@
         "source": "C:\\Users\\mobapp02\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-16.0.1.aar\\0753cf7f4f7e405f43d252875514a8fc\\res\\drawable-hdpi-v4\\common_google_signin_btn_text_light_normal_background.9.png"
     },
     {
-        "merged": "C:\\Users\\mobapp02\\Desktop\\EindprojectBIJ\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4_abc_textfield_search_default_mtrl_alpha.9.png.flat",
-        "source": "C:\\Users\\mobapp02\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d27a242a650a04a01e761cbe2a6c531a\\res\\drawable-hdpi-v4\\abc_textfield_search_default_mtrl_alpha.9.png"
-    },
-    {
         "merged": "C:\\Users\\mobapp02\\Desktop\\EindprojectBIJ\\app\\build\\intermediates\\res\\merged\\release\\drawable_abc_tab_indicator_material.xml.flat",
         "source": "C:\\Users\\mobapp02\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d27a242a650a04a01e761cbe2a6c531a\\res\\drawable\\abc_tab_indicator_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\mobapp02\\Desktop\\EindprojectBIJ\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4_abc_textfield_search_default_mtrl_alpha.9.png.flat",
+        "source": "C:\\Users\\mobapp02\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d27a242a650a04a01e761cbe2a6c531a\\res\\drawable-hdpi-v4\\abc_textfield_search_default_mtrl_alpha.9.png"
     },
     {
         "merged": "C:\\Users\\mobapp02\\Desktop\\EindprojectBIJ\\app\\build\\intermediates\\res\\merged\\release\\drawable-anydpi-v21_ic_info.xml.flat",
@@ -216,24 +216,24 @@
         "source": "C:\\Users\\mobapp02\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d27a242a650a04a01e761cbe2a6c531a\\res\\drawable-xhdpi-v4\\abc_list_longpressed_holo.9.png"
     },
     {
-        "merged": "C:\\Users\\mobapp02\\Desktop\\EindprojectBIJ\\app\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4_abc_btn_check_to_on_mtrl_000.png.flat",
-        "source": "C:\\Users\\mobapp02\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d27a242a650a04a01e761cbe2a6c531a\\res\\drawable-mdpi-v4\\abc_btn_check_to_on_mtrl_000.png"
-    },
-    {
         "merged": "C:\\Users\\mobapp02\\Desktop\\EindprojectBIJ\\app\\build\\intermediates\\res\\merged\\release\\drawable_abc_btn_radio_material.xml.flat",
         "source": "C:\\Users\\mobapp02\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d27a242a650a04a01e761cbe2a6c531a\\res\\drawable\\abc_btn_radio_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\mobapp02\\Desktop\\EindprojectBIJ\\app\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4_abc_btn_check_to_on_mtrl_000.png.flat",
+        "source": "C:\\Users\\mobapp02\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d27a242a650a04a01e761cbe2a6c531a\\res\\drawable-mdpi-v4\\abc_btn_check_to_on_mtrl_000.png"
     },
     {
         "merged": "C:\\Users\\mobapp02\\Desktop\\EindprojectBIJ\\app\\build\\intermediates\\res\\merged\\release\\drawable-ldrtl-mdpi-v17_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
         "source": "C:\\Users\\mobapp02\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d27a242a650a04a01e761cbe2a6c531a\\res\\drawable-ldrtl-mdpi-v17\\abc_ic_menu_copy_mtrl_am_alpha.png"
     },
     {
-        "merged": "C:\\Users\\mobapp02\\Desktop\\EindprojectBIJ\\app\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi-v4_googleg_standard_color_18.png.flat",
-        "source": "C:\\Users\\mobapp02\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-16.0.1.aar\\0753cf7f4f7e405f43d252875514a8fc\\res\\drawable-xhdpi-v4\\googleg_standard_color_18.png"
-    },
-    {
         "merged": "C:\\Users\\mobapp02\\Desktop\\EindprojectBIJ\\app\\build\\intermediates\\res\\merged\\release\\color_common_google_signin_btn_tint.xml.flat",
         "source": "C:\\Users\\mobapp02\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-16.0.1.aar\\0753cf7f4f7e405f43d252875514a8fc\\res\\color\\common_google_signin_btn_tint.xml"
+    },
+    {
+        "merged": "C:\\Users\\mobapp02\\Desktop\\EindprojectBIJ\\app\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi-v4_googleg_standard_color_18.png.flat",
+        "source": "C:\\Users\\mobapp02\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-16.0.1.aar\\0753cf7f4f7e405f43d252875514a8fc\\res\\drawable-xhdpi-v4\\googleg_standard_color_18.png"
     },
     {
         "merged": "C:\\Users\\mobapp02\\Desktop\\EindprojectBIJ\\app\\build\\intermediates\\res\\merged\\release\\color_abc_tint_switch_track.xml.flat",
@@ -260,12 +260,12 @@
         "source": "C:\\Users\\mobapp02\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\73acf723afbb9449f3d12e3f372a9b72\\res\\drawable-xhdpi-v4\\notification_bg_low_pressed.9.png"
     },
     {
-        "merged": "C:\\Users\\mobapp02\\Desktop\\EindprojectBIJ\\app\\build\\intermediates\\res\\merged\\release\\layout_preference_recyclerview.xml.flat",
-        "source": "C:\\Users\\mobapp02\\.gradle\\caches\\transforms-1\\files-1.1\\preference-v7-28.0.0.aar\\b6079f124137eb6d833250ee5f840e13\\res\\layout\\preference_recyclerview.xml"
-    },
-    {
         "merged": "C:\\Users\\mobapp02\\Desktop\\EindprojectBIJ\\app\\build\\intermediates\\res\\merged\\release\\drawable-ldpi_ic_search_black_24dp.png.flat",
         "source": "C:\\Users\\mobapp02\\Desktop\\EindprojectBIJ\\app\\build\\generated\\res\\pngs\\release\\drawable-ldpi\\ic_search_black_24dp.png"
+    },
+    {
+        "merged": "C:\\Users\\mobapp02\\Desktop\\EindprojectBIJ\\app\\build\\intermediates\\res\\merged\\release\\layout_preference_recyclerview.xml.flat",
+        "source": "C:\\Users\\mobapp02\\.gradle\\caches\\transforms-1\\files-1.1\\preference-v7-28.0.0.aar\\b6079f124137eb6d833250ee5f840e13\\res\\layout\\preference_recyclerview.xml"
     },
     {
         "merged": "C:\\Users\\mobapp02\\Desktop\\EindprojectBIJ\\app\\build\\intermediates\\res\\merged\\release\\drawable-anydpi-v21_ic_map.xml.flat",
@@ -280,12 +280,12 @@
         "source": "C:\\Users\\mobapp02\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d27a242a650a04a01e761cbe2a6c531a\\res\\drawable-xhdpi-v4\\abc_list_focused_holo.9.png"
     },
     {
-        "merged": "C:\\Users\\mobapp02\\Desktop\\EindprojectBIJ\\app\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi-v4_abc_textfield_search_activated_mtrl_alpha.9.png.flat",
-        "source": "C:\\Users\\mobapp02\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d27a242a650a04a01e761cbe2a6c531a\\res\\drawable-xhdpi-v4\\abc_textfield_search_activated_mtrl_alpha.9.png"
-    },
-    {
         "merged": "C:\\Users\\mobapp02\\Desktop\\EindprojectBIJ\\app\\build\\intermediates\\res\\merged\\release\\layout_preference_widget_switch.xml.flat",
         "source": "C:\\Users\\mobapp02\\.gradle\\caches\\transforms-1\\files-1.1\\preference-v7-28.0.0.aar\\b6079f124137eb6d833250ee5f840e13\\res\\layout\\preference_widget_switch.xml"
+    },
+    {
+        "merged": "C:\\Users\\mobapp02\\Desktop\\EindprojectBIJ\\app\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi-v4_abc_textfield_search_activated_mtrl_alpha.9.png.flat",
+        "source": "C:\\Users\\mobapp02\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d27a242a650a04a01e761cbe2a6c531a\\res\\drawable-xhdpi-v4\\abc_textfield_search_activated_mtrl_alpha.9.png"
     },
     {
         "merged": "C:\\Users\\mobapp02\\Desktop\\EindprojectBIJ\\app\\build\\intermediates\\res\\merged\\release\\layout_preference_category_material.xml.flat",
@@ -1246,6 +1246,10 @@
     {
         "merged": "C:\\Users\\mobapp02\\Desktop\\EindprojectBIJ\\app\\build\\intermediates\\res\\merged\\release\\layout-v17_preference_information_material.xml.flat",
         "source": "C:\\Users\\mobapp02\\.gradle\\caches\\transforms-1\\files-1.1\\preference-v7-28.0.0.aar\\b6079f124137eb6d833250ee5f840e13\\res\\layout-v17\\preference_information_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\mobapp02\\Desktop\\EindprojectBIJ\\app\\build\\intermediates\\res\\merged\\release\\layout_favroute_row.xml.flat",
+        "source": "C:\\Users\\mobapp02\\Desktop\\EindprojectBIJ\\app\\src\\main\\res\\layout\\favroute_row.xml"
     },
     {
         "merged": "C:\\Users\\mobapp02\\Desktop\\EindprojectBIJ\\app\\build\\intermediates\\res\\merged\\release\\drawable_abc_ic_ab_back_material.xml.flat",
