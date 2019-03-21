@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.comicbookroute">
-  <uses-permission android:name="android.permission.INTERNET"></uses-permission>
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
 
     <application
         android:allowBackup="true"
@@ -19,8 +23,8 @@
             </intent-filter>
         </activity>
         <meta-data
-            android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyAxcDDPr_SqV4mZj4WvBDw1mrcPKEu0ULA" />
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="AIzaSyAeM02QaT0ciuumeBfkTKpz0evS_Gj-OSE" />
     </application>
 
 </manifest>
