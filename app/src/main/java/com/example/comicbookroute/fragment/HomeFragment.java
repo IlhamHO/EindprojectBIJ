@@ -37,7 +37,8 @@ public class HomeFragment extends Fragment {
     public HomeFragment() {
         // Required empty public constructor
     }
-    public static HomeFragment newInstance(){
+
+    public static HomeFragment newInstance() {
         return new HomeFragment();
     }
 
@@ -69,32 +70,30 @@ public class HomeFragment extends Fragment {
     }
 
 
-
-
     private void downloadData() {
         Thread thread = new Thread(new Runnable() {
             @Override
             public void run() {
                 try {
 
-                        OkHttpClient client = new OkHttpClient();
+                    OkHttpClient client = new OkHttpClient();
 
-                        Request request = new Request.Builder()
-                                .url("https://bruxellesdata.opendatasoft.com/api/records/1.0/search/?dataset=comic-book-route&rows=52")
-                                .get()
-                                .build();
+                    Request request = new Request.Builder()
+                            .url("https://bruxellesdata.opendatasoft.com/api/records/1.0/search/?dataset=comic-book-route&rows=52")
+                            .get()
+                            .build();
 
-                        Response response = client.newCall(request).execute();
-                        if(response.body() != null){
-                            String responseBodyText = response.body().string();
+                    Response response = client.newCall(request).execute();
+                    if (response.body() != null) {
+                        String responseBodyText = response.body().string();
 
-                            Message msg = new Message();
-                            msg.obj = responseBodyText;
+                        Message msg = new Message();
+                        msg.obj = responseBodyText;
 
 
-                            mBookRouteHandler.sendMessage(msg);
-                        }
-                    }catch (IOException e){
+                        mBookRouteHandler.sendMessage(msg);
+                    }
+                } catch (IOException e) {
                     e.printStackTrace();
                 }
             }

@@ -18,7 +18,7 @@ import okhttp3.RequestBody;
 
 public class BookRouteHandler extends Handler {
 
-   private BookRouteAdapter mBookRouteAdapter;
+    private BookRouteAdapter mBookRouteAdapter;
 
     public BookRouteHandler(BookRouteAdapter mBookRouteAdapter) {
         this.mBookRouteAdapter = mBookRouteAdapter;
@@ -43,7 +43,8 @@ public class BookRouteHandler extends Handler {
                 String personnage = (fields.has("personnage_s")) ? fields.getString("personnage_s") : "geen personnage";
                 String auteur = fields.getString("auteur_s");
                 String annee = fields.getString("annee");
-                String photo = fields.getString("photo");
+                JSONObject photoObject = fields.getJSONObject("photo");
+                String photo = photoObject.getString("id");
 
                 BookRoute currentBookRoute = new BookRoute(photo, personnage, auteur, annee);
                 BookRouteDataSource.getInstance().addBookRoute(currentBookRoute);

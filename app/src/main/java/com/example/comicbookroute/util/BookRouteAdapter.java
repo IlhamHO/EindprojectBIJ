@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.example.comicbookroute.R;
 import com.example.comicbookroute.model.BookRoute;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -36,8 +37,8 @@ public class BookRouteAdapter extends RecyclerView.Adapter<BookRouteAdapter.Book
     public void onBindViewHolder(@NonNull BookRouteRowViewHolder bookRouteRowViewHolder, int i) {
         BookRoute currentBookRoute = items.get(i);
         bookRouteRowViewHolder.tvPersonnage.setText(currentBookRoute.getPersonnage());
-       /* bookRouteRowViewHolder.image.setImageResource(currentBookRoute.getPhoto());*/
-
+        String imageUrl = String.format("https://bruxellesdata.opendatasoft.com/explore/dataset/comic-book-route/files/%s", currentBookRoute.getPhoto())+"/300/";
+        Picasso.get().load(imageUrl).into(bookRouteRowViewHolder.image);
     }
 
     @Override
