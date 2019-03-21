@@ -55,7 +55,6 @@ public class BookRouteHandler extends Handler {
             e.printStackTrace();
         }
 
-        mBookRouteAdapter.setItems(BookRouteDataSource.getInstance().getBookRoutes());
         mBookRouteAdapter.notifyDataSetChanged();
 
     }

@@ -21,7 +21,6 @@ public class BookRouteAdapter extends RecyclerView.Adapter<BookRouteAdapter.Book
 
     ArrayList<BookRoute> items;
     ArrayList<BookRoute> filteredItems;
-    CustomFilter filter;
 
     public BookRouteAdapter( ArrayList<BookRoute> items) {
 
@@ -50,14 +49,10 @@ public class BookRouteAdapter extends RecyclerView.Adapter<BookRouteAdapter.Book
     public int getItemCount() {
         return filteredItems.size();
     }
-    public void setItems(ArrayList<BookRoute> bookRoutes){items.addAll(bookRoutes);}
 
     @Override
     public Filter getFilter() {
-        if (filter == null){
-            filter = new CustomFilter();
-        }
-        return filter;
+        return new CustomFilter();
     }
 
     class CustomFilter extends Filter {
@@ -80,7 +75,7 @@ public class BookRouteAdapter extends RecyclerView.Adapter<BookRouteAdapter.Book
 
 
                 for (int i = 0; i < items.size(); i++) {
-                    if (items.get(i).getAuteur().toUpperCase().contains(constraint)) {
+                    if (items.get(i).getPersonnage().toUpperCase().contains(constraint)) {
                         BookRoute p = items.get(i);
 
                         filters.add(p);
