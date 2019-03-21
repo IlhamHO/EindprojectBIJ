@@ -41,9 +41,8 @@ public class BookRouteAdapter extends RecyclerView.Adapter<BookRouteAdapter.Book
     public void onBindViewHolder(@NonNull BookRouteRowViewHolder bookRouteRowViewHolder, int i) {
         BookRoute currentBookRoute = filteredItems.get(i);
         bookRouteRowViewHolder.tvPersonnage.setText(currentBookRoute.getPersonnage());
-       /* bookRouteRowViewHolder.image.setImageResource(currentBookRoute.getPhoto());*/
-       // Picasso.get().load(currentBookRoute.getPhoto()).into(bookRouteRowViewHolder.image);
-
+        String imageUrl = String.format("https://bruxellesdata.opendatasoft.com/explore/dataset/comic-book-route/files/%s", currentBookRoute.getPhoto())+"/300/";
+        Picasso.get().load(imageUrl).into(bookRouteRowViewHolder.image);
     }
     @Override
     public int getItemCount() {
