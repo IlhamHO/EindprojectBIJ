@@ -1146,6 +1146,7 @@ drawable ic_map
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
+drawable ic_search_black_24dp
 drawable ic_star
 drawable mtrl_snackbar_background
 drawable mtrl_tabs_default_indicator
@@ -1197,6 +1198,7 @@ id adjust_width
 id alertTitle
 id all
 id always
+id app_bar_search
 id appbar
 id async
 id auto
@@ -1503,6 +1505,7 @@ layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
+menu list_menu
 mipmap ic_launcher
 mipmap ic_launcher_round
 string abc_action_bar_home_description

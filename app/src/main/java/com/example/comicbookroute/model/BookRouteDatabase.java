@@ -4,6 +4,7 @@ import android.arch.persistence.room.Database;
 import android.arch.persistence.room.Room;
 import android.arch.persistence.room.RoomDatabase;
 import android.content.Context;
+
 @Database(version = 1, entities = {BookRoute.class}, exportSchema = false)
 public abstract class BookRouteDatabase extends RoomDatabase {
 
@@ -18,7 +19,7 @@ public abstract class BookRouteDatabase extends RoomDatabase {
         return Room.databaseBuilder(context, BookRouteDatabase.class, "bookRoutes.db").allowMainThreadQueries().build();
     }
 
-    public abstract BookRouteDao getBoobRouteDAO();
+    public abstract BookRouteDao getBookRouteDAO();
 }
 
 

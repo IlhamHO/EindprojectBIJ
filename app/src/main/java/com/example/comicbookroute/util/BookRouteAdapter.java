@@ -6,23 +6,27 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
 import com.example.comicbookroute.R;
 import com.example.comicbookroute.model.BookRoute;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
-import java.util.List;
 
-public class BookRouteAdapter extends RecyclerView.Adapter<BookRouteAdapter.BookRouteRowViewHolder> {
+public class BookRouteAdapter extends RecyclerView.Adapter<BookRouteAdapter.BookRouteRowViewHolder> implements Filterable {
 
     private ArrayList<BookRoute> items;
+    ArrayList<BookRoute> items;
+    ArrayList<BookRoute> filteredItems;
 
-    public BookRouteAdapter(ArrayList<BookRoute> items) {
+    public BookRouteAdapter( ArrayList<BookRoute> items) {
+
         this.items = items;
-
+        filteredItems = items;
     }
 
     @NonNull
@@ -36,24 +40,66 @@ public class BookRouteAdapter extends RecyclerView.Adapter<BookRouteAdapter.Book
 
     @Override
     public void onBindViewHolder(@NonNull BookRouteRowViewHolder bookRouteRowViewHolder, int i) {
-        BookRoute currentBookRoute = items.get(i);
+        BookRoute currentBookRoute = filteredItems.get(i);
         bookRouteRowViewHolder.tvPersonnage.setText(currentBookRoute.getPersonnage());
-
-
-
+        String imageUrl = String.format("https://bruxellesdata.opendatasoft.com/explore/dataset/comic-book-route/files/%s", currentBookRoute.getPhoto())+"/300/";
+        Picasso.get().load(imageUrl).into(bookRouteRowViewHolder.image);
+    }
+    @Override
+    public int getItemCount() {
+        return filteredItems.size();
     }
 
     @Override
-    public int getItemCount() {
-        return items.size();
+    public Filter getFilter() {
+        return new CustomFilter();
     }
-    public void setItems(ArrayList<BookRoute> bookRoutes){items.addAll(bookRoutes);}
+
+    class CustomFilter extends Filter {
+
+        @Override
+        protected void publishResults(CharSequence constraint, FilterResults results) {
+            filteredItems = (ArrayList<BookRoute>) results.values;
+            notifyDataSetChanged();
+
+        }
+
+        @Override
+        protected FilterResults performFiltering(CharSequence constraint) {
+            FilterResults results = new FilterResults();
+
+            if (constraint != null && constraint.length() > 0) {
+                constraint = constraint.toString().toUpperCase();
+
+                ArrayList<BookRoute> filters = new ArrayList<>();
+
+
+                for (int i = 0; i < items.size(); i++) {
+                    if (items.get(i).getPersonnage().toUpperCase().contains(constraint)) {
+                        BookRoute p = items.get(i);
+
+                        filters.add(p);
+                    }
+                }
+
+                results.count = filters.size();
+                results.values = filters;
+
+            } else {
+                results.count = items.size();
+                results.values = items;
+
+            }
+
+            return results;
+        }
+    }
 
     public static class BookRouteRowViewHolder extends RecyclerView.ViewHolder{
 
         private ImageView image;
         private TextView tvPersonnage;
-        private ImageView favorite;
+        private ImageView icon;
 
 
 
@@ -62,7 +108,7 @@ public class BookRouteAdapter extends RecyclerView.Adapter<BookRouteAdapter.Book
 
             image = itemView.findViewById(R.id.iv_row);
             tvPersonnage = itemView.findViewById(R.id.tv_row_personnage);
-            favorite = itemView.findViewById(R.id.iv_row_botton);
+            icon = itemView.findViewById(R.id.iv_row_icon);
 
         }
     }
