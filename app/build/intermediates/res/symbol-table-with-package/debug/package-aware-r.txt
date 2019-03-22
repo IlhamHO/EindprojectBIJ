@@ -1168,6 +1168,7 @@ drawable tooltip_frame_dark
 drawable tooltip_frame_light
 id ALT
 id CTRL
+id ConstraintLayout
 id FUNCTION
 id META
 id SHIFT
@@ -1255,6 +1256,7 @@ id groups
 id home
 id homeAsUp
 id hybrid
+id ib_details
 id icon
 id icon_frame
 id icon_group
@@ -1265,9 +1267,9 @@ id info
 id invisible
 id italic
 id item_touch_helper_previous_elevation
-id iv_info_window
+id iv_photo_detail
 id iv_row
-id iv_row_botton
+id iv_row_icon
 id labeled
 id largeLabel
 id left
@@ -1312,6 +1314,7 @@ id right
 id right_icon
 id right_side
 id rv_bookroute
+id rv_favorits
 id satellite
 id save_image_matrix
 id save_non_transition_alpha
@@ -1386,7 +1389,9 @@ id transition_layout_save
 id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
-id tv_info_window
+id tv_jaar_detail
+id tv_naam_detail
+id tv_personage_detail
 id tv_row_personnage
 id uniform
 id unlabeled
@@ -1446,6 +1451,7 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_detail
 layout activity_main
 layout bookroute_row
 layout design_bottom_navigation_item
@@ -1467,7 +1473,6 @@ layout fragment_about
 layout fragment_favorite
 layout fragment_home
 layout fragment_map
-layout info_window
 layout mtrl_layout_snackbar
 layout mtrl_layout_snackbar_include
 layout notification_action
