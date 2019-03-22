@@ -56,7 +56,7 @@ public class HomeFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         recyclerView = v.findViewById(R.id.rv_bookroute);
-        BookRouteAdapter mBookRouteAdapter = new BookRouteAdapter(BookRouteDataSource.getInstance().getBookRoutes(),getContext());
+        BookRouteAdapter mBookRouteAdapter = new BookRouteAdapter(BookRouteDataSource.getInstance().getBookRoutes());
         recyclerView.setAdapter(mBookRouteAdapter);
 
         LinearLayoutManager mLayoutManager = new LinearLayoutManager(getActivity());

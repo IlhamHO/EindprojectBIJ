@@ -19,11 +19,10 @@ import java.util.List;
 public class BookRouteAdapter extends RecyclerView.Adapter<BookRouteAdapter.BookRouteRowViewHolder> {
 
     private ArrayList<BookRoute> items;
-    private Context context;
 
-    public BookRouteAdapter(ArrayList<BookRoute> items, Context context) {
+    public BookRouteAdapter(ArrayList<BookRoute> items) {
         this.items = items;
-        this.context = context;
+
     }
 
     @NonNull
@@ -39,7 +38,6 @@ public class BookRouteAdapter extends RecyclerView.Adapter<BookRouteAdapter.Book
     public void onBindViewHolder(@NonNull BookRouteRowViewHolder bookRouteRowViewHolder, int i) {
         BookRoute currentBookRoute = items.get(i);
         bookRouteRowViewHolder.tvPersonnage.setText(currentBookRoute.getPersonnage());
-        Glide.with(context).load(currentBookRoute.getPhoto()).into(bookRouteRowViewHolder.image);
 
 
 
