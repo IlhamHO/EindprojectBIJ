@@ -20,7 +20,6 @@ import java.util.ArrayList;
 public class BookRouteAdapter extends RecyclerView.Adapter<BookRouteAdapter.BookRouteRowViewHolder> implements Filterable {
 
     private ArrayList<BookRoute> items;
-    ArrayList<BookRoute> items;
     ArrayList<BookRoute> filteredItems;
 
     public BookRouteAdapter( ArrayList<BookRoute> items) {
@@ -108,7 +107,7 @@ public class BookRouteAdapter extends RecyclerView.Adapter<BookRouteAdapter.Book
 
             image = itemView.findViewById(R.id.iv_row);
             tvPersonnage = itemView.findViewById(R.id.tv_row_personnage);
-            icon = itemView.findViewById(R.id.iv_row_icon);
+            //icon = itemView.findViewById(R.id.iv_row_icon);
 
         }
     }
