@@ -9,18 +9,21 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.example.comicbookroute.R;
 import com.example.comicbookroute.model.BookRoute;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class BookRouteAdapter extends RecyclerView.Adapter<BookRouteAdapter.BookRouteRowViewHolder> {
 
-    ArrayList<BookRoute> items;
+    private ArrayList<BookRoute> items;
+    private Context context;
 
-    public BookRouteAdapter( ArrayList<BookRoute> items) {
-
+    public BookRouteAdapter(ArrayList<BookRoute> items, Context context) {
         this.items = items;
+        this.context = context;
     }
 
     @NonNull
@@ -36,7 +39,9 @@ public class BookRouteAdapter extends RecyclerView.Adapter<BookRouteAdapter.Book
     public void onBindViewHolder(@NonNull BookRouteRowViewHolder bookRouteRowViewHolder, int i) {
         BookRoute currentBookRoute = items.get(i);
         bookRouteRowViewHolder.tvPersonnage.setText(currentBookRoute.getPersonnage());
-       /* bookRouteRowViewHolder.image.setImageResource(currentBookRoute.getPhoto());*/
+        Glide.with(context).load(currentBookRoute.getPhoto()).into(bookRouteRowViewHolder.image);
+
+
 
     }
 
@@ -50,7 +55,7 @@ public class BookRouteAdapter extends RecyclerView.Adapter<BookRouteAdapter.Book
 
         private ImageView image;
         private TextView tvPersonnage;
-        private ImageView icon;
+        private ImageView favorite;
 
 
 
@@ -59,7 +64,7 @@ public class BookRouteAdapter extends RecyclerView.Adapter<BookRouteAdapter.Book
 
             image = itemView.findViewById(R.id.iv_row);
             tvPersonnage = itemView.findViewById(R.id.tv_row_personnage);
-            icon = itemView.findViewById(R.id.iv_row_icon);
+            favorite = itemView.findViewById(R.id.iv_row_botton);
 
         }
     }

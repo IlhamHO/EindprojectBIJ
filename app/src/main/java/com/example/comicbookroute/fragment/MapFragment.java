@@ -8,24 +8,41 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
+
 import com.example.comicbookroute.R;
+import com.example.comicbookroute.model.BookRoute;
+import com.example.comicbookroute.model.BookRouteDataSource;
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
+import com.google.android.gms.maps.model.MarkerOptions;
 
-public class MapFragment extends Fragment implements OnMapReadyCallback{
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.List;
+
+public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleMap.OnMapClickListener, GoogleMap.OnMarkerClickListener{
 
     MapView mMapView;
     private GoogleMap mGoogleMap;
     private final LatLng BRUSSEL = new LatLng(50.858712, 4.347446);
     private final int REQUEST_LOCATION = 1;
+
 
     public MapFragment() {
     }
@@ -51,6 +68,45 @@ public class MapFragment extends Fragment implements OnMapReadyCallback{
         mGoogleMap = googleMap;
         setupCamera();
         startLocationUpdate();
+        addMarkers();
+        mGoogleMap.setOnMapClickListener(this);
+        mGoogleMap.setOnMarkerClickListener(this);
+      /*  mGoogleMap.setInfoWindowAdapter(new GoogleMap.InfoWindowAdapter() {
+            @Override
+            public View getInfoWindow(Marker marker) {
+                return null;
+            }
+
+            @Override
+            public View getInfoContents(Marker marker) {
+
+                View mView = getLayoutInflater().inflate(R.layout.info_window,null,false);
+
+                BookRoute current = (BookRoute)marker.getTag();
+
+                TextView tvTitle = mView.findViewById(R.id.tv_info_window);
+                tvTitle.setText(current.getPersonnage());
+
+                ImageView iv = mView.findViewById(R.id.iv_info_window);
+
+                return mView;
+            }
+        });*/
+    }
+
+    private void addMarkers() {
+
+        List<BookRoute> data = BookRouteDataSource.getInstance().getBookRoutes();
+        Log.d("DATA", data.toString());
+        for(BookRoute br : data){
+            LatLng coord = new LatLng(br.getLatitude(), br.getLongitude());
+
+            mGoogleMap.addMarker(new MarkerOptions()
+                    .title(br.getPersonnage()).position(coord).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
+
+        }
+
+
     }
 
     private void setupCamera() {
@@ -63,27 +119,40 @@ public class MapFragment extends Fragment implements OnMapReadyCallback{
     }
 
     private void startLocationUpdate() {
-        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
-            if(ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED){
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            if (ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
                 String[] permissions = {Manifest.permission.ACCESS_FINE_LOCATION};
                 requestPermissions(permissions, REQUEST_LOCATION);
-            }else{
+            } else {
                 mGoogleMap.setMyLocationEnabled(true);
 
             }
-        }else {
+        } else {
             mGoogleMap.setMyLocationEnabled(true);
         }
+
     }
+
 
     @SuppressLint("MissingPermission")
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if(requestCode == REQUEST_LOCATION){
-            for(int result : grantResults)
-                if(result == PackageManager.PERMISSION_GRANTED)
+        if (requestCode == REQUEST_LOCATION) {
+            for (int result : grantResults)
+                if (result == PackageManager.PERMISSION_GRANTED)
                     mGoogleMap.setMyLocationEnabled(true);
         }
+    }
+
+    @Override
+    public void onMapClick(LatLng latLng) {
+        addMarkers();
+    }
+
+    @Override
+    public boolean onMarkerClick(Marker marker) {
+        Toast.makeText(getActivity(),marker.getTitle(),Toast.LENGTH_LONG).show();
+        return false;
     }
 }
