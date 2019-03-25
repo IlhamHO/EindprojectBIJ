@@ -1,6 +1,7 @@
 package com.example.comicbookroute.util;
 
-import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -10,19 +11,21 @@ import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.example.comicbookroute.R;
 import com.example.comicbookroute.model.BookRoute;
 import com.squareup.picasso.Picasso;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.List;
 
 public class BookRouteAdapter extends RecyclerView.Adapter<BookRouteAdapter.BookRouteRowViewHolder> implements Filterable {
 
-    ArrayList<BookRoute> items;
-    ArrayList<BookRoute> filteredItems;
+    List<BookRoute> items;
+    List<BookRoute> filteredItems;
 
-    public BookRouteAdapter( ArrayList<BookRoute> items) {
+    public BookRouteAdapter(List<BookRoute> items) {
 
         this.items = items;
         filteredItems = items;
@@ -41,8 +44,13 @@ public class BookRouteAdapter extends RecyclerView.Adapter<BookRouteAdapter.Book
     public void onBindViewHolder(@NonNull BookRouteRowViewHolder bookRouteRowViewHolder, int i) {
         BookRoute currentBookRoute = filteredItems.get(i);
         bookRouteRowViewHolder.tvPersonnage.setText(currentBookRoute.getPersonnage());
-        String imageUrl = String.format("https://bruxellesdata.opendatasoft.com/explore/dataset/comic-book-route/files/%s", currentBookRoute.getPhoto())+"/300/";
-        Picasso.get().load(imageUrl).into(bookRouteRowViewHolder.image);
+        try {
+            FileInputStream fis = bookRouteRowViewHolder.itemView.getContext().openFileInput(currentBookRoute.getPhoto());
+            Bitmap bitmap = BitmapFactory.decodeStream(fis);
+            bookRouteRowViewHolder.image.setImageBitmap(bitmap);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
     }
     @Override
     public int getItemCount() {

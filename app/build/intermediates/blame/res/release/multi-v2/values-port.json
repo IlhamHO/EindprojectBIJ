@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\mobapp02\\Desktop\\EindprojectBIJ\\app\\build\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-port\\values-port.xml",
+            "outputFile": "Z:\\AndroidStudioProjects\\EindprojectBIJ\\app\\build\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-port\\values-port.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\mobapp02\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d27a242a650a04a01e761cbe2a6c531a\\res\\values-port\\values-port.xml",
+                    "source": "C:\\Users\\mobapp08\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\df2124f62e24827b577fe0454cec24db\\res\\values-port\\values-port.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

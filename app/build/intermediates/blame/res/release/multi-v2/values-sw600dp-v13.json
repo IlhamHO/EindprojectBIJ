@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\mobapp02\\Desktop\\EindprojectBIJ\\app\\build\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-sw600dp-v13\\values-sw600dp-v13.xml",
+            "outputFile": "Z:\\AndroidStudioProjects\\EindprojectBIJ\\app\\build\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-sw600dp-v13\\values-sw600dp-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\mobapp02\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\414a84d8bc01e16c83f0976dbf6b350d\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
+                    "source": "C:\\Users\\mobapp08\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\7d8704901e382e4686527e8b6a32d71e\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,10,11,12",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\mobapp02\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d27a242a650a04a01e761cbe2a6c531a\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
+                    "source": "C:\\Users\\mobapp08\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\df2124f62e24827b577fe0454cec24db\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",

@@ -1,28 +1,30 @@
 package com.example.comicbookroute.fragment;
 
 
+import android.content.Context;
 import android.os.Bundle;
 import android.os.Message;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.ContentFrameLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.SearchView;
 
+import com.example.comicbookroute.MainActivity;
 import com.example.comicbookroute.R;
 import com.example.comicbookroute.model.BookRouteDataSource;
+import com.example.comicbookroute.model.BookRouteDatabase;
 import com.example.comicbookroute.util.BookRouteAdapter;
 import com.example.comicbookroute.util.BookRouteHandler;
 
 import java.io.IOException;
-import java.util.concurrent.RunnableFuture;
 
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -37,7 +39,6 @@ public class HomeFragment extends Fragment {
     private RecyclerView recyclerView;
     private BookRouteHandler mBookRouteHandler;
     private BookRouteAdapter mBookRouteAdapter;
-
 
     public HomeFragment() {
         // Required empty public constructor
@@ -63,16 +64,14 @@ public class HomeFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         recyclerView = v.findViewById(R.id.rv_bookroute);
-
-        mBookRouteAdapter = new BookRouteAdapter(BookRouteDataSource.getInstance().getBookRoutes());
+        mBookRouteAdapter = new BookRouteAdapter(BookRouteDatabase.getInstance(getContext()).getBookRouteDAO().selectAllBookRoutes());
         recyclerView.setAdapter(mBookRouteAdapter);
 
         LinearLayoutManager mLayoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setHasFixedSize(true);
 
-
-        mBookRouteHandler = new BookRouteHandler(mBookRouteAdapter);
+        mBookRouteHandler = new BookRouteHandler(mBookRouteAdapter, getActivity().getApplicationContext());
 
         downloadData();
     }
