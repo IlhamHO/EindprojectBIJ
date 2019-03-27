@@ -23,11 +23,9 @@ import java.util.concurrent.ExecutionException;
 
 public class BookRouteHandler extends Handler {
 
-    private BookRouteAdapter mBookRouteAdapter;
     private Context context;
 
-    public BookRouteHandler(BookRouteAdapter mBookRouteAdapter, Context context) {
-        this.mBookRouteAdapter = mBookRouteAdapter;
+    public BookRouteHandler( Context context) {
         this.context = context;
     }
 
@@ -58,20 +56,14 @@ public class BookRouteHandler extends Handler {
 
                 DownloadImageTask task = new DownloadImageTask(photo, context);
                 task.execute(pictureURL);
-                BookRoute currentBookRoute = new BookRoute(task.get(), personnage, auteur, annee);
+                BookRoute currentBookRoute = new BookRoute(photo+".jpeg", personnage, auteur, annee);
                 BookRouteDatabase.getInstance(context).getBookRouteDAO().insertBookRoute(currentBookRoute);
                 index++;
             }
 
         } catch (JSONException e) {
             e.printStackTrace();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } catch (ExecutionException e) {
-            e.printStackTrace();
         }
-
-        mBookRouteAdapter.notifyDataSetChanged();
 
     }
 

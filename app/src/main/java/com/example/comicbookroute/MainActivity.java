@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
     private TabLayout tabLayout;
     private ViewPager viewPager;
     private ViewPagerAdapter adapter;
+    private BookRouteHandler mBookRouteHandler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +58,43 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.getTabAt(3).setIcon(R.drawable.ic_info);
 
         setSupportActionBar(toolbar);
-        homeFragment.downloadData();
+
+        mBookRouteHandler = new BookRouteHandler(getApplicationContext());
+
+        downloadData();
+
+    }
+
+    private void downloadData() {
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+
+                    OkHttpClient client = new OkHttpClient();
+
+                    Request request = new Request.Builder()
+                            .url("https://bruxellesdata.opendatasoft.com/api/records/1.0/search/?dataset=comic-book-route&rows=52")
+                            .get()
+                            .build();
+
+                    Response response = client.newCall(request).execute();
+                    if (response.body() != null) {
+                        String responseBodyText = response.body().string();
+
+                        Message msg = new Message();
+                        msg.obj = responseBodyText;
+
+
+                        mBookRouteHandler.sendMessage(msg);
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+
+        });
+        thread.start();
+
     }
 }

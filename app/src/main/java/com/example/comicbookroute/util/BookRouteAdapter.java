@@ -2,6 +2,8 @@ package com.example.comicbookroute.util;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -13,23 +15,27 @@ import android.widget.Filterable;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.comicbookroute.DetailActivity;
 import com.example.comicbookroute.MainActivity;
 import com.example.comicbookroute.R;
 import com.example.comicbookroute.fragment.HomeFragment;
 import com.example.comicbookroute.model.BookRoute;
-import com.squareup.picasso.Picasso;
+import com.example.comicbookroute.model.FavoriteDataBase;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.List;
 
 public class BookRouteAdapter extends RecyclerView.Adapter<BookRouteAdapter.BookRouteRowViewHolder> implements Filterable {
 
-    ArrayList<BookRoute> items;
-    ArrayList<BookRoute> filteredItems;
+    List<BookRoute> items;
+    List<BookRoute> filteredItems;
     private int whichLayoutId;
 
-    public BookRouteAdapter( ArrayList<BookRoute> items, int whichLayoutId) {
+    public BookRouteAdapter(List<BookRoute> items, int whichLayoutId) {
 
         this.items = items;
         filteredItems = items;
@@ -49,9 +55,14 @@ public class BookRouteAdapter extends RecyclerView.Adapter<BookRouteAdapter.Book
     public void onBindViewHolder(@NonNull BookRouteRowViewHolder bookRouteRowViewHolder, int i) {
         BookRoute currentBookRoute = filteredItems.get(i);
         bookRouteRowViewHolder.tvPersonnage.setText(currentBookRoute.getPersonnage());
-        String imageUrl = String.format("https://bruxellesdata.opendatasoft.com/explore/dataset/comic-book-route/files/%s", currentBookRoute.getPhoto())+"/300/";
-        Picasso.get().load(imageUrl).into(bookRouteRowViewHolder.image);
-        bookRouteRowViewHolder.item = currentBookRoute;
+        try {
+            FileInputStream fis = bookRouteRowViewHolder.itemView.getContext().openFileInput(currentBookRoute.getPhoto());
+            Bitmap bitmap = BitmapFactory.decodeStream(fis);
+            bookRouteRowViewHolder.image.setImageBitmap(bitmap);
+            bookRouteRowViewHolder.item = currentBookRoute;
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
     }
     @Override
     public int getItemCount() {
@@ -61,6 +72,10 @@ public class BookRouteAdapter extends RecyclerView.Adapter<BookRouteAdapter.Book
     @Override
     public Filter getFilter() {
         return new CustomFilter();
+    }
+
+    public List<BookRoute> getItems() {
+        return items;
     }
 
     class CustomFilter extends Filter {
@@ -107,8 +122,8 @@ public class BookRouteAdapter extends RecyclerView.Adapter<BookRouteAdapter.Book
 
         private ImageView image;
         private TextView tvPersonnage;
-        private ImageView icon;
-        private ImageButton ib;
+        private ImageButton ibDetails;
+        private ImageButton ibFavorites;
         private BookRoute item;
 
 
@@ -118,16 +133,21 @@ public class BookRouteAdapter extends RecyclerView.Adapter<BookRouteAdapter.Book
 
             image = itemView.findViewById(R.id.iv_row);
             tvPersonnage = itemView.findViewById(R.id.tv_row_personnage);
-            icon = itemView.findViewById(R.id.iv_row_icon);
-            ib = itemView.findViewById(R.id.ib_details);
-
-            ib.setOnClickListener (new View.OnClickListener() {
+            ibDetails = itemView.findViewById(R.id.ib_details);
+            ibFavorites = itemView.findViewById(R.id.ib_favorites);
+            ibDetails.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     Intent intent = new Intent(v.getContext(), DetailActivity.class);
                     intent.putExtra("item",item);
                     v.getContext().startActivity(intent);
-
+                }
+            });
+            ibFavorites.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    FavoriteDataBase.getInstance(v.getContext()).getBookRouteDAO().insertBookRoute(item);
+                    Toast.makeText(v.getContext(), "Added to favourites", Toast.LENGTH_LONG).show();
                 }
             });
 

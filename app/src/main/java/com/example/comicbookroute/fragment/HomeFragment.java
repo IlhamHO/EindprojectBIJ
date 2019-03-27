@@ -20,7 +20,7 @@ import android.widget.ImageButton;
 import android.widget.SearchView;
 
 import com.example.comicbookroute.R;
-import com.example.comicbookroute.model.BookRouteDataSource;
+import com.example.comicbookroute.model.BookRouteDatabase;
 import com.example.comicbookroute.util.BookRouteAdapter;
 import com.example.comicbookroute.util.BookRouteHandler;
 
@@ -38,7 +38,7 @@ public class HomeFragment extends Fragment {
 
     View v;
     private RecyclerView recyclerView;
-    private BookRouteHandler mBookRouteHandler;
+
     private BookRouteAdapter mBookRouteAdapter;
     private ImageButton ibDetail;
     private FloatingActionButton fabSwitcher;
@@ -51,7 +51,7 @@ public class HomeFragment extends Fragment {
            isList = !isList;
            if(isList){
                LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
-               mBookRouteAdapter = new BookRouteAdapter(BookRouteDataSource.getInstance().getBookRoutes(), R.layout.bookroute_row);
+               mBookRouteAdapter = new BookRouteAdapter(BookRouteDatabase.getInstance(getActivity()).getBookRouteDAO().selectAllBookRoutes(), R.layout.bookroute_row);
                recyclerView.setAdapter(mBookRouteAdapter);
                recyclerView.setLayoutManager(linearLayoutManager);
 
@@ -59,7 +59,7 @@ public class HomeFragment extends Fragment {
                //tis een grid
                GridLayoutManager gridLayoutManager = new GridLayoutManager(getActivity(), 2);
                //layout grid meegeven
-               mBookRouteAdapter = new BookRouteAdapter(BookRouteDataSource.getInstance().getBookRoutes(), R.layout.bookroute_row_grid);
+               mBookRouteAdapter = new BookRouteAdapter(BookRouteDatabase.getInstance(getActivity()).getBookRouteDAO().selectAllBookRoutes(), R.layout.bookroute_row_grid);
                recyclerView.setAdapter(mBookRouteAdapter);
                recyclerView.setLayoutManager(gridLayoutManager);
            }
@@ -100,13 +100,13 @@ public class HomeFragment extends Fragment {
         fabSwitcher.setOnClickListener(switchClick);
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
-        mBookRouteAdapter = new BookRouteAdapter(BookRouteDataSource.getInstance().getBookRoutes(), R.layout.bookroute_row);
+        mBookRouteAdapter = new BookRouteAdapter(BookRouteDatabase.getInstance(getActivity()).getBookRouteDAO().selectAllBookRoutes(), R.layout.bookroute_row);
         recyclerView.setAdapter(mBookRouteAdapter);
         recyclerView.setLayoutManager(linearLayoutManager);
 
-        mBookRouteHandler = new BookRouteHandler(mBookRouteAdapter);
 
-        downloadData();
+
+
     }
 
     @Override
@@ -131,37 +131,6 @@ public class HomeFragment extends Fragment {
 
     }
 
-    private void downloadData() {
-        Thread thread = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
 
-                    OkHttpClient client = new OkHttpClient();
-
-                    Request request = new Request.Builder()
-                            .url("https://bruxellesdata.opendatasoft.com/api/records/1.0/search/?dataset=comic-book-route&rows=52")
-                            .get()
-                            .build();
-
-                    Response response = client.newCall(request).execute();
-                    if (response.body() != null) {
-                        String responseBodyText = response.body().string();
-
-                        Message msg = new Message();
-                        msg.obj = responseBodyText;
-
-
-                        mBookRouteHandler.sendMessage(msg);
-                    }
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-
-        });
-        thread.start();
-
-    }
 
 }
