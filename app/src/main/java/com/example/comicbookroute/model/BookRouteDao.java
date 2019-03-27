@@ -19,5 +19,6 @@ public interface BookRouteDao {
     List<BookRoute> selectAllBookRoutes();
 
     @Query("SELECT * FROM BookRoute WHERE id = :id")
-    BookRoute selectBookRouteByID(int id);
+    BookRoute selectBookRouteByID(long id);
+
 }

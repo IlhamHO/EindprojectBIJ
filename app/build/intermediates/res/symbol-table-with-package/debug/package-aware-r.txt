@@ -1138,6 +1138,7 @@ drawable design_snackbar_background
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
 drawable ic_arrow_down_24dp
+drawable ic_delete
 drawable ic_home
 drawable ic_info
 drawable ic_launcher_background
@@ -1257,6 +1258,7 @@ id home
 id homeAsUp
 id hybrid
 id ib_details
+id ib_favorites
 id icon
 id icon_frame
 id icon_group
@@ -1269,7 +1271,6 @@ id italic
 id item_touch_helper_previous_elevation
 id iv_photo_detail
 id iv_row
-id iv_row_icon
 id labeled
 id largeLabel
 id left
@@ -1314,7 +1315,7 @@ id right
 id right_icon
 id right_side
 id rv_bookroute
-id rv_favorits
+id rv_favorites
 id satellite
 id save_image_matrix
 id save_non_transition_alpha

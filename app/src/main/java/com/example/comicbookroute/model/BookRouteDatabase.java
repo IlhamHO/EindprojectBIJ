@@ -11,12 +11,17 @@ public abstract class BookRouteDatabase extends RoomDatabase {
     private static BookRouteDatabase ourInstance;
 
     public static BookRouteDatabase getInstance(Context context) {
-
+        if(ourInstance == null){
+            ourInstance = createDatabase(context);
+        }
         return ourInstance;
     }
 
     private static BookRouteDatabase createDatabase(Context context) {
-        return Room.databaseBuilder(context, BookRouteDatabase.class, "bookRoutes.db").allowMainThreadQueries().build();
+        return Room.databaseBuilder(
+                context,
+                BookRouteDatabase.class,
+                "bookroutes.db").allowMainThreadQueries().build();
     }
 
     public abstract BookRouteDao getBookRouteDAO();
