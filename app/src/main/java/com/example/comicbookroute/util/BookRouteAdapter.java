@@ -4,14 +4,20 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Filter;
 import android.widget.Filterable;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.comicbookroute.DetailActivity;
+import com.example.comicbookroute.MainActivity;
 import com.example.comicbookroute.R;
+import com.example.comicbookroute.fragment.HomeFragment;
 import com.example.comicbookroute.model.BookRoute;
 import com.squareup.picasso.Picasso;
 
@@ -107,15 +113,28 @@ public class BookRouteAdapter extends RecyclerView.Adapter<BookRouteAdapter.Book
         private ImageView image;
         private TextView tvPersonnage;
         private ImageView icon;
+        private ImageButton ib;
+        private BookRoute item;
 
 
 
-        public BookRouteRowViewHolder(@NonNull View itemView) {
+        public BookRouteRowViewHolder(@NonNull final View itemView) {
             super(itemView);
 
             image = itemView.findViewById(R.id.iv_row);
             tvPersonnage = itemView.findViewById(R.id.tv_row_personnage);
             icon = itemView.findViewById(R.id.iv_row_icon);
+            ib = itemView.findViewById(R.id.ib_details);
+
+            ib.setOnClickListener (new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(v.getContext(), DetailActivity.class);
+                    intent.putExtra("item",item);
+                    v.getContext().startActivity(intent);
+
+                }
+            });
 
         }
     }
