@@ -27,18 +27,20 @@ public class BookRouteAdapter extends RecyclerView.Adapter<BookRouteAdapter.Book
 
     ArrayList<BookRoute> items;
     ArrayList<BookRoute> filteredItems;
+    private int whichLayoutId;
 
-    public BookRouteAdapter( ArrayList<BookRoute> items) {
+    public BookRouteAdapter( ArrayList<BookRoute> items, int whichLayoutId) {
 
         this.items = items;
         filteredItems = items;
+        this.whichLayoutId = whichLayoutId;
     }
 
     @NonNull
     @Override
     public BookRouteRowViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
 
-        View rowView = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.bookroute_row, viewGroup, false);
+        View rowView = LayoutInflater.from(viewGroup.getContext()).inflate(whichLayoutId, viewGroup, false);
         BookRouteRowViewHolder holder = new BookRouteRowViewHolder(rowView);
         return holder;
     }
