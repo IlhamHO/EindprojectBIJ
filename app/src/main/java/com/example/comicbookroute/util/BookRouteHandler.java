@@ -92,11 +92,11 @@ public class BookRouteHandler extends Handler {
                 Bitmap bitmap = BitmapFactory.decodeStream(inputStream);
                 inputStream.close();
 
-                FileOutputStream foStream = contextReference.get().openFileOutput(name+".jpeg", Context.MODE_PRIVATE);
+                FileOutputStream foStream = contextReference.get().openFileOutput(name + ".jpeg", Context.MODE_PRIVATE);
                 bitmap.compress(Bitmap.CompressFormat.JPEG, 100, foStream);
                 foStream.close();
 
-                return name+".jpeg";
+                return name + ".jpeg";
 
             } catch (IOException e) {
                 e.printStackTrace();

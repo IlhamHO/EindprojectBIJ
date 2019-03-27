@@ -22,6 +22,7 @@ public class BookRoute implements Serializable {
     public BookRoute() {
     }
 
+    @Ignore
     public BookRoute(String photo, String personnage, String auteur, String annee) {
 
         this.photo = photo;
