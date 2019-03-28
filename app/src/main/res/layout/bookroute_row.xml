@@ -10,12 +10,6 @@
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
         app:cardCornerRadius="5dp"
         app:cardElevation="2dp"
         app:contentPadding="5dp"
@@ -36,7 +30,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@mipmap/ic_launcher" />
+                tools:srcCompat="@mipmap/ic_launcher" />
 
             <TextView
                 android:id="@+id/tv_row_personnage"
@@ -56,19 +50,19 @@
                 android:id="@+id/ib_details"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
-                android:layout_marginStart="160dp"
-                android:layout_marginLeft="160dp"
                 android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
                 android:layout_marginBottom="8dp"
                 android:visibility="visible"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/tv_row_personnage"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/iv_row"
                 app:layout_constraintVertical_bias="0.461"
                 app:srcCompat="@android:drawable/ic_dialog_info" />
 
-            <ImageButton
-                android:id="@+id/ib_favorites"
+            <Button
+                android:id="@+id/btn_favorites"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -77,13 +71,12 @@
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
                 android:layout_marginBottom="8dp"
+                android:text="@string/txt_btn_favorites"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.957"
-                app:layout_constraintStart_toEndOf="@+id/ib_details"
+                app:layout_constraintEnd_toStartOf="@+id/ib_details"
+                app:layout_constraintStart_toEndOf="@+id/tv_row_personnage"
                 app:layout_constraintTop_toBottomOf="@+id/iv_row"
-                app:layout_constraintVertical_bias="0.0"
-                app:srcCompat="@android:drawable/btn_star_big_off" />
+                app:layout_constraintVertical_bias="0.0" />
         </android.support.constraint.ConstraintLayout>
     </android.support.v7.widget.CardView>
 </android.support.constraint.ConstraintLayout>

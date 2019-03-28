@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.ImageButton;
@@ -107,7 +108,7 @@ public class BookRouteAdapter extends RecyclerView.Adapter<BookRouteAdapter.Book
         private ImageView image;
         private TextView tvPersonnage;
         private ImageButton ibDetails;
-        private ImageButton ibFavorites;
+        private Button btnFavorites;
         private BookRoute item;
 
         public BookRouteRowViewHolder(@NonNull final View itemView) {
@@ -115,7 +116,7 @@ public class BookRouteAdapter extends RecyclerView.Adapter<BookRouteAdapter.Book
             image = itemView.findViewById(R.id.iv_row);
             tvPersonnage = itemView.findViewById(R.id.tv_row_personnage);
             ibDetails = itemView.findViewById(R.id.ib_details);
-            ibFavorites = itemView.findViewById(R.id.ib_favorites);
+            btnFavorites = itemView.findViewById(R.id.btn_favorites);
             ibDetails.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -124,7 +125,7 @@ public class BookRouteAdapter extends RecyclerView.Adapter<BookRouteAdapter.Book
                     v.getContext().startActivity(intent);
                 }
             });
-            ibFavorites.setOnClickListener(new View.OnClickListener() {
+            btnFavorites.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     FavoriteDataBase.getInstance(v.getContext()).getBookRouteDAO().insertBookRoute(item);
