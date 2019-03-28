@@ -14,6 +14,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.SearchView;
 
 import com.example.comicbookroute.R;
@@ -37,6 +38,8 @@ public class HomeFragment extends Fragment {
     private RecyclerView recyclerView;
     private BookRouteHandler mBookRouteHandler;
     private BookRouteAdapter mBookRouteAdapter;
+    private ImageButton ibDetail;
+
 
 
     public HomeFragment() {
@@ -61,9 +64,12 @@ public class HomeFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        //button details///////
+        ibDetail = v.findViewById(R.id.ib_details);
+
+
 
         recyclerView = v.findViewById(R.id.rv_bookroute);
-
         mBookRouteAdapter = new BookRouteAdapter(BookRouteDataSource.getInstance().getBookRoutes());
         recyclerView.setAdapter(mBookRouteAdapter);
 
