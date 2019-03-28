@@ -17,6 +17,7 @@ MERGED from [com.android.support:recyclerview-v7:28.0.0] C:\Users\mobapp08\.grad
 MERGED from [com.squareup.picasso:picasso:2.71828] C:\Users\mobapp08\.gradle\caches\transforms-1\files-1.1\picasso-2.71828.aar\1a09fe759b3b4db6accade8177149892\AndroidManifest.xml:2:1-14:12
 MERGED from [com.android.support:cardview-v7:28.0.0] C:\Users\mobapp08\.gradle\caches\transforms-1\files-1.1\cardview-v7-28.0.0.aar\bf7d32885abe08808378350c3c7ed7a1\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.persistence.room:runtime:1.1.1] C:\Users\mobapp08\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\a87a267d543954aee6805868d0e828aa\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:gridlayout-v7:28.0.0] C:\Users\mobapp08\.gradle\caches\transforms-1\files-1.1\gridlayout-v7-28.0.0.aar\4a2ef0965c2fb203c8470cb795848152\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\mobapp08\.gradle\caches\transforms-1\files-1.1\support-fragment-28.0.0.aar\f5704b072973217ebc4fb2e13c53b57e\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\mobapp08\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-28.0.0.aar\90ef9125ece9693d4fc532f83c4c9d45\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\mobapp08\.gradle\caches\transforms-1\files-1.1\support-core-ui-28.0.0.aar\683441ee11f609c20a36d6287d758d7c\AndroidManifest.xml:17:1-22:12
@@ -176,6 +177,8 @@ MERGED from [com.android.support:cardview-v7:28.0.0] C:\Users\mobapp08\.gradle\c
 MERGED from [com.android.support:cardview-v7:28.0.0] C:\Users\mobapp08\.gradle\caches\transforms-1\files-1.1\cardview-v7-28.0.0.aar\bf7d32885abe08808378350c3c7ed7a1\AndroidManifest.xml:20:5-44
 MERGED from [android.arch.persistence.room:runtime:1.1.1] C:\Users\mobapp08\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\a87a267d543954aee6805868d0e828aa\AndroidManifest.xml:20:5-44
 MERGED from [android.arch.persistence.room:runtime:1.1.1] C:\Users\mobapp08\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\a87a267d543954aee6805868d0e828aa\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:gridlayout-v7:28.0.0] C:\Users\mobapp08\.gradle\caches\transforms-1\files-1.1\gridlayout-v7-28.0.0.aar\4a2ef0965c2fb203c8470cb795848152\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:gridlayout-v7:28.0.0] C:\Users\mobapp08\.gradle\caches\transforms-1\files-1.1\gridlayout-v7-28.0.0.aar\4a2ef0965c2fb203c8470cb795848152\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\mobapp08\.gradle\caches\transforms-1\files-1.1\support-fragment-28.0.0.aar\f5704b072973217ebc4fb2e13c53b57e\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\mobapp08\.gradle\caches\transforms-1\files-1.1\support-fragment-28.0.0.aar\f5704b072973217ebc4fb2e13c53b57e\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\mobapp08\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-28.0.0.aar\90ef9125ece9693d4fc532f83c4c9d45\AndroidManifest.xml:20:5-44
