@@ -1,6 +1,8 @@
 package com.example.comicbookroute;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ImageView;
@@ -8,6 +10,9 @@ import android.widget.TextView;
 
 import com.example.comicbookroute.model.BookRoute;
 import com.squareup.picasso.Picasso;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 
 public class DetailActivity extends AppCompatActivity {
     private TextView tvnaamdetail,tvpersonagedetail,tvjaardetail;
@@ -28,8 +33,12 @@ public class DetailActivity extends AppCompatActivity {
         tvpersonagedetail.setText(item.getPersonnage());
         tvnaamdetail.setText(item.getAuteur());
         tvjaardetail.setText(item.getAnnee());
-        String imageUrl = String.format("https://bruxellesdata.opendatasoft.com/explore/dataset/comic-book-route/files/%s",item.getPhoto())+"/300/";
-        Picasso.get().load(imageUrl).into(ivphotodetail);
-
+        try {
+            FileInputStream fis = openFileInput(item.getPhoto());
+            Bitmap bitmap = BitmapFactory.decodeStream(fis);
+            ivphotodetail.setImageBitmap(bitmap);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 }
