@@ -60,6 +60,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback{
         CameraPosition position = cameraPosition.target(BRUSSEL).zoom(18).tilt(60).build();
         CameraUpdate cameraUpdate = CameraUpdateFactory.newCameraPosition(position);
         mGoogleMap.animateCamera(cameraUpdate);
+
     }
 
     private void startLocationUpdate() {
