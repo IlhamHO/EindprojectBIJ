@@ -54,7 +54,18 @@ public class BookRouteAdapter extends RecyclerView.Adapter<BookRouteAdapter.Book
 
     @Override
     public void onBindViewHolder(@NonNull BookRouteRowViewHolder bookRouteRowViewHolder, int i) {
-        BookRoute currentBookRoute = filteredItems.get(i);
+        final BookRoute currentBookRoute = filteredItems.get(i);
+        bookRouteRowViewHolder.btnFavorites.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (FavoriteDataBase.getInstance(v.getContext()).getFavoriteDAO().selectAllBookRoutes().contains(currentBookRoute)){
+                    Toast.makeText(v.getContext(), "Comic was already added", Toast.LENGTH_LONG).show();
+                }else {
+                    FavoriteDataBase.getInstance(v.getContext()).getFavoriteDAO().insertBookRoute(currentBookRoute);
+                    Toast.makeText(v.getContext(), "Comic added to favourites", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
         bookRouteRowViewHolder.tvPersonnage.setText(currentBookRoute.getPersonnage());
         try {
             FileInputStream fis = bookRouteRowViewHolder.itemView.getContext().openFileInput(currentBookRoute.getPhoto());
@@ -144,14 +155,6 @@ public class BookRouteAdapter extends RecyclerView.Adapter<BookRouteAdapter.Book
                     v.getContext().startActivity(intent);
                 }
             });
-            btnFavorites.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    FavoriteDataBase.getInstance(v.getContext()).getBookRouteDAO().insertBookRoute(item);
-                    Toast.makeText(v.getContext(), "Added to favourites", Toast.LENGTH_LONG).show();
-                }
-            });
-
         }
     }
 }

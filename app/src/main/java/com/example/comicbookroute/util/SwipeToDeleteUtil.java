@@ -63,14 +63,14 @@ public class SwipeToDeleteUtil extends ItemTouchHelper.SimpleCallback {
     public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int i) {
         final int position = viewHolder.getAdapterPosition();
         final BookRoute delBookRoute = bookRouteAdapter.getItems().get(position);
-        FavoriteDataBase.getInstance(context).getBookRouteDAO().deleteBookRoute(delBookRoute);
+        FavoriteDataBase.getInstance(context).getFavoriteDAO().deleteBookRoute(delBookRoute);
         bookRouteAdapter.getItems().remove(delBookRoute);
         bookRouteAdapter.notifyItemRemoved(position);
         Snackbar sb = Snackbar.make(viewHolder.itemView, "Removed from favourites", Snackbar.LENGTH_LONG);
         sb.setAction("UNDO", new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FavoriteDataBase.getInstance(context).getBookRouteDAO().insertBookRoute(delBookRoute);
+                FavoriteDataBase.getInstance(context).getFavoriteDAO().insertBookRoute(delBookRoute);
                 bookRouteAdapter.getItems().add(delBookRoute);
                 bookRouteAdapter.notifyItemInserted(position);
             }

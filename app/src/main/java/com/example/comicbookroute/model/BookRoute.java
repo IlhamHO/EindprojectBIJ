@@ -3,10 +3,6 @@ package com.example.comicbookroute.model;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.Ignore;
 import android.arch.persistence.room.PrimaryKey;
-import android.support.annotation.NonNull;
-
-import com.google.android.gms.maps.model.LatLng;
-
 import java.io.Serializable;
 
 @Entity
@@ -25,7 +21,7 @@ public class BookRoute implements Serializable {
     }
 
     @Ignore
-    public BookRoute(String photo, String personnage, String auteur, String annee) {
+    public BookRoute(String photo, String personnage, String auteur, Double latitude, Double longitude, String annee) {
 
         this.photo = photo;
         this.personnage = personnage;
@@ -42,7 +38,6 @@ public class BookRoute implements Serializable {
     public void setId(long id) {
         this.id = id;
     }
-
 
     public String getPhoto() {
         return photo;

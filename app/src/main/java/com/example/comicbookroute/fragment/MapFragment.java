@@ -22,14 +22,13 @@ import android.widget.Toast;
 
 import com.example.comicbookroute.R;
 import com.example.comicbookroute.model.BookRoute;
-import com.example.comicbookroute.model.BookRouteDataSource;
+import com.example.comicbookroute.model.BookRouteDatabase;
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.BitmapDescriptor;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
@@ -135,7 +134,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
         }
     }
 
-    @SuppressLint("RestrictedApi")
+    /*@SuppressLint("RestrictedApi")
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         super.onCreateOptionsMenu(menu, inflater);
@@ -146,7 +145,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
         }
     }
 
-    @Override
+    /*@Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id == R.id.menu_item_streetart) {
@@ -168,9 +167,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
         }
         return super.onOptionsItemSelected(item);
     }
-
-
-
+*/
 
     @Override
     public void onResume() {
@@ -193,9 +190,8 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
         }*/
 
 
-
         mGoogleMap.setOnMarkerClickListener(this);
-        mGoogleMap.setInfoWindowAdapter(new GoogleMap.InfoWindowAdapter() {
+        /*mGoogleMap.setInfoWindowAdapter(new GoogleMap.InfoWindowAdapter() {
             @Override
             public View getInfoWindow(Marker marker) {
                 return null;
@@ -219,12 +215,12 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
 
                 return mView;
             }
-        });
+        });*/
     }
 
     private void addMarkers() {
 
-        List<BookRoute> data = BookRouteDataSource.getInstance().getBookRoutes();
+        List<BookRoute> data = BookRouteDatabase.getInstance(getContext()).getBookRouteDAO().selectAllBookRoutes();
         Log.d("DATA", data.toString());
         for (BookRoute br : data) {
             LatLng coord = new LatLng(br.getLatitude(), br.getLongitude());
