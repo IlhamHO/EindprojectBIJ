@@ -58,10 +58,10 @@ public class BookRouteAdapter extends RecyclerView.Adapter<BookRouteAdapter.Book
         bookRouteRowViewHolder.btnFavorites.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (FavoriteDataBase.getInstance(v.getContext()).getFavoriteDAO().selectAllBookRoutes().contains(currentBookRoute)){
+                if (FavoriteDataBase.getInstance(v.getContext()).getBookRouteDAO().selectAllBookRoutes().contains(currentBookRoute)){
                     Toast.makeText(v.getContext(), "Comic was already added", Toast.LENGTH_LONG).show();
                 }else {
-                    FavoriteDataBase.getInstance(v.getContext()).getFavoriteDAO().insertBookRoute(currentBookRoute);
+                    FavoriteDataBase.getInstance(v.getContext()).getBookRouteDAO().insertBookRoute(currentBookRoute);
                     Toast.makeText(v.getContext(), "Comic added to favourites", Toast.LENGTH_LONG).show();
                 }
             }

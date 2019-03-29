@@ -24,6 +24,6 @@ public abstract class FavoriteDataBase extends RoomDatabase {
                 "favorites.db").allowMainThreadQueries().build();
     }
 
-    public abstract FavoriteDao getFavoriteDAO();
+    public abstract BookRouteDao getBookRouteDAO();
 }
 
