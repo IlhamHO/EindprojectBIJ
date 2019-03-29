@@ -5,6 +5,8 @@ import android.arch.persistence.room.Ignore;
 import android.arch.persistence.room.PrimaryKey;
 import android.support.annotation.NonNull;
 
+import com.google.android.gms.maps.model.LatLng;
+
 import java.io.Serializable;
 
 @Entity
@@ -15,8 +17,8 @@ public class BookRoute implements Serializable {
     private String photo;
     private String personnage;
     private String auteur;
-    private Double lat;
-    private Double lng;
+    private Double latitude;
+    private Double longitude;
     private String annee;
 
     public BookRoute() {
@@ -28,6 +30,8 @@ public class BookRoute implements Serializable {
         this.photo = photo;
         this.personnage = personnage;
         this.auteur = auteur;
+        this.latitude = latitude;
+        this.longitude = longitude;
         this.annee = annee;
     }
 
@@ -39,21 +43,6 @@ public class BookRoute implements Serializable {
         this.id = id;
     }
 
-    public Double getLat() {
-        return lat;
-    }
-
-    public void setLat(Double lat) {
-        this.lat = lat;
-    }
-
-    public Double getLng() {
-        return lng;
-    }
-
-    public void setLng(Double lng) {
-        this.lng = lng;
-    }
 
     public String getPhoto() {
         return photo;
@@ -77,6 +66,22 @@ public class BookRoute implements Serializable {
 
     public void setAuteur(String auteur) {
         this.auteur = auteur;
+    }
+
+    public Double getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(Double latitude) {
+        this.latitude = latitude;
+    }
+
+    public Double getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(Double longitude) {
+        this.longitude = longitude;
     }
 
     public String getAnnee() {

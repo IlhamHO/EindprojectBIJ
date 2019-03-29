@@ -8,12 +8,21 @@ import android.os.Handler;
 import android.os.Message;
 
 import com.example.comicbookroute.model.BookRoute;
+import com.example.comicbookroute.model.BookRouteDataSource;
+import com.google.android.gms.maps.model.LatLng;
 import com.example.comicbookroute.model.BookRouteDatabase;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.Arrays;
+
+import okhttp3.Call;
+import okhttp3.MediaType;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.RequestBody;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -59,6 +68,20 @@ public class BookRouteHandler extends Handler {
                 BookRoute currentBookRoute = new BookRoute(photo+".jpeg", personnage, auteur, annee);
                 BookRouteDatabase.getInstance(context).getBookRouteDAO().insertBookRoute(currentBookRoute);
                 index++;
+
+
+               JSONArray locationJSON_Array = fields.getJSONArray("coordonnees_geographiques");
+               Double latitude = locationJSON_Array.getDouble(0);
+               Double longitude = locationJSON_Array.getDouble(1);
+
+               LatLng coordinnee = new LatLng(latitude,longitude);
+
+
+
+                BookRoute currentBookRoute = new BookRoute(photo, personnage, auteur, latitude, longitude, annee);
+                BookRouteDataSource.getInstance().addBookRoute(currentBookRoute);
+
+               index++;
             }
 
         } catch (JSONException e) {
@@ -97,5 +120,3 @@ public class BookRouteHandler extends Handler {
         }
     }
 }
-
-

@@ -4,4 +4,14 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="txt_btn_favorites">Add to favourites</string>
+    <string name="text_btn_restaurant">RESTAURANT</string>
+    <string name="text_btn_parking">PARKING</string>
+    <string name="text_btn_wc">WC</string>
+    <string name="text_action_settings">Settings</string>
+    <string name="text_tv_nav">MAP</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="text_menu_item_streetart">Street Art</string>
+    <string name="text_menu_item_parking">Parking</string>
+    <string name="text_menu_item_settings">Settings</string>
 </resources>

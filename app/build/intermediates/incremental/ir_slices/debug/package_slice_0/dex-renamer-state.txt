@@ -1,4 +1,4 @@
-#Fri Mar 22 14:29:42 CET 2019
-base.0=C\:\\Users\\mobapp02\\Desktop\\EindprojectBIJ\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
+#Sat Mar 23 09:20:25 GMT 2019
+base.0=C\:\\Users\\User\\AndroidStudioProjects\\EindprojectBIJ\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
 path.0=classes.dex
 renamed.0=classes.dex
