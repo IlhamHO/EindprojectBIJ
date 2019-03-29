@@ -64,6 +64,7 @@ attr alertDialogButtonGroupStyle
 attr alertDialogCenterButtons
 attr alertDialogStyle
 attr alertDialogTheme
+attr alignmentMode
 attr allowDividerAbove
 attr allowDividerAfterLastItem
 attr allowDividerBelow
@@ -187,6 +188,8 @@ attr colorPrimaryDark
 attr colorScheme
 attr colorSecondary
 attr colorSwitchThumbNormal
+attr columnCount
+attr columnOrderPreserved
 attr commitIcon
 attr constraintSet
 attr constraint_referenced_ids
@@ -344,6 +347,9 @@ attr layout_anchorGravity
 attr layout_behavior
 attr layout_collapseMode
 attr layout_collapseParallaxMultiplier
+attr layout_column
+attr layout_columnSpan
+attr layout_columnWeight
 attr layout_constrainedHeight
 attr layout_constrainedWidth
 attr layout_constraintBaseline_creator
@@ -394,9 +400,13 @@ attr layout_goneMarginLeft
 attr layout_goneMarginRight
 attr layout_goneMarginStart
 attr layout_goneMarginTop
+attr layout_gravity
 attr layout_insetEdge
 attr layout_keyline
 attr layout_optimizationLevel
+attr layout_row
+attr layout_rowSpan
+attr layout_rowWeight
 attr layout_scrollFlags
 attr layout_scrollInterpolator
 attr liftOnScroll
@@ -436,6 +446,7 @@ attr negativeButtonText
 attr numericModifiers
 attr order
 attr orderingFromXml
+attr orientation
 attr overlapAnchor
 attr paddingBottomNoButtons
 attr paddingEnd
@@ -481,6 +492,8 @@ attr ratingBarStyleSmall
 attr reverseLayout
 attr ringtonePreferenceStyle
 attr rippleColor
+attr rowCount
+attr rowOrderPreserved
 attr scopeUris
 attr scrimAnimationDuration
 attr scrimBackground
@@ -634,6 +647,7 @@ attr uiTiltGestures
 attr uiZoomControls
 attr uiZoomGestures
 attr useCompatPadding
+attr useDefaultMargins
 attr useViewLifecycle
 attr viewInflaterClass
 attr voiceIcon
@@ -883,6 +897,7 @@ dimen compat_button_padding_vertical_material
 dimen compat_control_corner_material
 dimen compat_notification_large_icon_max_height
 dimen compat_notification_large_icon_max_width
+dimen default_gap
 dimen design_appbar_elevation
 dimen design_bottom_navigation_active_item_max_width
 dimen design_bottom_navigation_active_item_min_width
@@ -1139,15 +1154,18 @@ drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
 drawable ic_arrow_down_24dp
 drawable ic_delete
+drawable ic_details
 drawable ic_home
 drawable ic_info
 drawable ic_launcher_background
 drawable ic_launcher_foreground
+drawable ic_local_parking
 drawable ic_map
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable ic_search_black_24dp
+drawable ic_settings
 drawable ic_star
 drawable mtrl_snackbar_background
 drawable mtrl_tabs_default_indicator
@@ -1164,7 +1182,9 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable parking
 drawable preference_list_divider_material
+drawable streetart
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
 id ALT
@@ -1198,6 +1218,8 @@ id add
 id adjust_height
 id adjust_width
 id alertTitle
+id alignBounds
+id alignMargins
 id all
 id always
 id app_bar_search
@@ -1244,6 +1266,7 @@ id enterAlwaysCollapsed
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
+id fabSwitch
 id fill
 id fill_horizontal
 id fill_vertical
@@ -1252,10 +1275,12 @@ id fixed
 id forever
 id ghost_view
 id gone
+id gridlayout
 id group_divider
 id groups
 id home
 id homeAsUp
+id horizontal
 id hybrid
 id ib_details
 id ib_favorites
@@ -1269,6 +1294,7 @@ id info
 id invisible
 id italic
 id item_touch_helper_previous_elevation
+id iv_info_window
 id iv_photo_detail
 id iv_row
 id labeled
@@ -1285,6 +1311,9 @@ id main_toolbar
 id main_viewpager
 id masked
 id media_actions
+id menu_item_parking
+id menu_item_settings
+id menu_item_streetart
 id message
 id middle
 id mini
@@ -1315,7 +1344,7 @@ id right
 id right_icon
 id right_side
 id rv_bookroute
-id rv_favorites
+id rv_favourites
 id satellite
 id save_image_matrix
 id save_non_transition_alpha
@@ -1390,6 +1419,7 @@ id transition_layout_save
 id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
+id tv_info_window
 id tv_jaar_detail
 id tv_naam_detail
 id tv_personage_detail
@@ -1398,6 +1428,7 @@ id uniform
 id unlabeled
 id up
 id useLogo
+id vertical
 id view_offset_helper
 id visible
 id wide
@@ -1455,6 +1486,7 @@ layout abc_tooltip
 layout activity_detail
 layout activity_main
 layout bookroute_row
+layout bookroute_row_grid
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
 layout design_layout_snackbar
@@ -1474,6 +1506,7 @@ layout fragment_about
 layout fragment_favorite
 layout fragment_home
 layout fragment_map
+layout info_window
 layout mtrl_layout_snackbar
 layout mtrl_layout_snackbar_include
 layout notification_action
@@ -1511,6 +1544,7 @@ layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
+menu fragment_map_menu
 menu list_menu
 mipmap ic_launcher
 mipmap ic_launcher_round
@@ -1582,6 +1616,8 @@ string fab_transformation_sheet_behavior
 string hello_blank_fragment
 string hide_bottom_view_on_scroll_behavior
 string mtrl_chip_close_icon_content_description
+string navigation_drawer_close
+string navigation_drawer_open
 string password_toggle_content_description
 string path_password_eye
 string path_password_eye_mask_strike_through
@@ -1590,6 +1626,14 @@ string path_password_strike_through
 string search_menu_title
 string status_bar_notification_info_overflow
 string summary_collapsed_preference_list
+string text_action_settings
+string text_btn_parking
+string text_btn_restaurant
+string text_btn_wc
+string text_menu_item_parking
+string text_menu_item_settings
+string text_menu_item_streetart
+string text_tv_nav
 string v7_preference_off
 string v7_preference_on
 style AlertDialog_AppCompat
@@ -2003,6 +2047,7 @@ style ThemeOverlay_MaterialComponents_TextInputEditText_FilledBox
 style ThemeOverlay_MaterialComponents_TextInputEditText_FilledBox_Dense
 style ThemeOverlay_MaterialComponents_TextInputEditText_OutlinedBox
 style ThemeOverlay_MaterialComponents_TextInputEditText_OutlinedBox_Dense
+style ToolBarStyle
 style Widget_AppCompat_ActionBar
 style Widget_AppCompat_ActionBar_Solid
 style Widget_AppCompat_ActionBar_TabBar
@@ -2171,6 +2216,8 @@ styleable FontFamilyFont android_font android_fontWeight android_fontStyle andro
 styleable ForegroundLinearLayout android_foreground android_foregroundGravity foregroundInsidePadding
 styleable GradientColor android_startColor android_endColor android_type android_centerX android_centerY android_gradientRadius android_tileMode android_centerColor android_startX android_startY android_endX android_endY
 styleable GradientColorItem android_color android_offset
+styleable GridLayout alignmentMode columnCount columnOrderPreserved orientation rowCount rowOrderPreserved useDefaultMargins
+styleable GridLayout_Layout android_layout_width android_layout_height android_layout_margin android_layout_marginLeft android_layout_marginTop android_layout_marginRight android_layout_marginBottom layout_column layout_columnSpan layout_columnWeight layout_gravity layout_row layout_rowSpan layout_rowWeight
 styleable LinearConstraintLayout android_orientation
 styleable LinearLayoutCompat android_gravity android_orientation android_baselineAligned android_baselineAlignedChildIndex android_weightSum divider dividerPadding measureWithLargestChild showDividers
 styleable LinearLayoutCompat_Layout android_layout_gravity android_layout_width android_layout_height android_layout_weight

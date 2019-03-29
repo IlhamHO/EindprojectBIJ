@@ -8,7 +8,7 @@
     tools:context=".fragment.FavoriteFragment" >
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/rv_favorites"
+        android:id="@+id/rv_favourites"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"

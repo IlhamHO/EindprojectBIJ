@@ -2,9 +2,13 @@ package com.example.comicbookroute.fragment;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Message;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
@@ -20,53 +24,42 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.comicbookroute.DetailActivity;
 import com.example.comicbookroute.R;
 import com.example.comicbookroute.model.BookRoute;
-import com.example.comicbookroute.model.BookRouteDataSource;
+import com.example.comicbookroute.model.BookRouteDatabase;
+import com.example.comicbookroute.model.StreetArt;
+import com.example.comicbookroute.model.StreetArtDatabase;
+import com.example.comicbookroute.util.StreetArtHandler;
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.BitmapDescriptor;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.squareup.picasso.Picasso;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.util.List;
 
-public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleMap.OnMapClickListener, GoogleMap.OnMarkerClickListener {
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
+
+public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleMap.OnMarkerClickListener, GoogleMap.OnInfoWindowClickListener {
     MapView mMapView;
+    transient private LatLng coord;
     private GoogleMap mGoogleMap;
     private final LatLng BRUSSEL = new LatLng(50.858712, 4.347446);
     private final int REQUEST_LOCATION = 1;
     private static final String SERVICE_URL_SA = "https://bruxellesdata.opendatasoft.com/api/records/1.0/search/?dataset=street-art&rows=23";
-   /* double latitude, longitude;
-    private int PROXIMITY_RADIUS = 10000;
-    GoogleApiClient googleApiClient;
-
-
-    //parameters nearby places
-    private Button btnRestaurant;
-    private Button btnParking;
-    private Button btnWc;
-    //design navigation drawer
-    private ActionBar toolbar;
-    private DrawerLayout drawerLayout;
-    private NavigationView navigationView;*/
-
+    private StreetArtHandler mStreetArtHandler;
 
     public MapFragment() {
     }
@@ -75,65 +68,43 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_map, container, false);
         setHasOptionsMenu(true);
-      /*  AppCompatActivity aca = (AppCompatActivity) getActivity();
-        //toolbar = aca.getSupportActionBar();
-
-        setHasOptionsMenu(true);
-
-        DrawerLayout drawer = (DrawerLayout) view.findViewById(R.id.fragment_map_drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(aca, drawer, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.addDrawerListener(toggle);
-        toggle.syncState();
-
-        navigationView =  view.findViewById(R.id.fragment_map_nav_view);
-        navigationView.setNavigationItemSelectedListener(this);*/
 
         SupportMapFragment supportMapFragment = SupportMapFragment.newInstance();
         mMapView = view.findViewById(R.id.mv_mapfragment);
         mMapView.getMapAsync(this);
-
-
         mMapView.onCreate(savedInstanceState);
         mMapView.onResume();
+        downloadDataSA();
 
         return view;
     }
 
-    protected void addStreetArt() throws IOException {
-        HttpURLConnection connection = null;
-        final StringBuilder json = new StringBuilder();
-        try {
-            URL url = new URL(SERVICE_URL_SA);
-            connection = (HttpURLConnection) url.openConnection();
-            InputStreamReader inputStreamReader = new InputStreamReader(connection.getInputStream());
+    private void downloadDataSA() {
+        Thread backTread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try{
+                    OkHttpClient client = new OkHttpClient();
+                    Request request = new Request.Builder()
+                            .url("https://bruxellesdata.opendatasoft.com/api/records/1.0/search/?dataset=street-art&rows=23")
+                            .get()
+                            .build();
+                    Response response = client.newCall(request).execute();
+                    if (response.body()!= null){
+                        String responseBody = response.body().string();
+                        Message msg = new Message();
+                        msg.obj = responseBody;
 
-            int read;
-            char[] buff = new char[23];
-            while ((read = inputStreamReader.read(buff)) != -1) {
-                json.append(buff, 0, read);
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
-        } catch (IOException e) {
-            e.printStackTrace();
-
-        } finally {
-            if (connection != null) {
-                connection.disconnect();
-            }
-        }
-
+        });
+        backTread.start();
     }
 
-    public void createMarkersFromJson(String json) throws JSONException {
-        JSONArray jsonArray = new JSONArray(json);
-        for (int i = 0; i < jsonArray.length(); i++) {
-            JSONObject jsonObject = jsonArray.getJSONObject(i);
-            mGoogleMap.addMarker(new MarkerOptions()
-                    .title(jsonObject.getString("fields"))
-                    .position(new LatLng(jsonObject.getJSONArray("geocoordinates").getDouble(0),
-                            jsonObject.getJSONArray("geocoordinates").getDouble(1)))
-                    .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
-        }
-    }
+
 
     @SuppressLint("RestrictedApi")
     @Override
@@ -148,29 +119,20 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-        if (id == R.id.menu_item_streetart) {
 
-            try {
-                addStreetArt();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            return true;
-        }
-
-        if (id == R.id.menu_item_parking) {
-
-            return true;
-        }
-        if (id == R.id.menu_item_settings) {
-            return true;
+       switch (item.getItemId()) {
+           case R.id.menu_item_streetart:
+               mGoogleMap.clear();
+               break;
+           case R.id.menu_item_parking:
+               mGoogleMap.clear();
+               break;
+           case R.id.menu_item_settings:
+               mGoogleMap.clear();
+               break;
         }
         return super.onOptionsItemSelected(item);
     }
-
-
-
 
     @Override
     public void onResume() {
@@ -184,17 +146,8 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
         setupCamera();
         startLocationUpdate();
         addMarkers();
-
-       /* if (ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            buildGoogleApiClient();
-            mGoogleMap.setMyLocationEnabled(true);
-
-
-        }*/
-
-
-
         mGoogleMap.setOnMarkerClickListener(this);
+        mGoogleMap.setOnInfoWindowClickListener(this);
         mGoogleMap.setInfoWindowAdapter(new GoogleMap.InfoWindowAdapter() {
             @Override
             public View getInfoWindow(Marker marker) {
@@ -213,9 +166,13 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
 
 
                 ImageView iv = mView.findViewById(R.id.iv_info_window);
-                String imageUrl = String.format("https://bruxellesdata.opendatasoft.com/explore/dataset/comic-book-route/files/%s", item.getPhoto()) + "/300/";
-                Picasso.get().load(imageUrl).into(iv);
-
+                try {
+                    FileInputStream fis = getContext().openFileInput(item.getPhoto());
+                    Bitmap bitmap = BitmapFactory.decodeStream(fis);
+                    iv.setImageBitmap(bitmap);
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                }
 
                 return mView;
             }
@@ -224,7 +181,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
 
     private void addMarkers() {
 
-        List<BookRoute> data = BookRouteDataSource.getInstance().getBookRoutes();
+        List<BookRoute> data = BookRouteDatabase.getInstance(getContext()).getBookRouteDAO().selectAllBookRoutes();
         Log.d("DATA", data.toString());
         for (BookRoute br : data) {
             LatLng coord = new LatLng(br.getLatitude(), br.getLongitude());
@@ -234,7 +191,16 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
             m.setTag(br);
         }
 
+        List<StreetArt> datast = StreetArtDatabase.getInstance(getContext()).getStreetArtDAO().selectAllStreetArts();
+        Log.d("DATA", datast.toString());
+        for (StreetArt st : datast) {
+            LatLng coord = new LatLng(st.getLatitude(), st.getLongitude());
 
+            Marker m = mGoogleMap.addMarker(new MarkerOptions()
+                    .title(st.getWerkNaam()).position(coord).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
+
+
+        }
     }
 
     private void setupCamera() {
@@ -276,10 +242,10 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
         }
     }
 
-    @Override
+  /*  @Override
     public void onMapClick(LatLng latLng) {
         addMarkers();
-    }
+    }*/
 
     @Override
     public boolean onMarkerClick(Marker marker) {
@@ -288,6 +254,13 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
     }
 
 
+    @Override
+    public void onInfoWindowClick(Marker marker) {
+        Intent detailsIntent = new Intent(getContext(), DetailActivity.class);
+        detailsIntent.putExtra("item", (BookRoute)marker.getTag());
+        startActivity(detailsIntent);
+
+    }
 }
 
 
