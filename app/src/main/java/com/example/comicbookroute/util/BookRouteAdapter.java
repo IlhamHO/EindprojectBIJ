@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.support.annotation.NonNull;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -122,9 +123,10 @@ public class BookRouteAdapter extends RecyclerView.Adapter<BookRouteAdapter.Book
 
         private ImageView image;
         private TextView tvPersonnage;
-        private ImageButton ibDetails;
+
         private ImageButton ibFavorites;
         private BookRoute item;
+        private CardView cardView;
 
 
 
@@ -133,9 +135,11 @@ public class BookRouteAdapter extends RecyclerView.Adapter<BookRouteAdapter.Book
 
             image = itemView.findViewById(R.id.iv_row);
             tvPersonnage = itemView.findViewById(R.id.tv_row_personnage);
-            ibDetails = itemView.findViewById(R.id.ib_details);
+
             ibFavorites = itemView.findViewById(R.id.ib_favorites);
-            ibDetails.setOnClickListener(new View.OnClickListener() {
+            //onclick op card
+           cardView = itemView.findViewById(R.id.cardid);
+            cardView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     Intent intent = new Intent(v.getContext(), DetailActivity.class);
@@ -143,7 +147,7 @@ public class BookRouteAdapter extends RecyclerView.Adapter<BookRouteAdapter.Book
                     v.getContext().startActivity(intent);
                 }
             });
-            ibFavorites.setOnClickListener(new View.OnClickListener() {
+            itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     FavoriteDataBase.getInstance(v.getContext()).getBookRouteDAO().insertBookRoute(item);

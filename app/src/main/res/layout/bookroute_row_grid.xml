@@ -7,6 +7,7 @@
     android:layout_height="wrap_content">
 
     <android.support.v7.widget.CardView
+        android:id="@+id/cardid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
@@ -53,19 +54,6 @@
                 android:src="@drawable/ic_star"
                 app:layout_constraintBottom_toBottomOf="@+id/iv_row"
                 app:layout_constraintEnd_toEndOf="@+id/iv_row" />
-
-            <ImageButton
-                android:id="@+id/ib_details"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginRight="8dp"
-                android:layout_marginBottom="4dp"
-                android:background="@color/common_google_signin_btn_text_dark_focused"
-                android:tint="@color/colorPrimary"
-                app:layout_constraintBottom_toBottomOf="@+id/iv_row"
-                app:layout_constraintEnd_toStartOf="@+id/ib_favorites"
-                app:srcCompat="@android:drawable/ic_dialog_info" />
 
         </android.support.constraint.ConstraintLayout>
     </android.support.v7.widget.CardView>

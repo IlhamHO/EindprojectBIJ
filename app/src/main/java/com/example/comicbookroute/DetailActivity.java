@@ -9,7 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.comicbookroute.model.BookRoute;
-import com.squareup.picasso.Picasso;
+
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
