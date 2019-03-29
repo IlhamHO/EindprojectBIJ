@@ -64,6 +64,7 @@ attr alertDialogButtonGroupStyle
 attr alertDialogCenterButtons
 attr alertDialogStyle
 attr alertDialogTheme
+attr alignmentMode
 attr allowDividerAbove
 attr allowDividerAfterLastItem
 attr allowDividerBelow
@@ -187,6 +188,8 @@ attr colorPrimaryDark
 attr colorScheme
 attr colorSecondary
 attr colorSwitchThumbNormal
+attr columnCount
+attr columnOrderPreserved
 attr commitIcon
 attr constraintSet
 attr constraint_referenced_ids
@@ -344,6 +347,9 @@ attr layout_anchorGravity
 attr layout_behavior
 attr layout_collapseMode
 attr layout_collapseParallaxMultiplier
+attr layout_column
+attr layout_columnSpan
+attr layout_columnWeight
 attr layout_constrainedHeight
 attr layout_constrainedWidth
 attr layout_constraintBaseline_creator
@@ -394,9 +400,13 @@ attr layout_goneMarginLeft
 attr layout_goneMarginRight
 attr layout_goneMarginStart
 attr layout_goneMarginTop
+attr layout_gravity
 attr layout_insetEdge
 attr layout_keyline
 attr layout_optimizationLevel
+attr layout_row
+attr layout_rowSpan
+attr layout_rowWeight
 attr layout_scrollFlags
 attr layout_scrollInterpolator
 attr liftOnScroll
@@ -436,6 +446,7 @@ attr negativeButtonText
 attr numericModifiers
 attr order
 attr orderingFromXml
+attr orientation
 attr overlapAnchor
 attr paddingBottomNoButtons
 attr paddingEnd
@@ -481,6 +492,8 @@ attr ratingBarStyleSmall
 attr reverseLayout
 attr ringtonePreferenceStyle
 attr rippleColor
+attr rowCount
+attr rowOrderPreserved
 attr scopeUris
 attr scrimAnimationDuration
 attr scrimBackground
@@ -634,6 +647,7 @@ attr uiTiltGestures
 attr uiZoomControls
 attr uiZoomGestures
 attr useCompatPadding
+attr useDefaultMargins
 attr useViewLifecycle
 attr viewInflaterClass
 attr voiceIcon
@@ -883,6 +897,7 @@ dimen compat_button_padding_vertical_material
 dimen compat_control_corner_material
 dimen compat_notification_large_icon_max_height
 dimen compat_notification_large_icon_max_width
+dimen default_gap
 dimen design_appbar_elevation
 dimen design_bottom_navigation_active_item_max_width
 dimen design_bottom_navigation_active_item_min_width
@@ -1198,6 +1213,8 @@ id add
 id adjust_height
 id adjust_width
 id alertTitle
+id alignBounds
+id alignMargins
 id all
 id always
 id app_bar_search
@@ -1210,6 +1227,7 @@ id blocking
 id bottom
 id buttonPanel
 id cancel_action
+id cardid
 id center
 id center_horizontal
 id center_vertical
@@ -1244,6 +1262,7 @@ id enterAlwaysCollapsed
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
+id fabSwitch
 id fill
 id fill_horizontal
 id fill_vertical
@@ -1252,12 +1271,13 @@ id fixed
 id forever
 id ghost_view
 id gone
+id gridlayout
 id group_divider
 id groups
 id home
 id homeAsUp
+id horizontal
 id hybrid
-id ib_details
 id ib_favorites
 id icon
 id icon_frame
@@ -1398,6 +1418,7 @@ id uniform
 id unlabeled
 id up
 id useLogo
+id vertical
 id view_offset_helper
 id visible
 id wide
@@ -1455,6 +1476,7 @@ layout abc_tooltip
 layout activity_detail
 layout activity_main
 layout bookroute_row
+layout bookroute_row_grid
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
 layout design_layout_snackbar
@@ -2171,6 +2193,8 @@ styleable FontFamilyFont android_font android_fontWeight android_fontStyle andro
 styleable ForegroundLinearLayout android_foreground android_foregroundGravity foregroundInsidePadding
 styleable GradientColor android_startColor android_endColor android_type android_centerX android_centerY android_gradientRadius android_tileMode android_centerColor android_startX android_startY android_endX android_endY
 styleable GradientColorItem android_color android_offset
+styleable GridLayout alignmentMode columnCount columnOrderPreserved orientation rowCount rowOrderPreserved useDefaultMargins
+styleable GridLayout_Layout android_layout_width android_layout_height android_layout_margin android_layout_marginLeft android_layout_marginTop android_layout_marginRight android_layout_marginBottom layout_column layout_columnSpan layout_columnWeight layout_gravity layout_row layout_rowSpan layout_rowWeight
 styleable LinearConstraintLayout android_orientation
 styleable LinearLayoutCompat android_gravity android_orientation android_baselineAligned android_baselineAlignedChildIndex android_weightSum divider dividerPadding measureWithLargestChild showDividers
 styleable LinearLayoutCompat_Layout android_layout_gravity android_layout_width android_layout_height android_layout_weight

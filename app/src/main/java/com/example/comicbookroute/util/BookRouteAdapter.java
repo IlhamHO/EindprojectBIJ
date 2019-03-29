@@ -147,7 +147,7 @@ public class BookRouteAdapter extends RecyclerView.Adapter<BookRouteAdapter.Book
                     v.getContext().startActivity(intent);
                 }
             });
-            itemView.setOnClickListener(new View.OnClickListener() {
+            ibFavorites.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     FavoriteDataBase.getInstance(v.getContext()).getBookRouteDAO().insertBookRoute(item);
