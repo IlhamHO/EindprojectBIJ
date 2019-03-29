@@ -46,6 +46,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import okhttp3.OkHttpClient;
@@ -120,16 +121,22 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
-       switch (item.getItemId()) {
-           case R.id.menu_item_streetart:
+       int id=item.getItemId();
+           if(id== R.id.menu_item_streetart){
+               if(mGoogleMap!=null) {
+                   mGoogleMap.clear();
+                   List<StreetArt> datast = StreetArtDatabase.getInstance(getContext()).getStreetArtDAO().selectAllStreetArts();
+                   Log.d("DATA", datast.toString());
+                   for (StreetArt st : datast) {
+                       LatLng coord = new LatLng(st.getLatitude(), st.getLongitude());
+                       mGoogleMap.addMarker(new MarkerOptions()
+                               .title(st.getWerkNaam()).position(coord).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
+                   }
+               }
+
+           if(id== R.id.menu_item_parking) {
                mGoogleMap.clear();
-               break;
-           case R.id.menu_item_parking:
-               mGoogleMap.clear();
-               break;
-           case R.id.menu_item_settings:
-               mGoogleMap.clear();
-               break;
+           }
         }
         return super.onOptionsItemSelected(item);
     }
