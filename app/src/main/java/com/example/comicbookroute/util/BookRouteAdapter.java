@@ -1,12 +1,10 @@
 package com.example.comicbookroute.util;
 
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,11 +17,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.comicbookroute.DetailActivity;
-import com.example.comicbookroute.MainActivity;
 import com.example.comicbookroute.R;
-import com.example.comicbookroute.fragment.HomeFragment;
 import com.example.comicbookroute.model.BookRoute;
-import com.example.comicbookroute.model.FavoriteDataBase;
+import com.example.comicbookroute.model.BookRouteDatabase;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -58,10 +54,11 @@ public class BookRouteAdapter extends RecyclerView.Adapter<BookRouteAdapter.Book
         bookRouteRowViewHolder.btnFavorites.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (FavoriteDataBase.getInstance(v.getContext()).getBookRouteDAO().selectAllBookRoutes().contains(currentBookRoute)){
+                if (currentBookRoute.isFavorite()){
                     Toast.makeText(v.getContext(), "Comic was already added", Toast.LENGTH_LONG).show();
                 }else {
-                    FavoriteDataBase.getInstance(v.getContext()).getBookRouteDAO().insertBookRoute(currentBookRoute);
+                    currentBookRoute.setFavorite(true);
+                    BookRouteDatabase.getInstance(v.getContext()).getBookRouteDAO().updateBookRoute(currentBookRoute);
                     Toast.makeText(v.getContext(), "Comic added to favourites", Toast.LENGTH_LONG).show();
                 }
             }

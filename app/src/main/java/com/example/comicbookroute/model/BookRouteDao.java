@@ -17,11 +17,15 @@ public interface BookRouteDao {
     @Delete
     void deleteBookRoute(BookRoute nBookRoute);
 
+    @Update
+    void updateBookRoute(BookRoute nBookRoute);
+
     @Query("SELECT * FROM BookRoute")
     List<BookRoute> selectAllBookRoutes();
 
     @Query("SELECT * FROM BookRoute WHERE id = :id")
     BookRoute selectBookRouteByID(long id);
 
-
+    @Query("SELECT * FROM BookRoute WHERE isFavorite = :isFavorite")
+    List<BookRoute> selectAllFavoriteBookRoutes(boolean isFavorite);
 }

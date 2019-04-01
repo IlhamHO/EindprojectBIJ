@@ -8,23 +8,21 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
-import android.util.Log;
 import android.view.View;
 
-import com.example.comicbookroute.R;
 import com.example.comicbookroute.model.BookRoute;
-import com.example.comicbookroute.model.FavoriteDataBase;
+import com.example.comicbookroute.model.BookRouteDatabase;
 
 public class SwipeToDeleteUtil extends ItemTouchHelper.SimpleCallback {
 
-    private BookRouteAdapter bookRouteAdapter;
+    private FavoriteAdapter favoriteAdapter;
     private Context context;
     //private Drawable icon;
     private final ColorDrawable background;
 
-    public SwipeToDeleteUtil(BookRouteAdapter bookRouteAdapter) {
+    public SwipeToDeleteUtil(FavoriteAdapter favoriteAdapter) {
         super(0, ItemTouchHelper.LEFT);
-        this.bookRouteAdapter = bookRouteAdapter;
+        this.favoriteAdapter = favoriteAdapter;
         //icon = ContextCompat.getDrawable(context, R.drawable.ic_delete);
         background = new ColorDrawable(Color.RED);
     }
@@ -62,17 +60,19 @@ public class SwipeToDeleteUtil extends ItemTouchHelper.SimpleCallback {
     @Override
     public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int i) {
         final int position = viewHolder.getAdapterPosition();
-        final BookRoute delBookRoute = bookRouteAdapter.getItems().get(position);
-        FavoriteDataBase.getInstance(context).getBookRouteDAO().deleteBookRoute(delBookRoute);
-        bookRouteAdapter.getItems().remove(delBookRoute);
-        bookRouteAdapter.notifyItemRemoved(position);
+        final BookRoute delBookRoute = favoriteAdapter.getItems().get(position);
+        delBookRoute.setFavorite(false);
+        BookRouteDatabase.getInstance(context).getBookRouteDAO().updateBookRoute(delBookRoute);
+        favoriteAdapter.getItems().remove(delBookRoute);
+        favoriteAdapter.notifyItemRemoved(position);
         Snackbar sb = Snackbar.make(viewHolder.itemView, "Removed from favourites", Snackbar.LENGTH_LONG);
         sb.setAction("UNDO", new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FavoriteDataBase.getInstance(context).getBookRouteDAO().insertBookRoute(delBookRoute);
-                bookRouteAdapter.getItems().add(delBookRoute);
-                bookRouteAdapter.notifyItemInserted(position);
+                delBookRoute.setFavorite(true);
+                BookRouteDatabase.getInstance(context).getBookRouteDAO().updateBookRoute(delBookRoute);
+                favoriteAdapter.getItems().add(position, delBookRoute);
+                favoriteAdapter.notifyItemInserted(position);
             }
         });
         sb.show();
