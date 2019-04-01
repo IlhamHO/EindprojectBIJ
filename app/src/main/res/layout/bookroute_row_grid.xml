@@ -14,6 +14,20 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+            <ImageButton
+                android:id="@+id/btn_favorites"
+                android:layout_width="38dp"
+                android:layout_height="37dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@android:color/transparent"
+                android:src="@drawable/ic_star"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iv_row" />
+
             <ImageView
                 android:id="@+id/iv_row"
                 android:layout_width="209dp"
@@ -43,23 +57,10 @@
                 app:layout_constraintStart_toStartOf="@+id/iv_row"
                 app:layout_constraintTop_toTopOf="@+id/iv_row" />
 
-            <Button
-                android:id="@+id/btn_favorites"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginBottom="8dp"
-                android:text="@string/txt_btn_favorites"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
-
             <ImageButton
                 android:id="@+id/ib_details"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginLeft="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
                 android:layout_marginBottom="24dp"
@@ -67,7 +68,6 @@
                 android:tint="@color/colorPrimary"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/btn_favorites"
                 app:srcCompat="@android:drawable/ic_dialog_info" />
 
         </android.support.constraint.ConstraintLayout>

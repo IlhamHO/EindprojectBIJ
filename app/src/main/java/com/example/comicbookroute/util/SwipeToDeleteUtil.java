@@ -4,12 +4,15 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.View;
 
+import com.example.comicbookroute.R;
 import com.example.comicbookroute.model.BookRoute;
 import com.example.comicbookroute.model.BookRouteDatabase;
 
@@ -17,13 +20,13 @@ public class SwipeToDeleteUtil extends ItemTouchHelper.SimpleCallback {
 
     private FavoriteAdapter favoriteAdapter;
     private Context context;
-    //private Drawable icon;
+    private Drawable icon;
     private final ColorDrawable background;
 
     public SwipeToDeleteUtil(FavoriteAdapter favoriteAdapter) {
         super(0, ItemTouchHelper.LEFT);
         this.favoriteAdapter = favoriteAdapter;
-        //icon = ContextCompat.getDrawable(context, R.drawable.ic_delete);
+        icon = ContextCompat.getDrawable(favoriteAdapter.getContext(), R.drawable.ic_delete_sweep_black_24dp);
         background = new ColorDrawable(Color.RED);
     }
 
@@ -32,24 +35,19 @@ public class SwipeToDeleteUtil extends ItemTouchHelper.SimpleCallback {
         super.onChildDraw(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive);
         View itemView = viewHolder.itemView;
         int backgroundCornerOffset = 20;
-        //int iconMargin = (itemView.getHeight() - icon.getIntrinsicHeight()) / 2;
-        //int iconTop = itemView.getTop() + (itemView.getHeight() - icon.getIntrinsicHeight()) / 2;
-        //int iconBottom = iconTop + icon.getIntrinsicHeight();
-        if (dX > 0) {
-            //int iconLeft = itemView.getLeft() + iconMargin + icon.getIntrinsicWidth();
-            //int iconRight = itemView.getLeft() + iconMargin;
-            //icon.setBounds(iconLeft, iconTop, iconRight, iconBottom);
-            background.setBounds(itemView.getLeft(), itemView.getTop(), itemView.getLeft() + ((int) dX) + backgroundCornerOffset, itemView.getBottom());
-        } else if (dX < 0) {
-            //int iconLeft = itemView.getRight() - iconMargin - icon.getIntrinsicWidth();
-            //int iconRight = itemView.getRight() - iconMargin;
-            //icon.setBounds(iconLeft, iconTop, iconRight, iconBottom);
+        int iconMargin = (itemView.getHeight() - icon.getIntrinsicHeight()) / 5;
+        int iconTop = itemView.getTop() - iconMargin;
+        int iconBottom = itemView.getBottom() + iconMargin;
+        if (dX < 0) {
+            int iconLeft = itemView.getRight() + (int)dX;
+            int iconRight = itemView.getRight();
+            icon.setBounds(iconLeft, iconTop, iconRight, iconBottom);
             background.setBounds(itemView.getRight() + ((int) dX) - backgroundCornerOffset, itemView.getTop(), itemView.getRight(), itemView.getBottom());
         } else {
             background.setBounds(0, 0, 0, 0);
         }
         background.draw(c);
-        //icon.draw(c);
+        icon.draw(c);
     }
 
     @Override
@@ -65,8 +63,8 @@ public class SwipeToDeleteUtil extends ItemTouchHelper.SimpleCallback {
         BookRouteDatabase.getInstance(context).getBookRouteDAO().updateBookRoute(delBookRoute);
         favoriteAdapter.getItems().remove(delBookRoute);
         favoriteAdapter.notifyItemRemoved(position);
-        Snackbar sb = Snackbar.make(viewHolder.itemView, "Removed from favourites", Snackbar.LENGTH_LONG);
-        sb.setAction("UNDO", new View.OnClickListener() {
+        final Snackbar snackbar = Snackbar.make(viewHolder.itemView, "Removed from favourites", Snackbar.LENGTH_LONG);
+        snackbar.setAction("UNDO", new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 delBookRoute.setFavorite(true);
@@ -75,6 +73,7 @@ public class SwipeToDeleteUtil extends ItemTouchHelper.SimpleCallback {
                 favoriteAdapter.notifyItemInserted(position);
             }
         });
-        sb.show();
+        snackbar.setActionTextColor(Color.YELLOW);
+        snackbar.show();
     }
 }

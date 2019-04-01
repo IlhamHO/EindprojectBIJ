@@ -9,31 +9,24 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.Filter;
-import android.widget.Filterable;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
-
 import com.example.comicbookroute.DetailActivity;
 import com.example.comicbookroute.R;
 import com.example.comicbookroute.model.BookRoute;
-import com.example.comicbookroute.model.BookRouteDatabase;
-
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
 import java.util.List;
 
 public class FavoriteAdapter extends RecyclerView.Adapter<FavoriteAdapter.BookRouteRowViewHolder>{
 
     List<BookRoute> items;
+    private Context context;
 
-    public FavoriteAdapter(List<BookRoute> items) {
-
+    public FavoriteAdapter(List<BookRoute> items, Context context) {
         this.items = items;
+        this.context = context;
     }
 
     @NonNull
@@ -60,11 +53,15 @@ public class FavoriteAdapter extends RecyclerView.Adapter<FavoriteAdapter.BookRo
 
     @Override
     public int getItemCount() {
-        return 0;
+        return items.size();
     }
 
     public List<BookRoute> getItems() {
         return items;
+    }
+
+    public Context getContext() {
+        return context;
     }
 
     public static class BookRouteRowViewHolder extends RecyclerView.ViewHolder{

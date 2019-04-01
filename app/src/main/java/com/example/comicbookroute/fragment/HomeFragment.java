@@ -21,9 +21,6 @@ import com.example.comicbookroute.R;
 import com.example.comicbookroute.model.BookRouteDatabase;
 import com.example.comicbookroute.util.BookRouteAdapter;
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class HomeFragment extends Fragment {
 
     View v;

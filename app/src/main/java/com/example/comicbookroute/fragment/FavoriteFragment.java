@@ -36,7 +36,7 @@ public class FavoriteFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         recyclerView = v.findViewById(R.id.rv_favourites);
-        favoriteAdapter= new FavoriteAdapter(BookRouteDatabase.getInstance(v.getContext()).getBookRouteDAO().selectAllFavoriteBookRoutes(true));
+        favoriteAdapter= new FavoriteAdapter(BookRouteDatabase.getInstance(v.getContext()).getBookRouteDAO().selectAllFavoriteBookRoutes(true), v.getContext());
         recyclerView.setAdapter(favoriteAdapter);
         ItemTouchHelper itemTouchHelper = new ItemTouchHelper(new SwipeToDeleteUtil(favoriteAdapter));
         itemTouchHelper.attachToRecyclerView(recyclerView);

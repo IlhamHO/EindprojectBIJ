@@ -3,6 +3,7 @@ package com.example.comicbookroute.util;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -49,17 +50,26 @@ public class BookRouteAdapter extends RecyclerView.Adapter<BookRouteAdapter.Book
     }
 
     @Override
-    public void onBindViewHolder(@NonNull BookRouteRowViewHolder bookRouteRowViewHolder, int i) {
+    public void onBindViewHolder(@NonNull final BookRouteRowViewHolder bookRouteRowViewHolder, int i) {
         final BookRoute currentBookRoute = filteredItems.get(i);
+        if (currentBookRoute.isFavorite()){
+            bookRouteRowViewHolder.btnFavorites.setColorFilter(Color.YELLOW);
+        }else{
+            bookRouteRowViewHolder.btnFavorites.setColorFilter(Color.BLACK);
+        }
         bookRouteRowViewHolder.btnFavorites.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (currentBookRoute.isFavorite()){
-                    Toast.makeText(v.getContext(), "Comic was already added", Toast.LENGTH_LONG).show();
+                    currentBookRoute.setFavorite(false);
+                    BookRouteDatabase.getInstance(v.getContext()).getBookRouteDAO().updateBookRoute(currentBookRoute);
+                    Toast.makeText(v.getContext(), "Comic removed from favourites", Toast.LENGTH_LONG).show();
+                    notifyDataSetChanged();
                 }else {
                     currentBookRoute.setFavorite(true);
                     BookRouteDatabase.getInstance(v.getContext()).getBookRouteDAO().updateBookRoute(currentBookRoute);
                     Toast.makeText(v.getContext(), "Comic added to favourites", Toast.LENGTH_LONG).show();
+                    notifyDataSetChanged();
                 }
             }
         });
@@ -132,7 +142,7 @@ public class BookRouteAdapter extends RecyclerView.Adapter<BookRouteAdapter.Book
         private ImageView image;
         private TextView tvPersonnage;
         private ImageButton ibDetails;
-        private Button btnFavorites;
+        private ImageButton btnFavorites;
         private BookRoute item;
 
 
