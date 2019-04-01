@@ -43,6 +43,9 @@ public class BookRouteHandler extends Handler {
                 JSONObject currentRecords = records.getJSONObject(index);
                 JSONObject fields = currentRecords.getJSONObject("fields");
 
+                String personnage = (fields.has("personnage_s")) ? fields.getString("personnage_s") : "geen personnage";
+                String auteur = fields.getString("auteur_s");
+                String annee = fields.getString("annee");
                 String photo = fields.getJSONObject("photo").getString("id");
                 String pictureURL = "https://bruxellesdata.opendatasoft.com/explore/dataset/"
                         + currentRecords.getString("datasetid")
@@ -50,18 +53,13 @@ public class BookRouteHandler extends Handler {
                         + photo
                         + "/300";
 
-                String personnage = (fields.has("personnage_s")) ? fields.getString("personnage_s") : "geen personnage";
-                String auteur = fields.getString("auteur_s");
-
                 JSONArray locationJSON_Array = fields.getJSONArray("coordonnees_geographiques");
                 Double latitude = locationJSON_Array.getDouble(0);
                 Double longitude = locationJSON_Array.getDouble(1);
 
-                String annee = fields.getString("annee");
-
                 DownloadImageTask task = new DownloadImageTask(photo, context);
                 task.execute(pictureURL);
-                BookRoute currentBookRoute = new BookRoute(photo + ".jpeg", personnage, auteur, latitude, longitude, annee);
+                BookRoute currentBookRoute = new BookRoute(photo + ".jpeg", personnage, latitude, longitude, auteur, annee);
                 BookRouteDatabase.getInstance(context).getBookRouteDAO().insertBookRoute(currentBookRoute);
                 index++;
             }
