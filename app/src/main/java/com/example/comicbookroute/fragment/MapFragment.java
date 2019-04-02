@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.location.Address;
+import android.location.Geocoder;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Message;
@@ -22,7 +24,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.comicbookroute.DetailActivity;
 import com.example.comicbookroute.R;
@@ -46,8 +47,8 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -163,25 +164,31 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
 
             @Override
             public View getInfoContents(Marker marker) {
-
-                View mView = getLayoutInflater().inflate(R.layout.info_window, null, false);
-
+                View infoWindowView = getLayoutInflater().inflate(R.layout.info_window, null, false);
                 BookRoute item = (BookRoute) marker.getTag();
+                ImageView ivPhotoWindow = infoWindowView.findViewById(R.id.iv_photo_window);
+                TextView tvPersonageWindow = infoWindowView.findViewById(R.id.tv_personage_window);
+                TextView tvAddressWindow = infoWindowView.findViewById(R.id.tv_adres_window);
 
-                TextView tvTitle = mView.findViewById(R.id.tv_info_window);
-                tvTitle.setText(item.getPersonnage());
+                Geocoder geocoder = new Geocoder(infoWindowView.getContext(), Locale.getDefault());;
+                List<Address> addresses = null;
 
-
-                ImageView iv = mView.findViewById(R.id.iv_info_window);
                 try {
                     FileInputStream fis = getContext().openFileInput(item.getPhoto());
                     Bitmap bitmap = BitmapFactory.decodeStream(fis);
-                    iv.setImageBitmap(bitmap);
+                    ivPhotoWindow.setImageBitmap(bitmap);
                 } catch (FileNotFoundException e) {
                     e.printStackTrace();
                 }
-
-                return mView;
+                tvPersonageWindow.setText(item.getPersonnage());
+                try {
+                    addresses = geocoder.getFromLocation(item.getLatitude(), item.getLongitude(), 1);
+                    String address = addresses.get(0).getAddressLine(0);
+                    tvAddressWindow.setText(address);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                return infoWindowView;
             }
         });
     }
@@ -249,14 +256,8 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
         }
     }
 
-  /*  @Override
-    public void onMapClick(LatLng latLng) {
-        addMarkers();
-    }*/
-
     @Override
     public boolean onMarkerClick(Marker marker) {
-        Toast.makeText(getActivity(), marker.getTitle(), Toast.LENGTH_LONG).show();
         return false;
     }
 
