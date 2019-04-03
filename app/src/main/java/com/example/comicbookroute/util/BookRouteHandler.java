@@ -19,13 +19,12 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.lang.ref.WeakReference;
 import java.net.URL;
-import java.util.concurrent.ExecutionException;
 
 public class BookRouteHandler extends Handler {
 
     private Context context;
 
-    public BookRouteHandler( Context context) {
+    public BookRouteHandler(Context context) {
         this.context = context;
     }
 
@@ -54,9 +53,13 @@ public class BookRouteHandler extends Handler {
                         + photo
                         + "/300";
 
+                JSONArray locationJSON_Array = fields.getJSONArray("coordonnees_geographiques");
+                Double latitude = locationJSON_Array.getDouble(0);
+                Double longitude = locationJSON_Array.getDouble(1);
+
                 DownloadImageTask task = new DownloadImageTask(photo, context);
                 task.execute(pictureURL);
-                BookRoute currentBookRoute = new BookRoute(photo+".jpeg", personnage, auteur, annee);
+                BookRoute currentBookRoute = new BookRoute(photo + ".jpeg", personnage, latitude, longitude, auteur, annee);
                 BookRouteDatabase.getInstance(context).getBookRouteDAO().insertBookRoute(currentBookRoute);
                 index++;
             }
@@ -97,5 +100,3 @@ public class BookRouteHandler extends Handler {
         }
     }
 }
-
-

@@ -15,7 +15,6 @@ import com.example.comicbookroute.fragment.FavoriteFragment;
 import com.example.comicbookroute.fragment.HomeFragment;
 import com.example.comicbookroute.fragment.MapFragment;
 
-
 import com.example.comicbookroute.util.BookRouteHandler;
 import com.example.comicbookroute.util.ViewPagerAdapter;
 

@@ -16,6 +16,10 @@
         "source": "C:\\Users\\mobapp02\\Desktop\\EindprojectBIJ\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_home.png"
     },
     {
+        "merged": "C:\\Users\\mobapp02\\Desktop\\EindprojectBIJ\\app\\build\\intermediates\\res\\merged\\debug\\drawable_eraslogo.png.flat",
+        "source": "C:\\Users\\mobapp02\\Desktop\\EindprojectBIJ\\app\\src\\main\\res\\drawable\\eraslogo.png"
+    },
+    {
         "merged": "C:\\Users\\mobapp02\\Desktop\\EindprojectBIJ\\app\\build\\intermediates\\res\\merged\\debug\\animator_mtrl_btn_unelevated_state_list_anim.xml.flat",
         "source": "C:\\Users\\mobapp02\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\414a84d8bc01e16c83f0976dbf6b350d\\res\\animator\\mtrl_btn_unelevated_state_list_anim.xml"
     },
@@ -56,6 +60,10 @@
         "source": "C:\\Users\\mobapp02\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d27a242a650a04a01e761cbe2a6c531a\\res\\drawable-xxhdpi-v4\\abc_textfield_activated_mtrl_alpha.9.png"
     },
     {
+        "merged": "C:\\Users\\mobapp02\\Desktop\\EindprojectBIJ\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_grid.png.flat",
+        "source": "C:\\Users\\mobapp02\\Desktop\\EindprojectBIJ\\app\\src\\main\\res\\drawable\\ic_grid.png"
+    },
+    {
         "merged": "C:\\Users\\mobapp02\\Desktop\\EindprojectBIJ\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher_round.png.flat",
         "source": "C:\\Users\\mobapp02\\Desktop\\EindprojectBIJ\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png"
     },
@@ -88,12 +96,12 @@
         "source": "C:\\Users\\mobapp02\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\414a84d8bc01e16c83f0976dbf6b350d\\res\\drawable-v21\\avd_show_password.xml"
     },
     {
-        "merged": "C:\\Users\\mobapp02\\Desktop\\EindprojectBIJ\\app\\build\\intermediates\\res\\merged\\debug\\animator_mtrl_fab_transformation_sheet_collapse_spec.xml.flat",
-        "source": "C:\\Users\\mobapp02\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\414a84d8bc01e16c83f0976dbf6b350d\\res\\animator\\mtrl_fab_transformation_sheet_collapse_spec.xml"
-    },
-    {
         "merged": "C:\\Users\\mobapp02\\Desktop\\EindprojectBIJ\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21_notification_template_custom_big.xml.flat",
         "source": "C:\\Users\\mobapp02\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\73acf723afbb9449f3d12e3f372a9b72\\res\\layout-v21\\notification_template_custom_big.xml"
+    },
+    {
+        "merged": "C:\\Users\\mobapp02\\Desktop\\EindprojectBIJ\\app\\build\\intermediates\\res\\merged\\debug\\animator_mtrl_fab_transformation_sheet_collapse_spec.xml.flat",
+        "source": "C:\\Users\\mobapp02\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\414a84d8bc01e16c83f0976dbf6b350d\\res\\animator\\mtrl_fab_transformation_sheet_collapse_spec.xml"
     },
     {
         "merged": "C:\\Users\\mobapp02\\Desktop\\EindprojectBIJ\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_delete.png.flat",
@@ -932,6 +940,10 @@
         "source": "C:\\Users\\mobapp02\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d27a242a650a04a01e761cbe2a6c531a\\res\\layout\\abc_list_menu_item_checkbox.xml"
     },
     {
+        "merged": "C:\\Users\\mobapp02\\Desktop\\EindprojectBIJ\\app\\build\\intermediates\\res\\merged\\debug\\menu_fragment_map_menu.xml.flat",
+        "source": "C:\\Users\\mobapp02\\Desktop\\EindprojectBIJ\\app\\src\\main\\res\\menu\\fragment_map_menu.xml"
+    },
+    {
         "merged": "C:\\Users\\mobapp02\\Desktop\\EindprojectBIJ\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_design_ic_visibility_off.xml.flat",
         "source": "C:\\Users\\mobapp02\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\414a84d8bc01e16c83f0976dbf6b350d\\res\\drawable-anydpi-v21\\design_ic_visibility_off.xml"
     },
@@ -1190,6 +1202,10 @@
     {
         "merged": "C:\\Users\\mobapp02\\Desktop\\EindprojectBIJ\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21_notification_action.xml.flat",
         "source": "C:\\Users\\mobapp02\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\73acf723afbb9449f3d12e3f372a9b72\\res\\layout-v21\\notification_action.xml"
+    },
+    {
+        "merged": "C:\\Users\\mobapp02\\Desktop\\EindprojectBIJ\\app\\build\\intermediates\\res\\merged\\debug\\drawable_logovdab.png.flat",
+        "source": "C:\\Users\\mobapp02\\Desktop\\EindprojectBIJ\\app\\src\\main\\res\\drawable\\logovdab.png"
     },
     {
         "merged": "C:\\Users\\mobapp02\\Desktop\\EindprojectBIJ\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_scrubber_track_mtrl_alpha.9.png.flat",
@@ -1738,6 +1754,10 @@
     {
         "merged": "C:\\Users\\mobapp02\\Desktop\\EindprojectBIJ\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_arrow_down_24dp.xml.flat",
         "source": "C:\\Users\\mobapp02\\.gradle\\caches\\transforms-1\\files-1.1\\preference-v7-28.0.0.aar\\b6079f124137eb6d833250ee5f840e13\\res\\drawable-anydpi-v21\\ic_arrow_down_24dp.xml"
+    },
+    {
+        "merged": "C:\\Users\\mobapp02\\Desktop\\EindprojectBIJ\\app\\build\\intermediates\\res\\merged\\debug\\layout_info_window.xml.flat",
+        "source": "C:\\Users\\mobapp02\\Desktop\\EindprojectBIJ\\app\\src\\main\\res\\layout\\info_window.xml"
     },
     {
         "merged": "C:\\Users\\mobapp02\\Desktop\\EindprojectBIJ\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_tab_indicator_mtrl_alpha.9.png.flat",
@@ -2350,6 +2370,10 @@
     {
         "merged": "C:\\Users\\mobapp02\\Desktop\\EindprojectBIJ\\app\\build\\intermediates\\res\\merged\\debug\\anim-v21_design_bottom_sheet_slide_out.xml.flat",
         "source": "C:\\Users\\mobapp02\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\414a84d8bc01e16c83f0976dbf6b350d\\res\\anim-v21\\design_bottom_sheet_slide_out.xml"
+    },
+    {
+        "merged": "C:\\Users\\mobapp02\\Desktop\\EindprojectBIJ\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_list.png.flat",
+        "source": "C:\\Users\\mobapp02\\Desktop\\EindprojectBIJ\\app\\src\\main\\res\\drawable\\ic_list.png"
     },
     {
         "merged": "C:\\Users\\mobapp02\\Desktop\\EindprojectBIJ\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_custom_big.xml.flat",
