@@ -10,7 +10,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.ImageButton;
@@ -19,9 +18,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.comicbookroute.DetailActivity;
-import com.example.comicbookroute.MainActivity;
 import com.example.comicbookroute.R;
-import com.example.comicbookroute.fragment.HomeFragment;
 import com.example.comicbookroute.model.BookRoute;
 import com.example.comicbookroute.model.BookRouteDatabase;
 
@@ -37,7 +34,6 @@ public class BookRouteAdapter extends RecyclerView.Adapter<BookRouteAdapter.Book
     private int whichLayoutId;
 
     public BookRouteAdapter(List<BookRoute> items, int whichLayoutId) {
-
         this.items = items;
         filteredItems = items;
         this.whichLayoutId = whichLayoutId;
@@ -46,7 +42,6 @@ public class BookRouteAdapter extends RecyclerView.Adapter<BookRouteAdapter.Book
     @NonNull
     @Override
     public BookRouteRowViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-
         View rowView = LayoutInflater.from(viewGroup.getContext()).inflate(whichLayoutId, viewGroup, false);
         BookRouteRowViewHolder holder = new BookRouteRowViewHolder(rowView);
         return holder;
@@ -101,41 +96,29 @@ public class BookRouteAdapter extends RecyclerView.Adapter<BookRouteAdapter.Book
     }
 
     class CustomFilter extends Filter {
-
         @Override
         protected void publishResults(CharSequence constraint, FilterResults results) {
             filteredItems = (ArrayList<BookRoute>) results.values;
             notifyDataSetChanged();
-
         }
-
         @Override
         protected FilterResults performFiltering(CharSequence constraint) {
             FilterResults results = new FilterResults();
-
             if (constraint != null && constraint.length() > 0) {
                 constraint = constraint.toString().toUpperCase();
-
                 ArrayList<BookRoute> filters = new ArrayList<>();
-
-
                 for (int i = 0; i < items.size(); i++) {
                     if (items.get(i).getPersonnage().toUpperCase().contains(constraint)) {
                         BookRoute p = items.get(i);
-
                         filters.add(p);
                     }
                 }
-
                 results.count = filters.size();
                 results.values = filters;
-
             } else {
                 results.count = items.size();
                 results.values = items;
-
             }
-
             return results;
         }
     }
@@ -144,25 +127,16 @@ public class BookRouteAdapter extends RecyclerView.Adapter<BookRouteAdapter.Book
 
         private ImageView image;
         private TextView tvPersonnage;
-        private ImageButton ibDetails;
         private ImageButton btnFavorites;
         private BookRoute item;
         private CardView cardView;
 
-
-
         public BookRouteRowViewHolder(@NonNull final View itemView) {
             super(itemView);
-
             image = itemView.findViewById(R.id.iv_row);
             tvPersonnage = itemView.findViewById(R.id.tv_row_personnage);
-            ibDetails = itemView.findViewById(R.id.ib_details);
-            btnFavorites = itemView.findViewById(R.id.btn_favorites);
-            ibDetails.setOnClickListener(new View.OnClickListener() {
-
-            ibFavorites = itemView.findViewById(R.id.ib_favorites);
-            //onclick op card
-           cardView = itemView.findViewById(R.id.cardid);
+            btnFavorites = itemView.findViewById(R.id.ib_favorites);
+            cardView = itemView.findViewById(R.id.cardid);
             cardView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

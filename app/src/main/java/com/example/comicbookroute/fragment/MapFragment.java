@@ -139,7 +139,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
                     }
                 }
                 break;
-            case R.id.menu_item_bookroute:
+            case R.id.menu_item_parking:
                 if (mGoogleMap != null) {
                     mGoogleMap.clear();
                     addMarkers();
