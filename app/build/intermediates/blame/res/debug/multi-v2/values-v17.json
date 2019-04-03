@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/Brecht/Desktop/projectAndroid/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v17/values-v17.xml",
+            "outputFile": "Z:\\AndroidStudioProjects\\EindprojectBIJ\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v17\\values-v17.xml",
             "map": [
                 {
-                    "source": "/Users/Brecht/.gradle/caches/transforms-1/files-1.1/preference-v7-28.0.0.aar/190ac25ceed2bd53f2be899b081a2b61/res/values-v17/values-v17.xml",
+                    "source": "C:\\Users\\mobapp08\\.gradle\\caches\\transforms-1\\files-1.1\\preference-v7-28.0.0.aar\\7f8de60cd11d166a369f523aee7cd784\\res\\values-v17\\values-v17.xml",
                     "from": {
                         "startLines": "2,7,11",
                         "startColumns": "4,4,4",
@@ -15,7 +15,7 @@
                     }
                 },
                 {
-                    "source": "/Users/Brecht/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/0bdf61c3338f5e988686c0cdb6f6ae73/res/values-v17/values-v17.xml",
+                    "source": "C:\\Users\\mobapp08\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\df2124f62e24827b577fe0454cec24db\\res\\values-v17\\values-v17.xml",
                     "from": {
                         "startLines": "2,5,9,12,15,18,22,25,29,33,37,40,43,46,50,53,57",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",

@@ -957,6 +957,8 @@ dimen hint_pressed_alpha_material_light
 dimen item_touch_helper_max_drag_scroll_per_frame
 dimen item_touch_helper_swipe_escape_max_velocity
 dimen item_touch_helper_swipe_escape_velocity
+dimen map_dx
+dimen map_dy
 dimen mtrl_bottomappbar_fabOffsetEndMode
 dimen mtrl_bottomappbar_fab_cradle_margin
 dimen mtrl_bottomappbar_fab_cradle_rounded_corner_radius
@@ -1153,7 +1155,7 @@ drawable design_snackbar_background
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
 drawable ic_arrow_down_24dp
-drawable ic_delete
+drawable ic_delete_sweep_black_24dp
 drawable ic_home
 drawable ic_info
 drawable ic_launcher_background
@@ -1289,8 +1291,8 @@ id info
 id invisible
 id italic
 id item_touch_helper_previous_elevation
-id iv_info_window
 id iv_photo_detail
+id iv_photo_window
 id iv_row
 id labeled
 id largeLabel
@@ -1414,10 +1416,12 @@ id transition_layout_save
 id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
-id tv_info_window
+id tv_adres_detail
+id tv_adres_window
 id tv_jaar_detail
 id tv_naam_detail
 id tv_personage_detail
+id tv_personage_window
 id tv_row_personnage
 id uniform
 id unlabeled

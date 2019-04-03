@@ -568,35 +568,35 @@ public final class R {
         public static final int item_touch_helper_max_drag_scroll_per_frame = 0x7f06008e;
         public static final int item_touch_helper_swipe_escape_max_velocity = 0x7f06008f;
         public static final int item_touch_helper_swipe_escape_velocity = 0x7f060090;
-        public static final int notification_action_icon_size = 0x7f0600c1;
-        public static final int notification_action_text_size = 0x7f0600c2;
-        public static final int notification_big_circle_margin = 0x7f0600c3;
-        public static final int notification_content_margin_start = 0x7f0600c4;
-        public static final int notification_large_icon_height = 0x7f0600c5;
-        public static final int notification_large_icon_width = 0x7f0600c6;
-        public static final int notification_main_column_padding_top = 0x7f0600c7;
-        public static final int notification_media_narrow_margin = 0x7f0600c8;
-        public static final int notification_right_icon_size = 0x7f0600c9;
-        public static final int notification_right_side_padding_top = 0x7f0600ca;
-        public static final int notification_small_icon_background_padding = 0x7f0600cb;
-        public static final int notification_small_icon_size_as_large = 0x7f0600cc;
-        public static final int notification_subtext_size = 0x7f0600cd;
-        public static final int notification_top_pad = 0x7f0600ce;
-        public static final int notification_top_pad_large_text = 0x7f0600cf;
-        public static final int preference_category_padding_start = 0x7f0600d0;
-        public static final int preference_icon_minWidth = 0x7f0600d1;
-        public static final int preference_no_icon_padding_start = 0x7f0600d2;
-        public static final int preference_seekbar_padding_end = 0x7f0600d3;
-        public static final int preference_seekbar_padding_start = 0x7f0600d4;
-        public static final int preference_seekbar_value_width = 0x7f0600d5;
-        public static final int tooltip_corner_radius = 0x7f0600db;
-        public static final int tooltip_horizontal_padding = 0x7f0600dc;
-        public static final int tooltip_margin = 0x7f0600dd;
-        public static final int tooltip_precise_anchor_extra_offset = 0x7f0600de;
-        public static final int tooltip_precise_anchor_threshold = 0x7f0600df;
-        public static final int tooltip_vertical_padding = 0x7f0600e0;
-        public static final int tooltip_y_offset_non_touch = 0x7f0600e1;
-        public static final int tooltip_y_offset_touch = 0x7f0600e2;
+        public static final int notification_action_icon_size = 0x7f0600c3;
+        public static final int notification_action_text_size = 0x7f0600c4;
+        public static final int notification_big_circle_margin = 0x7f0600c5;
+        public static final int notification_content_margin_start = 0x7f0600c6;
+        public static final int notification_large_icon_height = 0x7f0600c7;
+        public static final int notification_large_icon_width = 0x7f0600c8;
+        public static final int notification_main_column_padding_top = 0x7f0600c9;
+        public static final int notification_media_narrow_margin = 0x7f0600ca;
+        public static final int notification_right_icon_size = 0x7f0600cb;
+        public static final int notification_right_side_padding_top = 0x7f0600cc;
+        public static final int notification_small_icon_background_padding = 0x7f0600cd;
+        public static final int notification_small_icon_size_as_large = 0x7f0600ce;
+        public static final int notification_subtext_size = 0x7f0600cf;
+        public static final int notification_top_pad = 0x7f0600d0;
+        public static final int notification_top_pad_large_text = 0x7f0600d1;
+        public static final int preference_category_padding_start = 0x7f0600d2;
+        public static final int preference_icon_minWidth = 0x7f0600d3;
+        public static final int preference_no_icon_padding_start = 0x7f0600d4;
+        public static final int preference_seekbar_padding_end = 0x7f0600d5;
+        public static final int preference_seekbar_padding_start = 0x7f0600d6;
+        public static final int preference_seekbar_value_width = 0x7f0600d7;
+        public static final int tooltip_corner_radius = 0x7f0600dd;
+        public static final int tooltip_horizontal_padding = 0x7f0600de;
+        public static final int tooltip_margin = 0x7f0600df;
+        public static final int tooltip_precise_anchor_extra_offset = 0x7f0600e0;
+        public static final int tooltip_precise_anchor_threshold = 0x7f0600e1;
+        public static final int tooltip_vertical_padding = 0x7f0600e2;
+        public static final int tooltip_y_offset_non_touch = 0x7f0600e3;
+        public static final int tooltip_y_offset_touch = 0x7f0600e4;
     }
     public static final class drawable {
         private drawable() {}
@@ -814,9 +814,9 @@ public final class R {
         public static final int title_template = 0x7f0800df;
         public static final int top = 0x7f0800e0;
         public static final int topPanel = 0x7f0800e1;
-        public static final int uniform = 0x7f0800ed;
-        public static final int up = 0x7f0800ef;
-        public static final int wrap_content = 0x7f0800f7;
+        public static final int uniform = 0x7f0800ef;
+        public static final int up = 0x7f0800f1;
+        public static final int wrap_content = 0x7f0800f9;
     }
     public static final class integer {
         private integer() {}

@@ -41,14 +41,6 @@ public class FavoriteAdapter extends RecyclerView.Adapter<FavoriteAdapter.BookRo
     public void onBindViewHolder(@NonNull BookRouteRowViewHolder bookRouteRowViewHolder, int i) {
         final BookRoute currentBookRoute = items.get(i);
         bookRouteRowViewHolder.tvPersonnage.setText(currentBookRoute.getPersonnage());
-        try {
-            FileInputStream fis = bookRouteRowViewHolder.itemView.getContext().openFileInput(currentBookRoute.getPhoto());
-            Bitmap bitmap = BitmapFactory.decodeStream(fis);
-            bookRouteRowViewHolder.image.setImageBitmap(bitmap);
-            bookRouteRowViewHolder.item = currentBookRoute;
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
     }
 
     @Override
@@ -66,14 +58,12 @@ public class FavoriteAdapter extends RecyclerView.Adapter<FavoriteAdapter.BookRo
 
     public static class BookRouteRowViewHolder extends RecyclerView.ViewHolder{
 
-        private ImageView image;
         private TextView tvPersonnage;
         private ImageButton ibDetails;
         private BookRoute item;
 
         public BookRouteRowViewHolder(@NonNull final View itemView) {
             super(itemView);
-            image = itemView.findViewById(R.id.iv_row);
             tvPersonnage = itemView.findViewById(R.id.tv_row_personnage);
             ibDetails = itemView.findViewById(R.id.ib_details);
             ibDetails.setOnClickListener(new View.OnClickListener() {

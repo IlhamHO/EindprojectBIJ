@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Point;
 import android.location.Address;
 import android.location.Geocoder;
 import android.os.Build;
@@ -37,6 +38,7 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.Projection;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
@@ -258,16 +260,27 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
 
     @Override
     public boolean onMarkerClick(Marker marker) {
-        return false;
+        // Calculate required horizontal shift for current screen density
+        final int dX = getResources().getDimensionPixelSize(R.dimen.map_dx);
+        // Calculate required vertical shift for current screen density
+        final int dY = getResources().getDimensionPixelSize(R.dimen.map_dy);
+        final Projection projection = mGoogleMap.getProjection();
+        final Point markerPoint = projection.toScreenLocation(marker.getPosition());
+        // Shift the point we will use to center the map
+        markerPoint.offset(dX, dY);
+        final LatLng newLatLng = projection.fromScreenLocation(markerPoint);
+        // Buttery smooth camera swoop :)
+        mGoogleMap.animateCamera(CameraUpdateFactory.newLatLng(newLatLng));
+        // Show the info window
+        marker.showInfoWindow();
+        return true;
     }
-
 
     @Override
     public void onInfoWindowClick(Marker marker) {
         Intent detailsIntent = new Intent(getContext(), DetailActivity.class);
         detailsIntent.putExtra("item", (BookRoute)marker.getTag());
         startActivity(detailsIntent);
-
     }
 }
 

@@ -35,12 +35,12 @@ public class SwipeToDeleteUtil extends ItemTouchHelper.SimpleCallback {
         super.onChildDraw(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive);
         View itemView = viewHolder.itemView;
         int backgroundCornerOffset = 20;
-        int iconMargin = (itemView.getHeight() - icon.getIntrinsicHeight()) / 5;
-        int iconTop = itemView.getTop() - iconMargin;
-        int iconBottom = itemView.getBottom() + iconMargin;
+        int iconMargin = 15;
+        int iconTop = itemView.getTop() + iconMargin;
+        int iconBottom = itemView.getBottom() - iconMargin;
         if (dX < 0) {
             int iconLeft = itemView.getRight() + (int)dX;
-            int iconRight = itemView.getRight();
+            int iconRight = itemView.getRight() + icon.getIntrinsicWidth()*2 + (int)dX;
             icon.setBounds(iconLeft, iconTop, iconRight, iconBottom);
             background.setBounds(itemView.getRight() + ((int) dX) - backgroundCornerOffset, itemView.getTop(), itemView.getRight(), itemView.getBottom());
         } else {
