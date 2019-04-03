@@ -14,8 +14,9 @@
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
         android:clickable="true"
-        android:src="@color/common_google_signin_btn_text_dark_focused"
+        android:src="@drawable/ic_grid"
         app:backgroundTint="@color/colorPrimary"
+        app:fabSize="normal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -23,11 +24,12 @@
         android:id="@+id/rv_bookroute"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@drawable/ic_list"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:listitem="@layout/bookroute_row" >
+        tools:listitem="@layout/bookroute_row">
 
     </android.support.v7.widget.RecyclerView>
 </android.support.constraint.ConstraintLayout>
