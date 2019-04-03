@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Rect;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
@@ -139,6 +140,7 @@ public class BookRouteAdapter extends RecyclerView.Adapter<BookRouteAdapter.Book
             ibFavorites = itemView.findViewById(R.id.ib_favorites);
             //onclick op card
            cardView = itemView.findViewById(R.id.cardid);
+
             cardView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -148,9 +150,11 @@ public class BookRouteAdapter extends RecyclerView.Adapter<BookRouteAdapter.Book
                 }
             });
             ibFavorites.setOnClickListener(new View.OnClickListener() {
+
                 @Override
                 public void onClick(View v) {
                     FavoriteDataBase.getInstance(v.getContext()).getBookRouteDAO().insertBookRoute(item);
+
                     Toast.makeText(v.getContext(), "Added to favourites", Toast.LENGTH_LONG).show();
                 }
             });
