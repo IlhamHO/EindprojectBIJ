@@ -5,6 +5,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.support.annotation.NonNull;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,7 +19,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.comicbookroute.DetailActivity;
+import com.example.comicbookroute.MainActivity;
 import com.example.comicbookroute.R;
+import com.example.comicbookroute.fragment.HomeFragment;
 import com.example.comicbookroute.model.BookRoute;
 import com.example.comicbookroute.model.BookRouteDatabase;
 
@@ -144,6 +147,7 @@ public class BookRouteAdapter extends RecyclerView.Adapter<BookRouteAdapter.Book
         private ImageButton ibDetails;
         private ImageButton btnFavorites;
         private BookRoute item;
+        private CardView cardView;
 
 
 
@@ -155,6 +159,11 @@ public class BookRouteAdapter extends RecyclerView.Adapter<BookRouteAdapter.Book
             ibDetails = itemView.findViewById(R.id.ib_details);
             btnFavorites = itemView.findViewById(R.id.btn_favorites);
             ibDetails.setOnClickListener(new View.OnClickListener() {
+
+            ibFavorites = itemView.findViewById(R.id.ib_favorites);
+            //onclick op card
+           cardView = itemView.findViewById(R.id.cardid);
+            cardView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     Intent intent = new Intent(v.getContext(), DetailActivity.class);

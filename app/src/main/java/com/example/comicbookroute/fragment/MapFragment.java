@@ -31,7 +31,6 @@ import com.example.comicbookroute.R;
 import com.example.comicbookroute.model.BookRoute;
 import com.example.comicbookroute.model.BookRouteDatabase;
 import com.example.comicbookroute.model.StreetArt;
-import com.example.comicbookroute.model.StreetArtDatabase;
 import com.example.comicbookroute.util.StreetArtHandler;
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -62,8 +61,9 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
     private GoogleMap mGoogleMap;
     private final LatLng BRUSSEL = new LatLng(50.858712, 4.347446);
     private final int REQUEST_LOCATION = 1;
-    private static final String SERVICE_URL_SA = "https://bruxellesdata.opendatasoft.com/api/records/1.0/search/?dataset=street-art&rows=23";
-    private StreetArtHandler mStreetArtHandler;
+    // List<Marker> comicbookList = new ArrayList<>();
+    //  List<Marker> streetartList = new ArrayList<>();
+    StreetArtHandler mStreetArtHandler;
 
     public MapFragment() {
     }
@@ -78,27 +78,31 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
         mMapView.getMapAsync(this);
         mMapView.onCreate(savedInstanceState);
         mMapView.onResume();
+        mStreetArtHandler = new StreetArtHandler(getActivity());
+
         downloadDataSA();
 
         return view;
     }
 
+
+
     private void downloadDataSA() {
         Thread backTread = new Thread(new Runnable() {
             @Override
             public void run() {
-                try{
+                try {
                     OkHttpClient client = new OkHttpClient();
                     Request request = new Request.Builder()
                             .url("https://bruxellesdata.opendatasoft.com/api/records/1.0/search/?dataset=street-art&rows=23")
                             .get()
                             .build();
                     Response response = client.newCall(request).execute();
-                    if (response.body()!= null){
+                    if (response.body() != null) {
                         String responseBody = response.body().string();
-                        Message msg = new Message();
-                        msg.obj = responseBody;
-
+                        Message message = new Message();
+                        message.obj = responseBody;
+                        mStreetArtHandler.sendMessage(message);
                     }
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -107,7 +111,6 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
         });
         backTread.start();
     }
-
 
 
     @SuppressLint("RestrictedApi")
@@ -123,26 +126,30 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-
-       int id=item.getItemId();
-           if(id== R.id.menu_item_streetart){
-               if(mGoogleMap!=null) {
-                   mGoogleMap.clear();
-                   List<StreetArt> datast = StreetArtDatabase.getInstance(getContext()).getStreetArtDAO().selectAllStreetArts();
-                   Log.d("DATA", datast.toString());
-                   for (StreetArt st : datast) {
-                       LatLng coord = new LatLng(st.getLatitude(), st.getLongitude());
-                       mGoogleMap.addMarker(new MarkerOptions()
-                               .title(st.getWerkNaam()).position(coord).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
-                   }
-               }
-
-           if(id== R.id.menu_item_parking) {
-               mGoogleMap.clear();
-           }
+        switch (item.getItemId()) {
+            case R.id.menu_item_streetart:
+                if (mGoogleMap != null) {
+                    mGoogleMap.clear();
+                    List<StreetArt> datast = BookRouteDatabase.getInstance(getContext()).getStreetArtDAO().selectAllStreetArts();
+                    Log.d("DATA", datast.toString());
+                    for (StreetArt st : datast) {
+                        LatLng coord = new LatLng(st.getLatitude(), st.getLongitude());
+                        mGoogleMap.addMarker(new MarkerOptions()
+                                .title(st.getWerkNaam()).position(coord).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
+                    }
+                }
+                break;
+            case R.id.menu_item_bookroute:
+                if (mGoogleMap != null) {
+                    mGoogleMap.clear();
+                    addMarkers();
+                }
+                break;
         }
+
         return super.onOptionsItemSelected(item);
     }
+
 
     @Override
     public void onResume() {
@@ -207,23 +214,13 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
             m.setTag(br);
         }
 
-        List<StreetArt> datast = StreetArtDatabase.getInstance(getContext()).getStreetArtDAO().selectAllStreetArts();
-        Log.d("DATA", datast.toString());
-        for (StreetArt st : datast) {
-            LatLng coord = new LatLng(st.getLatitude(), st.getLongitude());
-
-            Marker m = mGoogleMap.addMarker(new MarkerOptions()
-                    .title(st.getWerkNaam()).position(coord).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
-
-
-        }
     }
 
     private void setupCamera() {
         CameraUpdate update = CameraUpdateFactory.newLatLngZoom(BRUSSEL, 14);
         mGoogleMap.animateCamera(update);
         CameraPosition.Builder cameraPosition = new CameraPosition.Builder();
-        CameraPosition position = cameraPosition.target(BRUSSEL).zoom(18).tilt(60).build();
+        CameraPosition position = cameraPosition.target(BRUSSEL).zoom(14).tilt(60).build();
         CameraUpdate cameraUpdate = CameraUpdateFactory.newCameraPosition(position);
         mGoogleMap.animateCamera(cameraUpdate);
 
@@ -279,9 +276,12 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
     @Override
     public void onInfoWindowClick(Marker marker) {
         Intent detailsIntent = new Intent(getContext(), DetailActivity.class);
-        detailsIntent.putExtra("item", (BookRoute)marker.getTag());
+        detailsIntent.putExtra("item", (BookRoute) marker.getTag());
         startActivity(detailsIntent);
     }
 }
+
+
+
 
 

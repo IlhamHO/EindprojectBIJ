@@ -78,7 +78,7 @@ public class HomeFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         //button details///////
-        ibDetail = v.findViewById(R.id.ib_details);
+
 
 
 

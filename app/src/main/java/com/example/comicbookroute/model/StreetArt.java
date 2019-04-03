@@ -18,6 +18,7 @@ public class StreetArt implements Serializable {
 
     public StreetArt() {
     }
+
     @Ignore
     public StreetArt(String werkNaam, String kunstenaar, String adres, String photo, Double latitude, Double longitude) {
         this.werkNaam = werkNaam;
@@ -84,6 +85,4 @@ public class StreetArt implements Serializable {
         this.longitude = longitude;
     }
 
-    public static class StreetArtDatabase {
-    }
 }
