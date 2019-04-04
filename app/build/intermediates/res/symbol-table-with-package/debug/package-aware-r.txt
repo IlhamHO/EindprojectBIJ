@@ -1315,7 +1315,8 @@ id main_toolbar
 id main_viewpager
 id masked
 id media_actions
-id menu_item_bookroute
+id menu_item_parking
+id menu_item_settings
 id menu_item_streetart
 id message
 id middle
@@ -1627,6 +1628,8 @@ string fab_transformation_sheet_behavior
 string hello_blank_fragment
 string hide_bottom_view_on_scroll_behavior
 string mtrl_chip_close_icon_content_description
+string navigation_drawer_close
+string navigation_drawer_open
 string password_toggle_content_description
 string path_password_eye
 string path_password_eye_mask_strike_through
@@ -1635,8 +1638,14 @@ string path_password_strike_through
 string search_menu_title
 string status_bar_notification_info_overflow
 string summary_collapsed_preference_list
-string text_menu_item_bookroute
+string text_action_settings
+string text_btn_parking
+string text_btn_restaurant
+string text_btn_wc
+string text_menu_item_parking
+string text_menu_item_settings
 string text_menu_item_streetart
+string text_tv_nav
 string v7_preference_off
 string v7_preference_on
 style AlertDialog_AppCompat

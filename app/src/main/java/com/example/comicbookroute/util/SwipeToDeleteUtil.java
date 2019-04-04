@@ -12,6 +12,7 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.View;
 
+import com.example.comicbookroute.R;
 import com.example.comicbookroute.model.BookRoute;
 import com.example.comicbookroute.model.BookRouteDatabase;
 
