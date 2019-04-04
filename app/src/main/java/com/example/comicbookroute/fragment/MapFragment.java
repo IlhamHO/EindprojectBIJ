@@ -98,7 +98,6 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
                         mGoogleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
                 }
             }
-
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
             }
@@ -217,29 +216,22 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
 
     @Override
     public boolean onMarkerClick(Marker marker) {
-        // Calculate required horizontal shift for current screen density
         final int dX = getResources().getDimensionPixelSize(R.dimen.map_dx);
-        // Calculate required vertical shift for current screen density
         final int dY = getResources().getDimensionPixelSize(R.dimen.map_dy);
         final Projection projection = mGoogleMap.getProjection();
         final Point markerPoint = projection.toScreenLocation(marker.getPosition());
-        // Shift the point we will use to center the map
         markerPoint.offset(dX, dY);
         final LatLng newLatLng = projection.fromScreenLocation(markerPoint);
-        // Buttery smooth camera swoop :)
         mGoogleMap.animateCamera(CameraUpdateFactory.newLatLng(newLatLng));
-        // Show the info window
         marker.showInfoWindow();
         return true;
     }
 
     @Override
     public void onInfoWindowClick(Marker marker) {
-        if (marker.getTag() == "bookRoute") {
             Intent detailsIntent = new Intent(getContext(), DetailActivity.class);
             detailsIntent.putExtra("item", (BookRoute) marker.getTag());
             startActivity(detailsIntent);
-        }
     }
 
     @Override
@@ -268,8 +260,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
                     TextView tvAddressWindow = infoWindowView.findViewById(R.id.tv_adres_window);
 
                     Geocoder geocoder = new Geocoder(infoWindowView.getContext(), Locale.getDefault());
-                    ;
-                    List<Address> addresses = null;
+                    List<Address> addresses;
 
                     try {
                         FileInputStream fis = getContext().openFileInput(item.getPhoto());
@@ -314,8 +305,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
                     TextView tvAddressWindow = infoWindowView.findViewById(R.id.tv_adres_window);
 
                     Geocoder geocoder = new Geocoder(infoWindowView.getContext(), Locale.getDefault());
-                    ;
-                    List<Address> addresses = null;
+                    List<Address> addresses;
 
                     try {
                         FileInputStream fis = getContext().openFileInput(item.getPhoto());

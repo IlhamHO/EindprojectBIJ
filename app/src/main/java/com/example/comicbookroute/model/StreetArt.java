@@ -8,6 +8,7 @@ import java.io.Serializable;
 
 @Entity
 public class StreetArt implements Serializable {
+
     @PrimaryKey(autoGenerate = true)
     private long id;
     private String kunstenaar;
@@ -65,5 +66,4 @@ public class StreetArt implements Serializable {
     public void setLongitude(Double longitude) {
         this.longitude = longitude;
     }
-
 }

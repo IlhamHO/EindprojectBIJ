@@ -2,22 +2,16 @@ package com.example.comicbookroute.util;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.TextView;
 import com.example.comicbookroute.DetailActivity;
 import com.example.comicbookroute.R;
 import com.example.comicbookroute.model.BookRoute;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.util.List;
 
 public class FavoriteAdapter extends RecyclerView.Adapter<FavoriteAdapter.BookRouteRowViewHolder>{
@@ -76,7 +70,6 @@ public class FavoriteAdapter extends RecyclerView.Adapter<FavoriteAdapter.BookRo
                     v.getContext().startActivity(intent);
                 }
             });
-
         }
     }
 }

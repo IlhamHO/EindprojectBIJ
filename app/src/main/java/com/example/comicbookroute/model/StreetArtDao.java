@@ -13,14 +13,8 @@ public interface StreetArtDao {
     @Insert
     void insertStreetArt(StreetArt nStreetArt);
 
-    @Delete
-    void deleteStreetArt(StreetArt nStreetArt);
-
     @Query("SELECT * FROM StreetArt")
     List<StreetArt> selectAllStreetArts();
-
-    @Query("SELECT * FROM StreetArt WHERE id = :id")
-    StreetArt selectStreetArtByID(long id);
 
 }
 

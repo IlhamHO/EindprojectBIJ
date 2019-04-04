@@ -19,9 +19,9 @@ import com.example.comicbookroute.model.BookRouteDatabase;
 public class SwipeToDeleteUtil extends ItemTouchHelper.SimpleCallback {
 
     private FavoriteAdapter favoriteAdapter;
-    private Context context;
     private Drawable icon;
     private final ColorDrawable background;
+    private Context context;
 
     public SwipeToDeleteUtil(FavoriteAdapter favoriteAdapter) {
         super(0, ItemTouchHelper.LEFT);

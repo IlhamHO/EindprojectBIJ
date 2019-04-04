@@ -3,108 +3,180 @@
     abi="x86"
     api-level="28"
     build-mode="FULL"
-    density="420dpi"
+    density="xxhdpi"
     format="10"
     plugin-version="3.3.1"
-    timestamp="1554366782166"
+    timestamp="1554401170018"
     token="8708411194390795584"
     verifier="FULL_BUILD_REQUESTED" >
 
     <task
         name="javac"
-        duration="0" />
+        duration="3563" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="0" />
+        duration="75" />
     <task
         name="verifier"
-        duration="0" />
+        duration="22" />
 
     <artifact
-        location="C:\Users\mobapp02\Desktop\EindprojectBIJ\app\build\intermediates\split-apk\debug\dep\dependencies.apk"
+        location="/Users/Brecht/Desktop/EindprojectBIJ/app/build/intermediates/split-apk/debug/slices/slice_7.apk"
         type="SPLIT" />
     <artifact
-        location="C:\Users\mobapp02\Desktop\EindprojectBIJ\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
+        location="/Users/Brecht/Desktop/EindprojectBIJ/C:\Users\mobapp02\Desktop\EindprojectBIJ\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
         type="SPLIT" />
     <artifact
-        location="C:\Users\mobapp02\Desktop\EindprojectBIJ\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
+        location="/Users/Brecht/Desktop/EindprojectBIJ/C:\Users\mobapp02\Desktop\EindprojectBIJ\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
         type="SPLIT" />
     <artifact
-        location="C:\Users\mobapp02\Desktop\EindprojectBIJ\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
+        location="/Users/Brecht/Desktop/EindprojectBIJ/C:\Users\mobapp02\Desktop\EindprojectBIJ\app\build\intermediates\resources\instant-run\debug\resources-debug.apk"
         type="SPLIT" />
     <artifact
-        location="C:\Users\mobapp02\Desktop\EindprojectBIJ\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
+        location="/Users/Brecht/Desktop/EindprojectBIJ/app/build/intermediates/split-apk/debug/slices/slice_9.apk"
         type="SPLIT" />
     <artifact
-        location="C:\Users\mobapp02\Desktop\EindprojectBIJ\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
+        location="/Users/Brecht/Desktop/EindprojectBIJ/C:\Users\mobapp02\Desktop\EindprojectBIJ\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
         type="SPLIT" />
     <artifact
-        location="C:\Users\mobapp02\Desktop\EindprojectBIJ\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
+        location="/Users/Brecht/Desktop/EindprojectBIJ/C:\Users\mobapp02\Desktop\EindprojectBIJ\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
         type="SPLIT" />
     <artifact
-        location="C:\Users\mobapp02\Desktop\EindprojectBIJ\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
+        location="/Users/Brecht/Desktop/EindprojectBIJ/app/build/intermediates/resources/instant-run/debug/resources-debug.apk"
         type="SPLIT" />
     <artifact
-        location="C:\Users\mobapp02\Desktop\EindprojectBIJ\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
+        location="/Users/Brecht/Desktop/EindprojectBIJ/C:\Users\mobapp02\Desktop\EindprojectBIJ\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
         type="SPLIT" />
     <artifact
-        location="C:\Users\mobapp02\Desktop\EindprojectBIJ\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
+        location="/Users/Brecht/Desktop/EindprojectBIJ/app/build/intermediates/split-apk/debug/slices/slice_2.apk"
         type="SPLIT" />
     <artifact
-        location="C:\Users\mobapp02\Desktop\EindprojectBIJ\app\build\intermediates\resources\instant-run\debug\resources-debug.apk"
+        location="/Users/Brecht/Desktop/EindprojectBIJ/app/build/intermediates/split-apk/debug/slices/slice_8.apk"
         type="SPLIT" />
     <artifact
-        location="C:\Users\mobapp02\Desktop\EindprojectBIJ\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
+        location="/Users/Brecht/Desktop/EindprojectBIJ/C:\Users\mobapp02\Desktop\EindprojectBIJ\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
         type="SPLIT" />
     <artifact
-        location="C:\Users\mobapp02\Desktop\EindprojectBIJ\app\build\intermediates\instant-run-apk\debug\app-debug.apk"
+        location="/Users/Brecht/Desktop/EindprojectBIJ/app/build/intermediates/split-apk/debug/slices/slice_6.apk"
+        type="SPLIT" />
+    <artifact
+        location="/Users/Brecht/Desktop/EindprojectBIJ/app/build/intermediates/split-apk/debug/dep/dependencies.apk"
+        type="SPLIT" />
+    <artifact
+        location="/Users/Brecht/Desktop/EindprojectBIJ/app/build/intermediates/split-apk/debug/slices/slice_4.apk"
+        type="SPLIT" />
+    <artifact
+        location="/Users/Brecht/Desktop/EindprojectBIJ/app/build/intermediates/split-apk/debug/slices/slice_5.apk"
+        type="SPLIT" />
+    <artifact
+        location="/Users/Brecht/Desktop/EindprojectBIJ/app/build/intermediates/split-apk/debug/slices/slice_0.apk"
+        type="SPLIT" />
+    <artifact
+        location="/Users/Brecht/Desktop/EindprojectBIJ/C:\Users\mobapp02\Desktop\EindprojectBIJ\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
+        type="SPLIT" />
+    <artifact
+        location="/Users/Brecht/Desktop/EindprojectBIJ/C:\Users\mobapp02\Desktop\EindprojectBIJ\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
+        type="SPLIT" />
+    <artifact
+        location="/Users/Brecht/Desktop/EindprojectBIJ/C:\Users\mobapp02\Desktop\EindprojectBIJ\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
+        type="SPLIT" />
+    <artifact
+        location="/Users/Brecht/Desktop/EindprojectBIJ/C:\Users\mobapp02\Desktop\EindprojectBIJ\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
+        type="SPLIT" />
+    <artifact
+        location="/Users/Brecht/Desktop/EindprojectBIJ/app/build/intermediates/split-apk/debug/slices/slice_1.apk"
+        type="SPLIT" />
+    <artifact
+        location="/Users/Brecht/Desktop/EindprojectBIJ/app/build/intermediates/split-apk/debug/slices/slice_3.apk"
+        type="SPLIT" />
+    <artifact
+        location="/Users/Brecht/Desktop/EindprojectBIJ/C:\Users\mobapp02\Desktop\EindprojectBIJ\app\build\intermediates\split-apk\debug\dep\dependencies.apk"
+        type="SPLIT" />
+    <artifact
+        location="/Users/Brecht/Desktop/EindprojectBIJ/app/build/intermediates/instant-run-apk/debug/app-debug.apk"
         type="SPLIT_MAIN" />
 
     <build
         build-mode="FULL"
-        timestamp="1554366782166"
+        timestamp="1554401170018"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
-            location="C:\Users\mobapp02\Desktop\EindprojectBIJ\app\build\intermediates\split-apk\debug\dep\dependencies.apk"
+            location="/Users/Brecht/Desktop/EindprojectBIJ/app/build/intermediates/split-apk/debug/slices/slice_7.apk"
             type="SPLIT" />
         <artifact
-            location="C:\Users\mobapp02\Desktop\EindprojectBIJ\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
+            location="/Users/Brecht/Desktop/EindprojectBIJ/C:\Users\mobapp02\Desktop\EindprojectBIJ\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
             type="SPLIT" />
         <artifact
-            location="C:\Users\mobapp02\Desktop\EindprojectBIJ\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
+            location="/Users/Brecht/Desktop/EindprojectBIJ/C:\Users\mobapp02\Desktop\EindprojectBIJ\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
             type="SPLIT" />
         <artifact
-            location="C:\Users\mobapp02\Desktop\EindprojectBIJ\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
+            location="/Users/Brecht/Desktop/EindprojectBIJ/C:\Users\mobapp02\Desktop\EindprojectBIJ\app\build\intermediates\resources\instant-run\debug\resources-debug.apk"
             type="SPLIT" />
         <artifact
-            location="C:\Users\mobapp02\Desktop\EindprojectBIJ\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
+            location="/Users/Brecht/Desktop/EindprojectBIJ/app/build/intermediates/split-apk/debug/slices/slice_9.apk"
             type="SPLIT" />
         <artifact
-            location="C:\Users\mobapp02\Desktop\EindprojectBIJ\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
+            location="/Users/Brecht/Desktop/EindprojectBIJ/C:\Users\mobapp02\Desktop\EindprojectBIJ\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
             type="SPLIT" />
         <artifact
-            location="C:\Users\mobapp02\Desktop\EindprojectBIJ\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
+            location="/Users/Brecht/Desktop/EindprojectBIJ/C:\Users\mobapp02\Desktop\EindprojectBIJ\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
             type="SPLIT" />
         <artifact
-            location="C:\Users\mobapp02\Desktop\EindprojectBIJ\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
+            location="/Users/Brecht/Desktop/EindprojectBIJ/app/build/intermediates/resources/instant-run/debug/resources-debug.apk"
             type="SPLIT" />
         <artifact
-            location="C:\Users\mobapp02\Desktop\EindprojectBIJ\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
+            location="/Users/Brecht/Desktop/EindprojectBIJ/C:\Users\mobapp02\Desktop\EindprojectBIJ\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
             type="SPLIT" />
         <artifact
-            location="C:\Users\mobapp02\Desktop\EindprojectBIJ\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
+            location="/Users/Brecht/Desktop/EindprojectBIJ/app/build/intermediates/split-apk/debug/slices/slice_2.apk"
             type="SPLIT" />
         <artifact
-            location="C:\Users\mobapp02\Desktop\EindprojectBIJ\app\build\intermediates\resources\instant-run\debug\resources-debug.apk"
+            location="/Users/Brecht/Desktop/EindprojectBIJ/app/build/intermediates/split-apk/debug/slices/slice_8.apk"
             type="SPLIT" />
         <artifact
-            location="C:\Users\mobapp02\Desktop\EindprojectBIJ\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
+            location="/Users/Brecht/Desktop/EindprojectBIJ/C:\Users\mobapp02\Desktop\EindprojectBIJ\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
             type="SPLIT" />
         <artifact
-            location="C:\Users\mobapp02\Desktop\EindprojectBIJ\app\build\intermediates\instant-run-apk\debug\app-debug.apk"
+            location="/Users/Brecht/Desktop/EindprojectBIJ/app/build/intermediates/split-apk/debug/slices/slice_6.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/Brecht/Desktop/EindprojectBIJ/app/build/intermediates/split-apk/debug/dep/dependencies.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/Brecht/Desktop/EindprojectBIJ/app/build/intermediates/split-apk/debug/slices/slice_4.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/Brecht/Desktop/EindprojectBIJ/app/build/intermediates/split-apk/debug/slices/slice_5.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/Brecht/Desktop/EindprojectBIJ/app/build/intermediates/split-apk/debug/slices/slice_0.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/Brecht/Desktop/EindprojectBIJ/C:\Users\mobapp02\Desktop\EindprojectBIJ\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/Brecht/Desktop/EindprojectBIJ/C:\Users\mobapp02\Desktop\EindprojectBIJ\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/Brecht/Desktop/EindprojectBIJ/C:\Users\mobapp02\Desktop\EindprojectBIJ\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/Brecht/Desktop/EindprojectBIJ/C:\Users\mobapp02\Desktop\EindprojectBIJ\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/Brecht/Desktop/EindprojectBIJ/app/build/intermediates/split-apk/debug/slices/slice_1.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/Brecht/Desktop/EindprojectBIJ/app/build/intermediates/split-apk/debug/slices/slice_3.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/Brecht/Desktop/EindprojectBIJ/C:\Users\mobapp02\Desktop\EindprojectBIJ\app\build\intermediates\split-apk\debug\dep\dependencies.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/Brecht/Desktop/EindprojectBIJ/app/build/intermediates/instant-run-apk/debug/app-debug.apk"
             type="SPLIT_MAIN" />
     </build>
 

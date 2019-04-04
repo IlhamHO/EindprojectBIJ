@@ -1,7 +1,6 @@
 package com.example.comicbookroute.model;
 
 import android.arch.persistence.room.Dao;
-import android.arch.persistence.room.Delete;
 import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.Query;
 import android.arch.persistence.room.Update;
@@ -14,17 +13,11 @@ public interface BookRouteDao {
     @Insert
     void insertBookRoute(BookRoute nBookRoute);
 
-    @Delete
-    void deleteBookRoute(BookRoute nBookRoute);
-
     @Update
     void updateBookRoute(BookRoute nBookRoute);
 
     @Query("SELECT * FROM BookRoute")
     List<BookRoute> selectAllBookRoutes();
-
-    @Query("SELECT * FROM BookRoute WHERE id = :id")
-    BookRoute selectBookRouteByID(long id);
 
     @Query("SELECT * FROM BookRoute WHERE isFavorite = :isFavorite")
     List<BookRoute> selectAllFavoriteBookRoutes(boolean isFavorite);

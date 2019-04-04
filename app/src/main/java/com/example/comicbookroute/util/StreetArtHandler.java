@@ -28,7 +28,7 @@ public class StreetArtHandler extends Handler {
         this.context = context;
     }
 
-   @Override
+    @Override
     public void handleMessage(Message msg) {
         super.handleMessage(msg);
         String data = (String) msg.obj;
@@ -42,7 +42,7 @@ public class StreetArtHandler extends Handler {
                 JSONObject currentRecords = records.getJSONObject(index);
                 JSONObject fields = currentRecords.getJSONObject("fields");
 
-                String kunstenaar = (fields.has("naam_van_de_kunstenaar"))? fields.getString("naam_van_de_kunstenaar") : "geen kunstenaar";
+                String kunstenaar = (fields.has("naam_van_de_kunstenaar")) ? fields.getString("naam_van_de_kunstenaar") : "geen kunstenaar";
                 String photo = fields.getJSONObject("photo").getString("id");
                 String pictureURL = "https://bruxellesdata.opendatasoft.com/explore/dataset/"
                         + currentRecords.getString("datasetid")
@@ -53,9 +53,9 @@ public class StreetArtHandler extends Handler {
                 Double latitude = locationJSON_Array.getDouble(0);
                 Double longitude = locationJSON_Array.getDouble(1);
 
-                StreetArtHandler.DownloadImageTask task = new DownloadImageTask(photo,context);
+                StreetArtHandler.DownloadImageTask task = new DownloadImageTask(photo, context);
                 task.execute(pictureURL);
-                StreetArt currentStreetArt = new StreetArt(kunstenaar,photo+".jpeg", latitude, longitude);
+                StreetArt currentStreetArt = new StreetArt(kunstenaar, photo + ".jpeg", latitude, longitude);
                 BookRouteDatabase.getInstance(context).getStreetArtDAO().insertStreetArt(currentStreetArt);
 
                 index++;
@@ -64,7 +64,8 @@ public class StreetArtHandler extends Handler {
             e.printStackTrace();
         }
     }
-   private static class DownloadImageTask extends AsyncTask<String, Void, String> {
+
+    private static class DownloadImageTask extends AsyncTask<String, Void, String> {
 
         private String name;
         private WeakReference<Context> contextReference;

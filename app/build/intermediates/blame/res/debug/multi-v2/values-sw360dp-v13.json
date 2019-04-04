@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\mobapp02\\Desktop\\EindprojectBIJ\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sw360dp-v13\\values-sw360dp-v13.xml",
+            "outputFile": "/Users/Brecht/Desktop/EindprojectBIJ/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-sw360dp-v13/values-sw360dp-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\mobapp02\\.gradle\\caches\\transforms-1\\files-1.1\\preference-v7-28.0.0.aar\\b6079f124137eb6d833250ee5f840e13\\res\\values-sw360dp-v13\\values-sw360dp-v13.xml",
+                    "source": "/Users/Brecht/.gradle/caches/transforms-1/files-1.1/preference-v7-28.0.0.aar/190ac25ceed2bd53f2be899b081a2b61/res/values-sw360dp-v13/values-sw360dp-v13.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",

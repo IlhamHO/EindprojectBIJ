@@ -20,7 +20,6 @@ import java.io.InputStream;
 import java.lang.ref.WeakReference;
 import java.net.URL;
 
-
 public class BookRouteHandler extends Handler {
 
     private Context context;
@@ -32,7 +31,6 @@ public class BookRouteHandler extends Handler {
     @Override
     public void handleMessage(Message msg) {
         super.handleMessage(msg);
-
         String data = (String) msg.obj;
         try {
             JSONObject rootObject = new JSONObject(data);
@@ -61,16 +59,22 @@ public class BookRouteHandler extends Handler {
                 DownloadImageTask task = new DownloadImageTask(photo, context);
                 task.execute(pictureURL);
                 BookRoute currentBookRoute = new BookRoute(photo + ".jpeg", personnage, latitude, longitude, auteur, annee, false);
-                BookRouteDatabase.getInstance(context).getBookRouteDAO().insertBookRoute(currentBookRoute);
 
-
+                boolean dbCheck = false;
+                for (BookRoute bookRoute : BookRouteDatabase.getInstance(context).getBookRouteDAO().selectAllBookRoutes()) {
+                    if (bookRoute.getPhoto().equals(currentBookRoute.getPhoto())) {
+                        dbCheck = true;
+                        break;
+                    }
+                }
+                if (!dbCheck) {
+                    BookRouteDatabase.getInstance(context).getBookRouteDAO().insertBookRoute(currentBookRoute);
+                }
                 index++;
             }
-
         } catch (JSONException e) {
             e.printStackTrace();
         }
-
     }
 
     private static class DownloadImageTask extends AsyncTask<String, Void, String> {

@@ -1,6 +1,5 @@
 package com.example.comicbookroute.fragment;
 
-
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -11,30 +10,23 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.comicbookroute.MainActivity;
 import com.example.comicbookroute.R;
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class AboutFragment extends Fragment {
-    View v;
-    public ImageView logo1,logo2;
-    public TextView part,naam1,naam2,naam3,dev;
 
+    View v;
+    public ImageView logo1, logo2;
+    public TextView part, naam1, naam2, naam3, dev;
 
     public AboutFragment() {
-        // Required empty public constructor
     }
-
 
     @Override
     public View onCreateView(final LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         v = inflater.inflate(R.layout.fragment_about, container, false);
 
-        part =  v.findViewById(R.id.tv_partners);
+        part = v.findViewById(R.id.tv_partners);
         logo1 = v.findViewById(R.id.iv_eraslogo);
         logo2 = v.findViewById(R.id.iv_vdablogo);
         dev = v.findViewById(R.id.tv_dev);
@@ -65,7 +57,7 @@ public class AboutFragment extends Fragment {
         naam1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new  Intent();
+                Intent intent = new Intent();
                 intent.setAction(Intent.ACTION_VIEW);
                 intent.addCategory(Intent.CATEGORY_BROWSABLE);
                 intent.setData(Uri.parse("https://github.com/gloin666"));
@@ -75,7 +67,7 @@ public class AboutFragment extends Fragment {
         naam2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new  Intent();
+                Intent intent = new Intent();
                 intent.setAction(Intent.ACTION_VIEW);
                 intent.addCategory(Intent.CATEGORY_BROWSABLE);
                 intent.setData(Uri.parse("https://github.com/brechtgorissen"));
@@ -85,16 +77,13 @@ public class AboutFragment extends Fragment {
         naam3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new  Intent();
+                Intent intent = new Intent();
                 intent.setAction(Intent.ACTION_VIEW);
                 intent.addCategory(Intent.CATEGORY_BROWSABLE);
                 intent.setData(Uri.parse("https://github.com/mobapp10"));
                 startActivity(intent);
             }
         });
-
-
         return v;
     }
-
 }

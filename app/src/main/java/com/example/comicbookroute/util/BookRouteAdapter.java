@@ -3,8 +3,6 @@ package com.example.comicbookroute.util;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.Rect;
-import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
@@ -44,8 +42,7 @@ public class BookRouteAdapter extends RecyclerView.Adapter<BookRouteAdapter.Book
     @Override
     public BookRouteRowViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         View rowView = LayoutInflater.from(viewGroup.getContext()).inflate(whichLayoutId, viewGroup, false);
-        BookRouteRowViewHolder holder = new BookRouteRowViewHolder(rowView);
-        return holder;
+        return new BookRouteRowViewHolder(rowView);
     }
 
     @Override
@@ -90,10 +87,6 @@ public class BookRouteAdapter extends RecyclerView.Adapter<BookRouteAdapter.Book
     @Override
     public Filter getFilter() {
         return new CustomFilter();
-    }
-
-    public List<BookRoute> getItems() {
-        return items;
     }
 
     class CustomFilter extends Filter {
