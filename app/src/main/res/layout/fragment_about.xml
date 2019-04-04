@@ -27,11 +27,11 @@
 
         <ImageView
             android:id="@+id/iv_vdablogo"
-            android:layout_width="375dp"
+            android:layout_width="149dp"
             android:layout_height="79dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="16dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
             android:src="@drawable/logovdab"
