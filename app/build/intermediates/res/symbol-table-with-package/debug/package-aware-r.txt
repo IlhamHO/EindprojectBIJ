@@ -957,6 +957,8 @@ dimen hint_pressed_alpha_material_light
 dimen item_touch_helper_max_drag_scroll_per_frame
 dimen item_touch_helper_swipe_escape_max_velocity
 dimen item_touch_helper_swipe_escape_velocity
+dimen map_dx
+dimen map_dy
 dimen mtrl_bottomappbar_fabOffsetEndMode
 dimen mtrl_bottomappbar_fab_cradle_margin
 dimen mtrl_bottomappbar_fab_cradle_rounded_corner_radius
@@ -1154,7 +1156,7 @@ drawable eraslogo
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
 drawable ic_arrow_down_24dp
-drawable ic_delete
+drawable ic_delete_sweep_black_24dp
 drawable ic_grid
 drawable ic_home
 drawable ic_info
@@ -1267,6 +1269,7 @@ id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
 id fabSwitch
+id favoriteCard
 id fill
 id fill_horizontal
 id fill_vertical
@@ -1294,8 +1297,8 @@ id invisible
 id italic
 id item_touch_helper_previous_elevation
 id iv_eraslogo
-id iv_info_window
 id iv_photo_detail
+id iv_photo_window
 id iv_row
 id iv_vdablogo
 id labeled
@@ -1419,8 +1422,9 @@ id transition_layout_save
 id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
+id tv_adres_detail
+id tv_adres_window
 id tv_dev
-id tv_info_window
 id tv_jaar_detail
 id tv_naam1
 id tv_naam2
@@ -1428,6 +1432,7 @@ id tv_naam3
 id tv_naam_detail
 id tv_partners
 id tv_personage_detail
+id tv_personage_window
 id tv_row_personnage
 id uniform
 id unlabeled
@@ -1491,6 +1496,7 @@ layout abc_tooltip
 layout activity_detail
 layout activity_main
 layout bookroute_row
+layout bookroute_row_favorite
 layout bookroute_row_grid
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog

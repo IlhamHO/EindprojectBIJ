@@ -6,6 +6,9 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Point;
+import android.location.Address;
+import android.location.Geocoder;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Message;
@@ -22,7 +25,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.comicbookroute.DetailActivity;
 import com.example.comicbookroute.R;
@@ -35,6 +37,7 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.Projection;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
@@ -45,8 +48,8 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -136,7 +139,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
                     }
                 }
                 break;
-            case R.id.menu_item_bookroute:
+            case R.id.menu_item_parking:
                 if (mGoogleMap != null) {
                     mGoogleMap.clear();
                     addMarkers();
@@ -170,25 +173,31 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
 
             @Override
             public View getInfoContents(Marker marker) {
-
-                View mView = getLayoutInflater().inflate(R.layout.info_window, null, false);
-
+                View infoWindowView = getLayoutInflater().inflate(R.layout.info_window, null, false);
                 BookRoute item = (BookRoute) marker.getTag();
+                ImageView ivPhotoWindow = infoWindowView.findViewById(R.id.iv_photo_window);
+                TextView tvPersonageWindow = infoWindowView.findViewById(R.id.tv_personage_window);
+                TextView tvAddressWindow = infoWindowView.findViewById(R.id.tv_adres_window);
 
-                TextView tvTitle = mView.findViewById(R.id.tv_info_window);
-                tvTitle.setText(item.getPersonnage());
+                Geocoder geocoder = new Geocoder(infoWindowView.getContext(), Locale.getDefault());;
+                List<Address> addresses = null;
 
-
-                ImageView iv = mView.findViewById(R.id.iv_info_window);
                 try {
                     FileInputStream fis = getContext().openFileInput(item.getPhoto());
                     Bitmap bitmap = BitmapFactory.decodeStream(fis);
-                    iv.setImageBitmap(bitmap);
+                    ivPhotoWindow.setImageBitmap(bitmap);
                 } catch (FileNotFoundException e) {
                     e.printStackTrace();
                 }
-
-                return mView;
+                tvPersonageWindow.setText(item.getPersonnage());
+                try {
+                    addresses = geocoder.getFromLocation(item.getLatitude(), item.getLongitude(), 1);
+                    String address = addresses.get(0).getAddressLine(0);
+                    tvAddressWindow.setText(address);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                return infoWindowView;
             }
         });
     }
@@ -248,17 +257,27 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
 
     @Override
     public boolean onMarkerClick(Marker marker) {
-        Toast.makeText(getActivity(), marker.getTitle(), Toast.LENGTH_LONG).show();
-        return false;
+        // Calculate required horizontal shift for current screen density
+        final int dX = getResources().getDimensionPixelSize(R.dimen.map_dx);
+        // Calculate required vertical shift for current screen density
+        final int dY = getResources().getDimensionPixelSize(R.dimen.map_dy);
+        final Projection projection = mGoogleMap.getProjection();
+        final Point markerPoint = projection.toScreenLocation(marker.getPosition());
+        // Shift the point we will use to center the map
+        markerPoint.offset(dX, dY);
+        final LatLng newLatLng = projection.fromScreenLocation(markerPoint);
+        // Buttery smooth camera swoop :)
+        mGoogleMap.animateCamera(CameraUpdateFactory.newLatLng(newLatLng));
+        // Show the info window
+        marker.showInfoWindow();
+        return true;
     }
-
 
     @Override
     public void onInfoWindowClick(Marker marker) {
         Intent detailsIntent = new Intent(getContext(), DetailActivity.class);
         detailsIntent.putExtra("item", (BookRoute) marker.getTag());
         startActivity(detailsIntent);
-
     }
 }
 

@@ -7,14 +7,17 @@
 
             <item
                 android:id="@+id/menu_item_streetart"
-
                 android:title="@string/text_menu_item_streetart"
                 app:showAsAction="never"/>
-    <item
+            <item
 
-        android:id="@+id/menu_item_bookroute"
-        android:icon="@drawable/ic_map"
-        android:title="@string/text_menu_item_bookroute"
-        app:showAsAction="never" />
+                android:id="@+id/menu_item_parking"
+                android:title="@string/text_menu_item_parking"
+                app:showAsAction="never" />
+            <item
+                android:id="@+id/menu_item_settings"
+                android:title="@string/text_menu_item_settings"
+                app:showAsAction="never"/>
+
 
     </menu>

@@ -3,10 +3,6 @@ package com.example.comicbookroute.model;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.Ignore;
 import android.arch.persistence.room.PrimaryKey;
-import android.support.annotation.NonNull;
-
-import com.google.android.gms.maps.model.LatLng;
-
 import java.io.Serializable;
 
 @Entity
@@ -20,12 +16,13 @@ public class BookRoute implements Serializable {
     private Double latitude;
     private Double longitude;
     private String annee;
+    private boolean isFavorite;
 
     public BookRoute() {
     }
 
     @Ignore
-    public BookRoute(String photo, String personnage, Double latitude, Double longitude, String auteur, String annee) {
+    public BookRoute(String photo, String personnage, Double latitude, Double longitude, String auteur, String annee, boolean isFavorite) {
 
         this.photo = photo;
         this.personnage = personnage;
@@ -33,6 +30,7 @@ public class BookRoute implements Serializable {
         this.latitude = latitude;
         this.longitude = longitude;
         this.annee = annee;
+        this.isFavorite = isFavorite;
     }
 
     public long getId() {
@@ -42,7 +40,6 @@ public class BookRoute implements Serializable {
     public void setId(long id) {
         this.id = id;
     }
-
 
     public String getPhoto() {
         return photo;
@@ -92,17 +89,12 @@ public class BookRoute implements Serializable {
         this.annee = annee;
     }
 
-    @Override
-    public String toString() {
-        return "BookRoute{" +
-                "id=" + id +
-                ", photo='" + photo + '\'' +
-                ", personnage='" + personnage + '\'' +
-                ", auteur='" + auteur + '\'' +
-                ", latitude=" + latitude +
-                ", longitude=" + longitude +
-                ", annee='" + annee + '\'' +
-                '}';
+    public boolean isFavorite() {
+        return isFavorite;
+    }
+
+    public void setFavorite(boolean favorite) {
+        isFavorite = favorite;
     }
 }
 

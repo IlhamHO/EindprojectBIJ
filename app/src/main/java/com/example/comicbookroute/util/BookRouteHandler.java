@@ -59,7 +59,7 @@ public class BookRouteHandler extends Handler {
 
                 DownloadImageTask task = new DownloadImageTask(photo, context);
                 task.execute(pictureURL);
-                BookRoute currentBookRoute = new BookRoute(photo + ".jpeg", personnage, latitude, longitude, auteur, annee);
+                BookRoute currentBookRoute = new BookRoute(photo + ".jpeg", personnage, latitude, longitude, auteur, annee, false);
                 BookRouteDatabase.getInstance(context).getBookRouteDAO().insertBookRoute(currentBookRoute);
 
 
