@@ -1,4 +1,4 @@
-#Thu Apr 04 16:12:07 CEST 2019
+#Thu Apr 04 16:40:05 CEST 2019
 base.0=Z\:\\AndroidStudioProjects\\EindprojectBIJ\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out
 path.0=classes.dex
 renamed.0=classes.dex

@@ -11,7 +11,10 @@
         android:id="@+id/sp_maptype"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:entries="@array/maptype_array">
+        android:background="@color/colorPrimary"
+        android:entries="@array/maptype_array"
+        android:popupBackground="@color/common_google_signin_btn_text_dark_default"
+        android:spinnerMode="dropdown">
 
     </Spinner>
 

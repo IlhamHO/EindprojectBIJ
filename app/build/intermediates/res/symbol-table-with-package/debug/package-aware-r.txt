@@ -805,6 +805,8 @@ color secondary_text_default_material_dark
 color secondary_text_default_material_light
 color secondary_text_disabled_material_dark
 color secondary_text_disabled_material_light
+color starcollor
+color starcolloroff
 color switch_thumb_disabled_material_dark
 color switch_thumb_disabled_material_light
 color switch_thumb_material_dark
@@ -1136,6 +1138,7 @@ drawable bd5
 drawable bd7
 drawable bd8
 drawable bd9
+drawable bdxl
 drawable book
 drawable comicbookroute
 drawable common_full_open_on_phone
@@ -1307,6 +1310,7 @@ id icon_group
 id icon_only
 id ifRoom
 id image
+id imageView3
 id info
 id invisible
 id italic
@@ -1644,7 +1648,6 @@ string common_signin_button_text_long
 string expand_button_title
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
-string hello_blank_fragment
 string hide_bottom_view_on_scroll_behavior
 string mtrl_chip_close_icon_content_description
 string navigation_drawer_close
@@ -1658,9 +1661,6 @@ string search_menu_title
 string status_bar_notification_info_overflow
 string summary_collapsed_preference_list
 string text_action_settings
-string text_btn_parking
-string text_btn_restaurant
-string text_btn_wc
 string text_menu_item_bookroute
 string text_menu_item_parking
 string text_menu_item_settings

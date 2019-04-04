@@ -1,0 +1,4 @@
+#Wed Apr 03 13:38:19 CEST 2019
+base.0=C\:\\Users\\mobapp02\\Desktop\\EindprojectBIJ\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\2
+path.0=classes.dex
+renamed.0=classes.dex
