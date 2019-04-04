@@ -23,7 +23,11 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.example.comicbookroute.DetailActivity;
@@ -31,6 +35,7 @@ import com.example.comicbookroute.R;
 import com.example.comicbookroute.model.BookRoute;
 import com.example.comicbookroute.model.BookRouteDatabase;
 import com.example.comicbookroute.model.StreetArt;
+import com.example.comicbookroute.util.RestaurantHandler;
 import com.example.comicbookroute.util.StreetArtHandler;
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -55,14 +60,13 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
-public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleMap.OnMarkerClickListener, GoogleMap.OnInfoWindowClickListener {
-    MapView mMapView;
-    transient private LatLng coord;
+public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleMap.OnMapClickListener, GoogleMap.OnMarkerClickListener, GoogleMap.OnInfoWindowClickListener {
     private GoogleMap mGoogleMap;
     private final LatLng BRUSSEL = new LatLng(50.858712, 4.347446);
     private final int REQUEST_LOCATION = 1;
-    // List<Marker> comicbookList = new ArrayList<>();
-    //  List<Marker> streetartList = new ArrayList<>();
+    MapView mMapView;
+    private Spinner spinner;
+    transient private LatLng coord;
     StreetArtHandler mStreetArtHandler;
 
     public MapFragment() {
@@ -79,6 +83,36 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
         mMapView.onCreate(savedInstanceState);
         mMapView.onResume();
         mStreetArtHandler = new StreetArtHandler(getActivity());
+        spinner = view.findViewById(R.id.sp_maptype);
+
+        //changing type map with spinner
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                switch (position) {
+                    case 0:
+                        mGoogleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+                        break;
+                    case 1:
+                        mGoogleMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
+                        break;
+                    case 2:
+                        mGoogleMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
+                        break;
+                    case 3:
+                        mGoogleMap.setMapType(GoogleMap.MAP_TYPE_TERRAIN);
+                        break;
+                    default:
+                        mGoogleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+                }
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
 
         downloadDataSA();
 
@@ -134,12 +168,13 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
                     Log.d("DATA", datast.toString());
                     for (StreetArt st : datast) {
                         LatLng coord = new LatLng(st.getLatitude(), st.getLongitude());
-                        mGoogleMap.addMarker(new MarkerOptions()
-                                .title(st.getWerkNaam()).position(coord).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
+                        Marker streetartMarkers = mGoogleMap.addMarker(new MarkerOptions()
+                                .title(st.getKunstenaar()).position(coord).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
+                        streetartMarkers.setTag(st);
                     }
                 }
                 break;
-            case R.id.menu_item_parking:
+            case R.id.menu_item_bookroute:
                 if (mGoogleMap != null) {
                     mGoogleMap.clear();
                     addMarkers();
@@ -198,6 +233,20 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
                     e.printStackTrace();
                 }
                 return infoWindowView;
+
+             /* StreetArt saitem = (StreetArt) marker.getTag();
+                tvTitle = mView.findViewById(R.id.tv_info_window);
+                tvTitle.setText(saitem.getKunstenaar());
+                iv = mView.findViewById(R.id.iv_info_window);
+                try {
+                    FileInputStream fis = getContext().openFileInput(saitem.getPhoto());
+                    Bitmap bitmap = BitmapFactory.decodeStream(fis);
+                    iv.setImageBitmap(bitmap);
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                }*/
+
+                return mView;
             }
         });
     }
@@ -209,9 +258,9 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
         for (BookRoute br : data) {
             LatLng coord = new LatLng(br.getLatitude(), br.getLongitude());
 
-            Marker m = mGoogleMap.addMarker(new MarkerOptions()
+            Marker comicbookMarkers = mGoogleMap.addMarker(new MarkerOptions()
                     .title(br.getPersonnage()).position(coord).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
-            m.setTag(br);
+            comicbookMarkers.setTag(br);
         }
 
     }
@@ -278,6 +327,12 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
         Intent detailsIntent = new Intent(getContext(), DetailActivity.class);
         detailsIntent.putExtra("item", (BookRoute) marker.getTag());
         startActivity(detailsIntent);
+
+    }
+
+    @Override
+    public void onMapClick(LatLng latLng) {
+        addMarkers();
     }
 }
 

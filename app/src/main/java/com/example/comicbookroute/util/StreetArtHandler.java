@@ -21,6 +21,7 @@ import java.io.InputStream;
 import java.lang.ref.WeakReference;
 import java.net.URL;
 
+
 public class StreetArtHandler extends Handler {
     private Context context;
 
@@ -28,7 +29,7 @@ public class StreetArtHandler extends Handler {
         this.context = context;
     }
 
-    @Override
+   @Override
     public void handleMessage(Message msg) {
         super.handleMessage(msg);
         String data = (String) msg.obj;
@@ -44,9 +45,8 @@ public class StreetArtHandler extends Handler {
                 JSONObject fields = currentRecords.getJSONObject("fields");
 
 
-                String werkNaam = (fields.has("name_of_the_work")) ? fields.getString("name_of_the_work") : "geen werk naam";
-                String kunstenaar = fields.getString("name_of_the_artist");
-                String adres = fields.getString("adres");
+
+                String kunstenaar = (fields.has("naam_van_de_kunstenaar"))? fields.getString("naam_van_de_kunstenaar") : "geen kunstenaar";
                 String photo = fields.getJSONObject("photo").getString("id");
                 String pictureURL = "https://bruxellesdata.opendatasoft.com/explore/dataset/"
                         + currentRecords.getString("datasetid")
@@ -58,10 +58,11 @@ public class StreetArtHandler extends Handler {
                 Double longitude = locationJSON_Array.getDouble(1);
 
 
-              StreetArtHandler.DownloadImageTask task = new DownloadImageTask(photo,context);
+                StreetArtHandler.DownloadImageTask task = new DownloadImageTask(photo,context);
                 task.execute(pictureURL);
-                StreetArt currentStreetArt = new StreetArt(werkNaam,kunstenaar,adres,photo+".jpeg",latitude,longitude);
+                StreetArt currentStreetArt = new StreetArt(kunstenaar,photo+".jpeg",latitude,longitude);
                 BookRouteDatabase.getInstance(context).getStreetArtDAO().insertStreetArt(currentStreetArt);
+
                 index++;
             }
         } catch (JSONException e) {

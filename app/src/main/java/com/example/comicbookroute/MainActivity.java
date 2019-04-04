@@ -1,5 +1,6 @@
 package com.example.comicbookroute;
 
+import android.app.ProgressDialog;
 import android.os.Message;
 import android.support.design.widget.TabLayout;
 
@@ -41,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         toolbar = findViewById(R.id.main_toolbar);
         tabLayout = findViewById(R.id.main_tabs);
+
 
         adapter = new ViewPagerAdapter(getSupportFragmentManager());
         HomeFragment homeFragment = new HomeFragment();

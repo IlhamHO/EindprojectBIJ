@@ -5,7 +5,7 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="15"
+        android:minSdkVersion="16"
         android:targetSdkVersion="28" />
 
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -28,14 +28,15 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
-        <activity android:name="com.example.comicbookroute.DetailActivity" />
-        <activity android:name="com.example.comicbookroute.MainActivity" >
+        <activity android:name="com.example.comicbookroute.SplashScreenActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="com.example.comicbookroute.MainActivity" />
+        <activity android:name="com.example.comicbookroute.DetailActivity" />
 
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
