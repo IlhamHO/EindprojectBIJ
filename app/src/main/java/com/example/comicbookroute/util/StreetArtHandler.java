@@ -7,7 +7,6 @@ import android.os.AsyncTask;
 import android.os.Handler;
 import android.os.Message;
 
-import com.example.comicbookroute.model.BookRoute;
 import com.example.comicbookroute.model.BookRouteDatabase;
 import com.example.comicbookroute.model.StreetArt;
 
@@ -21,8 +20,8 @@ import java.io.InputStream;
 import java.lang.ref.WeakReference;
 import java.net.URL;
 
-
 public class StreetArtHandler extends Handler {
+
     private Context context;
 
     public StreetArtHandler(Context context) {
@@ -40,27 +39,23 @@ public class StreetArtHandler extends Handler {
             int index = 0;
 
             while (index < nrOfRecords) {
-
                 JSONObject currentRecords = records.getJSONObject(index);
                 JSONObject fields = currentRecords.getJSONObject("fields");
-
-
 
                 String kunstenaar = (fields.has("naam_van_de_kunstenaar"))? fields.getString("naam_van_de_kunstenaar") : "geen kunstenaar";
                 String photo = fields.getJSONObject("photo").getString("id");
                 String pictureURL = "https://bruxellesdata.opendatasoft.com/explore/dataset/"
                         + currentRecords.getString("datasetid")
-                        + "/images/"
+                        + "/files/"
                         + photo
                         + "/300";
                 JSONArray locationJSON_Array = fields.getJSONArray("geocoordinates");
                 Double latitude = locationJSON_Array.getDouble(0);
                 Double longitude = locationJSON_Array.getDouble(1);
 
-
                 StreetArtHandler.DownloadImageTask task = new DownloadImageTask(photo,context);
                 task.execute(pictureURL);
-                StreetArt currentStreetArt = new StreetArt(kunstenaar,photo+".jpeg",latitude,longitude);
+                StreetArt currentStreetArt = new StreetArt(kunstenaar,photo+".jpeg", latitude, longitude);
                 BookRouteDatabase.getInstance(context).getStreetArtDAO().insertStreetArt(currentStreetArt);
 
                 index++;

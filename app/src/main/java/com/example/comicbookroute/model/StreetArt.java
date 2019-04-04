@@ -5,6 +5,7 @@ import android.arch.persistence.room.Ignore;
 import android.arch.persistence.room.PrimaryKey;
 
 import java.io.Serializable;
+
 @Entity
 public class StreetArt implements Serializable {
     @PrimaryKey(autoGenerate = true)
@@ -18,7 +19,7 @@ public class StreetArt implements Serializable {
     }
 
     @Ignore
-    public StreetArt( String kunstenaar,String photo, Double latitude, Double longitude) {
+    public StreetArt(String kunstenaar, String photo, Double latitude, Double longitude) {
         this.kunstenaar = kunstenaar;
         this.photo = photo;
         this.latitude = latitude;
@@ -32,7 +33,6 @@ public class StreetArt implements Serializable {
     public void setId(long id) {
         this.id = id;
     }
-
 
     public String getKunstenaar() {
         return kunstenaar;
@@ -66,5 +66,4 @@ public class StreetArt implements Serializable {
         this.longitude = longitude;
     }
 
-
-    }
+}

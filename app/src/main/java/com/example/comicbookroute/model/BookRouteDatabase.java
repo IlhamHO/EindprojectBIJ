@@ -5,7 +5,7 @@ import android.arch.persistence.room.Room;
 import android.arch.persistence.room.RoomDatabase;
 import android.content.Context;
 
-@Database(version = 1, entities = {BookRoute.class, StreetArt.class, Restaurant.class}, exportSchema = false)
+@Database(version = 1, entities = {BookRoute.class, StreetArt.class}, exportSchema = false)
 public abstract class BookRouteDatabase extends RoomDatabase {
 
     private static BookRouteDatabase ourInstance;
@@ -26,7 +26,6 @@ public abstract class BookRouteDatabase extends RoomDatabase {
 
     public abstract BookRouteDao getBookRouteDAO();
     public abstract StreetArtDao getStreetArtDAO();
-    public abstract RestaurantDao getRestaurantDAO();
 }
 
 

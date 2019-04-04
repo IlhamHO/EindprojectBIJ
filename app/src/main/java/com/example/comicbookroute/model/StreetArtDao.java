@@ -9,6 +9,7 @@ import java.util.List;
 
 @Dao
 public interface StreetArtDao {
+
     @Insert
     void insertStreetArt(StreetArt nStreetArt);
 
