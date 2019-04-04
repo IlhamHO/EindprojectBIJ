@@ -8,14 +8,9 @@
 
 
     <android.support.v7.widget.CardView
+        android:id="@+id/cardid"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
         app:cardCornerRadius="5dp"
         app:cardElevation="2dp"
         app:contentPadding="5dp"
@@ -30,59 +25,41 @@
 
             <ImageView
                 android:id="@+id/iv_row"
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_width="0dp"
+                android:layout_height="160dp"
                 android:scaleType="centerCrop"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0"
                 app:srcCompat="@mipmap/ic_launcher" />
 
             <TextView
                 android:id="@+id/tv_row_personnage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/colorPrimary"
                 android:text="TextView"
                 android:textAppearance="@style/TextAppearance.AppCompat.Title"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/iv_row" />
-
-            <ImageButton
-                android:id="@+id/ib_details"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:layout_marginStart="160dp"
-                android:layout_marginLeft="160dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:visibility="visible"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/tv_row_personnage"
-                app:layout_constraintTop_toBottomOf="@+id/iv_row"
-                app:layout_constraintVertical_bias="0.461"
-                app:srcCompat="@android:drawable/ic_dialog_info" />
+                app:layout_constraintStart_toStartOf="@+id/iv_row"
+                app:layout_constraintTop_toTopOf="@+id/iv_row" />
 
             <ImageButton
                 android:id="@+id/ib_favorites"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginRight="8dp"
-                android:layout_marginBottom="8dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.957"
-                app:layout_constraintStart_toEndOf="@+id/ib_details"
-                app:layout_constraintTop_toBottomOf="@+id/iv_row"
-                app:layout_constraintVertical_bias="0.0"
+                android:layout_width="25dp"
+                android:layout_height="26dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="11dp"
+                android:background="@color/colorPrimary"
+                android:tint="@color/common_google_signin_btn_text_dark_focused"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_row"
+                app:layout_constraintEnd_toEndOf="@+id/iv_row"
                 app:srcCompat="@android:drawable/btn_star_big_off" />
         </android.support.constraint.ConstraintLayout>
     </android.support.v7.widget.CardView>

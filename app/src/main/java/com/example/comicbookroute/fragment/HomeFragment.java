@@ -21,19 +21,17 @@ import com.example.comicbookroute.R;
 import com.example.comicbookroute.model.BookRouteDatabase;
 import com.example.comicbookroute.util.BookRouteAdapter;
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class HomeFragment extends Fragment {
 
     View v;
     private RecyclerView recyclerView;
 
     private BookRouteAdapter mBookRouteAdapter;
-    private ImageButton ibDetail;
     private FloatingActionButton fabSwitcher;
 
+
     private boolean isList = true;
+    int icon;
 
     private View.OnClickListener switchClick = new View.OnClickListener() {
         @Override
@@ -44,6 +42,8 @@ public class HomeFragment extends Fragment {
                mBookRouteAdapter = new BookRouteAdapter(BookRouteDatabase.getInstance(getActivity()).getBookRouteDAO().selectAllBookRoutes(), R.layout.bookroute_row);
                recyclerView.setAdapter(mBookRouteAdapter);
                recyclerView.setLayoutManager(linearLayoutManager);
+               isList = true;
+               fabSwitcher.setImageDrawable(getResources().getDrawable(R.drawable.ic_grid));
 
            }else{
                //tis een grid
@@ -52,6 +52,8 @@ public class HomeFragment extends Fragment {
                mBookRouteAdapter = new BookRouteAdapter(BookRouteDatabase.getInstance(getActivity()).getBookRouteDAO().selectAllBookRoutes(), R.layout.bookroute_row_grid);
                recyclerView.setAdapter(mBookRouteAdapter);
                recyclerView.setLayoutManager(gridLayoutManager);
+               isList = false;
+               fabSwitcher.setImageDrawable(getResources().getDrawable(R.drawable.ic_list));
            }
         }
     };
@@ -81,7 +83,7 @@ public class HomeFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         //button details///////
-        ibDetail = v.findViewById(R.id.ib_details);
+
 
 
 
@@ -94,7 +96,15 @@ public class HomeFragment extends Fragment {
         recyclerView.setAdapter(mBookRouteAdapter);
         recyclerView.setLayoutManager(linearLayoutManager);
 
+
+
+
+
     }
+
+
+
+
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {

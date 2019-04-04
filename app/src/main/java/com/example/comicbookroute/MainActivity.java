@@ -9,6 +9,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import android.support.v7.widget.Toolbar;
+import android.view.MotionEvent;
+import android.view.View;
 
 
 import com.example.comicbookroute.fragment.AboutFragment;
@@ -17,6 +19,7 @@ import com.example.comicbookroute.fragment.HomeFragment;
 import com.example.comicbookroute.fragment.MapFragment;
 
 import com.example.comicbookroute.util.BookRouteHandler;
+import com.example.comicbookroute.util.CustomViewPager;
 import com.example.comicbookroute.util.ViewPagerAdapter;
 
 import java.io.IOException;
@@ -29,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Toolbar toolbar;
     private TabLayout tabLayout;
-    private ViewPager viewPager;
+    private CustomViewPager viewPager;
     private ViewPagerAdapter adapter;
     private BookRouteHandler mBookRouteHandler;
 
