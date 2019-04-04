@@ -46,6 +46,7 @@
                 android:background="@color/colorPrimary"
                 android:text="TextView"
                 android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                android:textColor="@android:color/white"
                 app:layout_constraintStart_toStartOf="@+id/iv_row"
                 app:layout_constraintTop_toTopOf="@+id/iv_row" />
 
@@ -56,11 +57,13 @@
                 android:layout_marginEnd="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginBottom="11dp"
-                android:background="@color/colorPrimary"
-                android:tint="@color/common_google_signin_btn_text_dark_focused"
+                android:background="@android:color/transparent"
                 app:layout_constraintBottom_toBottomOf="@+id/iv_row"
                 app:layout_constraintEnd_toEndOf="@+id/iv_row"
-                app:srcCompat="@android:drawable/btn_star_big_off" />
+
+                android:src="@drawable/ic_star"
+
+                android:contentDescription="TODO" />
         </android.support.constraint.ConstraintLayout>
     </android.support.v7.widget.CardView>
 </android.support.constraint.ConstraintLayout>

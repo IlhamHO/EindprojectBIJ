@@ -15,6 +15,7 @@
         android:layout_marginBottom="8dp"
         android:clickable="true"
         android:src="@drawable/ic_grid"
+        android:tint="@android:color/white"
         app:backgroundTint="@color/colorPrimary"
         app:elevation="8dp"
         app:fabSize="mini"

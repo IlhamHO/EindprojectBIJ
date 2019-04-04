@@ -35,7 +35,6 @@ import com.example.comicbookroute.R;
 import com.example.comicbookroute.model.BookRoute;
 import com.example.comicbookroute.model.BookRouteDatabase;
 import com.example.comicbookroute.model.StreetArt;
-import com.example.comicbookroute.util.RestaurantHandler;
 import com.example.comicbookroute.util.StreetArtHandler;
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -245,8 +244,6 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
                 } catch (FileNotFoundException e) {
                     e.printStackTrace();
                 }*/
-
-                return mView;
             }
         });
     }

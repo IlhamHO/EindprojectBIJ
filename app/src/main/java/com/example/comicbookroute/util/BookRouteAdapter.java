@@ -52,9 +52,9 @@ public class BookRouteAdapter extends RecyclerView.Adapter<BookRouteAdapter.Book
     public void onBindViewHolder(@NonNull final BookRouteRowViewHolder bookRouteRowViewHolder, int i) {
         final BookRoute currentBookRoute = filteredItems.get(i);
         if (currentBookRoute.isFavorite()){
-            bookRouteRowViewHolder.btnFavorites.setColorFilter(Color.YELLOW);
+            bookRouteRowViewHolder.btnFavorites.setColorFilter(bookRouteRowViewHolder.itemView.getContext().getResources().getColor(R.color.starcollor));
         }else{
-            bookRouteRowViewHolder.btnFavorites.setColorFilter(Color.BLACK);
+            bookRouteRowViewHolder.btnFavorites.setColorFilter(bookRouteRowViewHolder.itemView.getContext().getResources().getColor(R.color.starcolloroff));
         }
         bookRouteRowViewHolder.btnFavorites.setOnClickListener(new View.OnClickListener() {
             @Override

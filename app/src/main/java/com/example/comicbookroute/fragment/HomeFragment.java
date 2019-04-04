@@ -54,6 +54,7 @@ public class HomeFragment extends Fragment {
                recyclerView.setLayoutManager(gridLayoutManager);
                isList = false;
                fabSwitcher.setImageDrawable(getResources().getDrawable(R.drawable.ic_list));
+               
            }
         }
     };
