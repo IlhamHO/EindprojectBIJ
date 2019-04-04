@@ -5,16 +5,16 @@
     tools:showIn="navigation_view">
 
 
-            <item
-                android:id="@+id/menu_item_streetart"
-                android:icon="@drawable/streetart"
-                android:title="@string/text_menu_item_streetart"
-                app:showAsAction="never"/>
+    <item
+        android:id="@+id/menu_item_streetart"
+        android:icon="@drawable/streetart"
+        android:title="@string/text_menu_item_streetart"
+        app:showAsAction="never" />
     <item
 
         android:id="@+id/menu_item_bookroute"
-        android:icon="@drawable/ic_map"
+        android:icon="@drawable/ic_palette"
         android:title="@string/text_menu_item_bookroute"
         app:showAsAction="never" />
 
-    </menu>
+</menu>

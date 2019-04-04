@@ -94,9 +94,6 @@ public class HomeFragment extends Fragment {
         recyclerView.setAdapter(mBookRouteAdapter);
         recyclerView.setLayoutManager(linearLayoutManager);
 
-
-
-
     }
 
     @Override

@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\User\AndroidStudioProjects\EindprojectBIJ\app\src\main\AndroidManifest.xml:2:1-32:12
-INJECTED from C:\Users\User\AndroidStudioProjects\EindprojectBIJ\app\src\main\AndroidManifest.xml:2:1-32:12
-INJECTED from C:\Users\User\AndroidStudioProjects\EindprojectBIJ\app\src\main\AndroidManifest.xml:2:1-32:12
-INJECTED from C:\Users\User\AndroidStudioProjects\EindprojectBIJ\app\src\main\AndroidManifest.xml:2:1-32:12
+ADDED from C:\Users\User\AndroidStudioProjects\EindprojectBIJ\app\src\main\AndroidManifest.xml:2:1-34:12
+INJECTED from C:\Users\User\AndroidStudioProjects\EindprojectBIJ\app\src\main\AndroidManifest.xml:2:1-34:12
+INJECTED from C:\Users\User\AndroidStudioProjects\EindprojectBIJ\app\src\main\AndroidManifest.xml:2:1-34:12
+INJECTED from C:\Users\User\AndroidStudioProjects\EindprojectBIJ\app\src\main\AndroidManifest.xml:2:1-34:12
 MERGED from [com.android.support:design:28.0.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\90a0ea81a90d6c3bb09a96a42047457d\AndroidManifest.xml:17:1-24:12
 MERGED from [com.android.support:preference-v7:28.0.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\preference-v7-28.0.0.aar\3950f8b6a20d6db97a4b73fe34d39c3e\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\appcompat-v7-28.0.0.aar\c127a20bcc62f703584c349578c65957\AndroidManifest.xml:17:1-22:12
@@ -50,49 +50,49 @@ MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\User\.gr
 MERGED from [com.android.support:print:28.0.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\print-28.0.0.aar\5ff511ed279fa612fa6cb96db9b7a7c2\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\User\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.1.aar\b012ad3e422d33b2a134f7da62aef0f6\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:interpolator:28.0.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\interpolator-28.0.0.aar\c8d1986a14713608385262082435976e\AndroidManifest.xml:17:1-22:12
-INJECTED from C:\Users\User\AndroidStudioProjects\EindprojectBIJ\app\src\main\AndroidManifest.xml:2:1-32:12
-INJECTED from C:\Users\User\AndroidStudioProjects\EindprojectBIJ\app\src\main\AndroidManifest.xml:2:1-32:12
-INJECTED from C:\Users\User\AndroidStudioProjects\EindprojectBIJ\app\src\main\AndroidManifest.xml:2:1-32:12
+INJECTED from C:\Users\User\AndroidStudioProjects\EindprojectBIJ\app\src\main\AndroidManifest.xml:2:1-34:12
+INJECTED from C:\Users\User\AndroidStudioProjects\EindprojectBIJ\app\src\main\AndroidManifest.xml:2:1-34:12
+INJECTED from C:\Users\User\AndroidStudioProjects\EindprojectBIJ\app\src\main\AndroidManifest.xml:2:1-34:12
 	package
 		ADDED from C:\Users\User\AndroidStudioProjects\EindprojectBIJ\app\src\main\AndroidManifest.xml:3:5-41
 		INJECTED from C:\Users\User\AndroidStudioProjects\EindprojectBIJ\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\User\AndroidStudioProjects\EindprojectBIJ\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\User\AndroidStudioProjects\EindprojectBIJ\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\User\AndroidStudioProjects\EindprojectBIJ\app\src\main\AndroidManifest.xml:2:1-32:12
+		ADDED from C:\Users\User\AndroidStudioProjects\EindprojectBIJ\app\src\main\AndroidManifest.xml:2:1-34:12
 		INJECTED from C:\Users\User\AndroidStudioProjects\EindprojectBIJ\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from C:\Users\User\AndroidStudioProjects\EindprojectBIJ\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\User\AndroidStudioProjects\EindprojectBIJ\app\src\main\AndroidManifest.xml:2:1-32:12
+		ADDED from C:\Users\User\AndroidStudioProjects\EindprojectBIJ\app\src\main\AndroidManifest.xml:2:1-34:12
 		INJECTED from C:\Users\User\AndroidStudioProjects\EindprojectBIJ\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\User\AndroidStudioProjects\EindprojectBIJ\app\src\main\AndroidManifest.xml:2:11-69
 uses-permission#android.permission.ACCESS_COARSE_LOCATION
-ADDED from C:\Users\User\AndroidStudioProjects\EindprojectBIJ\app\src\main\AndroidManifest.xml:5:5-80
+ADDED from C:\Users\User\AndroidStudioProjects\EindprojectBIJ\app\src\main\AndroidManifest.xml:5:5-81
 	android:name
 		ADDED from C:\Users\User\AndroidStudioProjects\EindprojectBIJ\app\src\main\AndroidManifest.xml:5:22-78
 uses-permission#android.permission.ACCESS_FINE_LOCATION
-ADDED from C:\Users\User\AndroidStudioProjects\EindprojectBIJ\app\src\main\AndroidManifest.xml:6:5-78
+ADDED from C:\Users\User\AndroidStudioProjects\EindprojectBIJ\app\src\main\AndroidManifest.xml:6:5-79
 	android:name
 		ADDED from C:\Users\User\AndroidStudioProjects\EindprojectBIJ\app\src\main\AndroidManifest.xml:6:22-76
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from C:\Users\User\AndroidStudioProjects\EindprojectBIJ\app\src\main\AndroidManifest.xml:7:5-78
+ADDED from C:\Users\User\AndroidStudioProjects\EindprojectBIJ\app\src\main\AndroidManifest.xml:7:5-79
 MERGED from [com.google.android.gms:play-services-maps:16.1.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\play-services-maps-16.1.0.aar\24ef36cefb2532e4fc535edacd9ef082\AndroidManifest.xml:23:5-79
 MERGED from [com.google.android.gms:play-services-maps:16.1.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\play-services-maps-16.1.0.aar\24ef36cefb2532e4fc535edacd9ef082\AndroidManifest.xml:23:5-79
 	android:name
 		ADDED from C:\Users\User\AndroidStudioProjects\EindprojectBIJ\app\src\main\AndroidManifest.xml:7:22-76
 uses-permission#android.permission.INTERNET
-ADDED from C:\Users\User\AndroidStudioProjects\EindprojectBIJ\app\src\main\AndroidManifest.xml:8:5-66
+ADDED from C:\Users\User\AndroidStudioProjects\EindprojectBIJ\app\src\main\AndroidManifest.xml:8:5-67
 MERGED from [com.google.android.gms:play-services-maps:16.1.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\play-services-maps-16.1.0.aar\24ef36cefb2532e4fc535edacd9ef082\AndroidManifest.xml:24:5-67
 MERGED from [com.google.android.gms:play-services-maps:16.1.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\play-services-maps-16.1.0.aar\24ef36cefb2532e4fc535edacd9ef082\AndroidManifest.xml:24:5-67
 	android:name
 		ADDED from C:\Users\User\AndroidStudioProjects\EindprojectBIJ\app\src\main\AndroidManifest.xml:8:22-64
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from C:\Users\User\AndroidStudioProjects\EindprojectBIJ\app\src\main\AndroidManifest.xml:9:5-80
+ADDED from C:\Users\User\AndroidStudioProjects\EindprojectBIJ\app\src\main\AndroidManifest.xml:9:5-81
 	android:name
 		ADDED from C:\Users\User\AndroidStudioProjects\EindprojectBIJ\app\src\main\AndroidManifest.xml:9:22-78
 application
-ADDED from C:\Users\User\AndroidStudioProjects\EindprojectBIJ\app\src\main\AndroidManifest.xml:11:5-30:19
+ADDED from C:\Users\User\AndroidStudioProjects\EindprojectBIJ\app\src\main\AndroidManifest.xml:11:5-32:19
 MERGED from [com.android.support:design:28.0.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\90a0ea81a90d6c3bb09a96a42047457d\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:design:28.0.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\90a0ea81a90d6c3bb09a96a42047457d\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\User\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\a88d0374a1beb7be385aa8ed3385d4fa\AndroidManifest.xml:9:5-20
@@ -129,30 +129,34 @@ MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\User\.grad
 		ADDED from C:\Users\User\AndroidStudioProjects\EindprojectBIJ\app\src\main\AndroidManifest.xml:12:9-35
 	android:theme
 		ADDED from C:\Users\User\AndroidStudioProjects\EindprojectBIJ\app\src\main\AndroidManifest.xml:17:9-40
-activity#com.example.comicbookroute.DetailActivity
-ADDED from C:\Users\User\AndroidStudioProjects\EindprojectBIJ\app\src\main\AndroidManifest.xml:18:9-61
+activity#com.example.comicbookroute.SplashScreenActivity
+ADDED from C:\Users\User\AndroidStudioProjects\EindprojectBIJ\app\src\main\AndroidManifest.xml:20:9-26:20
 	android:name
-		ADDED from C:\Users\User\AndroidStudioProjects\EindprojectBIJ\app\src\main\AndroidManifest.xml:18:19-49
-activity#com.example.comicbookroute.MainActivity
-ADDED from C:\Users\User\AndroidStudioProjects\EindprojectBIJ\app\src\main\AndroidManifest.xml:19:9-25:20
-	android:name
-		ADDED from C:\Users\User\AndroidStudioProjects\EindprojectBIJ\app\src\main\AndroidManifest.xml:19:19-47
+		ADDED from C:\Users\User\AndroidStudioProjects\EindprojectBIJ\app\src\main\AndroidManifest.xml:20:19-55
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\User\AndroidStudioProjects\EindprojectBIJ\app\src\main\AndroidManifest.xml:20:13-24:29
+ADDED from C:\Users\User\AndroidStudioProjects\EindprojectBIJ\app\src\main\AndroidManifest.xml:21:13-25:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\User\AndroidStudioProjects\EindprojectBIJ\app\src\main\AndroidManifest.xml:21:17-69
+ADDED from C:\Users\User\AndroidStudioProjects\EindprojectBIJ\app\src\main\AndroidManifest.xml:22:17-69
 	android:name
-		ADDED from C:\Users\User\AndroidStudioProjects\EindprojectBIJ\app\src\main\AndroidManifest.xml:21:25-66
+		ADDED from C:\Users\User\AndroidStudioProjects\EindprojectBIJ\app\src\main\AndroidManifest.xml:22:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\User\AndroidStudioProjects\EindprojectBIJ\app\src\main\AndroidManifest.xml:23:17-77
+ADDED from C:\Users\User\AndroidStudioProjects\EindprojectBIJ\app\src\main\AndroidManifest.xml:24:17-77
 	android:name
-		ADDED from C:\Users\User\AndroidStudioProjects\EindprojectBIJ\app\src\main\AndroidManifest.xml:23:27-74
+		ADDED from C:\Users\User\AndroidStudioProjects\EindprojectBIJ\app\src\main\AndroidManifest.xml:24:27-74
+activity#com.example.comicbookroute.MainActivity
+ADDED from C:\Users\User\AndroidStudioProjects\EindprojectBIJ\app\src\main\AndroidManifest.xml:27:9-59
+	android:name
+		ADDED from C:\Users\User\AndroidStudioProjects\EindprojectBIJ\app\src\main\AndroidManifest.xml:27:19-47
+activity#com.example.comicbookroute.DetailActivity
+ADDED from C:\Users\User\AndroidStudioProjects\EindprojectBIJ\app\src\main\AndroidManifest.xml:28:9-52
+	android:name
+		ADDED from C:\Users\User\AndroidStudioProjects\EindprojectBIJ\app\src\main\AndroidManifest.xml:28:19-49
 meta-data#com.google.android.maps.v2.API_KEY
-ADDED from C:\Users\User\AndroidStudioProjects\EindprojectBIJ\app\src\main\AndroidManifest.xml:27:9-29:71
+ADDED from C:\Users\User\AndroidStudioProjects\EindprojectBIJ\app\src\main\AndroidManifest.xml:29:9-31:71
 	android:value
-		ADDED from C:\Users\User\AndroidStudioProjects\EindprojectBIJ\app\src\main\AndroidManifest.xml:29:13-68
+		ADDED from C:\Users\User\AndroidStudioProjects\EindprojectBIJ\app\src\main\AndroidManifest.xml:31:13-68
 	android:name
-		ADDED from C:\Users\User\AndroidStudioProjects\EindprojectBIJ\app\src\main\AndroidManifest.xml:28:13-62
+		ADDED from C:\Users\User\AndroidStudioProjects\EindprojectBIJ\app\src\main\AndroidManifest.xml:30:13-62
 uses-sdk
 INJECTED from C:\Users\User\AndroidStudioProjects\EindprojectBIJ\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\User\AndroidStudioProjects\EindprojectBIJ\app\src\main\AndroidManifest.xml

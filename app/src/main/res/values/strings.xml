@@ -4,5 +4,12 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="text_menu_item_streetart">Street Art</string>
-    <string name="text_menu_item_bookroute">Comic Book Street</string>
+    <string name="text_menu_item_bookroute">Comic Book</string>
+
+    <string-array name="maptype_array">
+        <item>Normal</item>
+        <item>Hybrid</item>
+        <item>Satellite</item>
+        <item>Terrain</item>
+    </string-array>
 </resources>
