@@ -9,9 +9,7 @@ import java.io.Serializable;
 public class StreetArt implements Serializable {
     @PrimaryKey(autoGenerate = true)
     private long id;
-    private String werkNaam;
     private String kunstenaar;
-    private String adres;
     private String photo;
     private Double latitude;
     private Double longitude;
@@ -20,10 +18,8 @@ public class StreetArt implements Serializable {
     }
 
     @Ignore
-    public StreetArt(String werkNaam, String kunstenaar, String adres, String photo, Double latitude, Double longitude) {
-        this.werkNaam = werkNaam;
+    public StreetArt( String kunstenaar,String photo, Double latitude, Double longitude) {
         this.kunstenaar = kunstenaar;
-        this.adres = adres;
         this.photo = photo;
         this.latitude = latitude;
         this.longitude = longitude;
@@ -37,13 +33,6 @@ public class StreetArt implements Serializable {
         this.id = id;
     }
 
-    public String getWerkNaam() {
-        return werkNaam;
-    }
-
-    public void setWerkNaam(String werkNaam) {
-        this.werkNaam = werkNaam;
-    }
 
     public String getKunstenaar() {
         return kunstenaar;
@@ -51,14 +40,6 @@ public class StreetArt implements Serializable {
 
     public void setKunstenaar(String kunstenaar) {
         this.kunstenaar = kunstenaar;
-    }
-
-    public String getAdres() {
-        return adres;
-    }
-
-    public void setAdres(String adres) {
-        this.adres = adres;
     }
 
     public String getPhoto() {
@@ -85,4 +66,5 @@ public class StreetArt implements Serializable {
         this.longitude = longitude;
     }
 
-}
+
+    }
